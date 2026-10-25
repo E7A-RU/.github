@@ -17,7 +17,8 @@
 9. **Humans authorize production.** Автоматизация помогает валидировать/планировать; по умолчанию не меняет production без явного owner approval.
 10. **One organization standard.** Канонические правила — здесь, а не семь расходящихся копий. Каждая потребляющая версия стандарта и контрактов известна по ссылке/SHA.
 11. **Security before convenience.** Минимальные полномочия, разделение tenants, контроль внешних интеграций, секреты не в Git, ограничение ресурсов и проверяемый off-host backup.
-12. **Brand and code rights are separate.** Публичный @e7a-ru/ui@0.2.1 указан как UNLICENSED (internal-first/external-ready); официальные материалы E7A требуют разрешения правообладателей согласно [Brand Policy](../BRAND_POLICY.md). Публичность npm не означает open-source лицензию.
+12. **Discover before deploy.** Website предоставляет понятную публичную витрину для B2B/B2C, Laboratory — защищённый вход для команды/партнёров и инженерное производство, а Demo показывает возможности на синтетических данных без обещания готового production. Позиционирование и первые сегменты пока проходят проверку, а не считаются утверждёнными маркетинговыми фактами.
+13. **Brand and code rights are separate.** Публичный @e7a-ru/ui@0.2.1 указан как UNLICENSED (internal-first/external-ready); официальные материалы E7A требуют разрешения правообладателей согласно [Brand Policy](../BRAND_POLICY.md). Публичность npm не означает open-source лицензию.
 
 ## Из чего состоит экосистема
 
@@ -31,3 +32,5 @@
 **Не смешивать:** «общие стандарты» ≠ «одна база»; «единый логин» ≠ «единые продуктовые роли»; «создать Kit» ≠ «автоматически деплоить»; «доставить сообщение» ≠ «выполнить внешнее действие».
 
 Подробнее см. [матрицу](ownership-and-data.md), [Identity](identity-and-trust.md), [Platform](platform-delivery-jobs-integrations.md).
+
+Маршруты аудиторий, рекрутинга и демонстраций описаны отдельно: [Website/market](market-positioning-and-entrypoints.md), [Laboratory intake](developer-and-partner-lifecycle.md), [Demo](demo-and-trials.md).
