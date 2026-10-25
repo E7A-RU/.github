@@ -45,9 +45,9 @@ Website служит визуальной baseline, Core — источнико�
 
 ## Визуальные референсы и мокапы
 
-![E7A — концептуальная доска бренд-идентичности и мерча](references/e7a-brand-reference-board.svg)
+![E7A — концептуальная доска бренд-идентичности и мерча](references/e7a-brand-reference-board.jpg)
 
-[Открыть доску в полном размере](references/e7a-brand-reference-board.svg) · [Описание референсов и требования к доработке](references/README.md). Это **концептуальные** изображения, не замена точных E7ALogo/E7AMark из Core и не утверждённая production-спецификация.
+[Открыть доску в полном размере](references/e7a-brand-reference-board.jpg) · [векторная схема](references/e7a-brand-reference-board.svg) · [описание референсов и требования к доработке](references/README.md). Это **концептуальные** изображения, не замена точных E7ALogo/E7AMark из Core и не утверждённая production-спецификация.
 
 ## Носители фирменного стиля — дизайн-референсы
 

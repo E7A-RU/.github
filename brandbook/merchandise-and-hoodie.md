@@ -4,9 +4,9 @@
 
 ## Визуальные мокапы
 
-![E7A — худи и дополнительные носители (концепт)](references/e7a-brand-reference-board.svg)
+![E7A — худи и дополнительные носители (концепт)](references/e7a-brand-reference-board.jpg)
 
-[Векторная доска с Quiet Edition / Engineering Edition / Light Study и дополнительными носителями](references/e7a-brand-reference-board.svg) · [Пояснения и источники](references/README.md). На схеме символы условные, для финальных макетов обязательны исходники Core; физические образцы ещё не изготовлены.
+[Доска с Quiet Edition / Engineering Edition / Light Study и дополнительными носителями](references/e7a-brand-reference-board.jpg) · [векторная схема](references/e7a-brand-reference-board.svg) · [пояснения и источники](references/README.md). Знаки на доске условные, для финальных макетов обязательны исходники Core; физические образцы ещё не изготовлены.
 
 ## 01 — Essential Hoodie (основной обязательный концепт)
 
