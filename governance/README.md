@@ -22,6 +22,7 @@
 - [Собственный стикерпак E7A — MVP на 12 сюжетов](../brandbook/stickerpack.md)
 - [Юридическая дорожная карта России (НПД/ИП/ООО, IP, software и соблюдение требований)](../legal/README.md)
 - [Фирменная продукция и обязательные референсы худи](../brandbook/merchandise-and-hoodie.md)
+- [Россия: практическая подача E7A на товарный знак и доходы при официальной работе](../legal/trademark-filing-and-employed-income-russia.md)
 - [Россия: организационно-правовая форма и налоги](../legal/business-structure-russia.md)
 - [Россия: товарный знак E7A, промышленный образец и права на стикеры](../legal/brand-ip-and-patents-russia.md)
 - [Россия: цифровые продукты, privacy, payments, hoodies/мерч](../legal/product-compliance-russia.md)
