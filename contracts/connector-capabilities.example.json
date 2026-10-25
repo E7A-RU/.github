@@ -1,0 +1,36 @@
+{
+  "_comment": "ILLUSTRATIVE connector capability declaration. Actual provider permissions, contracts and quotas must be verified independently.",
+  "schemaVersion": "e7a.connector-capability/v0-proposal",
+  "connectorId": "telegram",
+  "connectorVersion": "proposed-0",
+  "operations": [
+    {
+      "name": "message.send",
+      "requiresAccountConnection": true,
+      "canPromiseBusinessProcessed": false
+    },
+    {
+      "name": "file.send",
+      "requiresAccountConnection": true,
+      "canPromiseBusinessProcessed": false
+    }
+  ],
+  "credentials": {
+    "mode": "scoped-vault-reference",
+    "neverInQueuePayload": true
+  },
+  "constraints": {
+    "requireTenantAuthorization": true,
+    "rateLimitPolicy": "provider-specific",
+    "maxContentBytes": "provider-specific",
+    "callbackSignatureVerification": "provider-dependent",
+    "idempotencyGuarantee": "unknown-until-tested"
+  },
+  "egress": {
+    "allowlistRequired": true
+  },
+  "evidence": {
+    "source": "official-provider-documentation-plus-live-permission-check",
+    "status": "NOT_VERIFIED"
+  }
+}
