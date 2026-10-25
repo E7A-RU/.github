@@ -21,7 +21,16 @@
 | 015 | Brand Policy отдельно от code licence, UI public UNLICENSED | EXISTING POLICY | PR #1 содержит брендовые правила |
 | 016 | Physical hypervisor/Kubernetes не прибавляет CPU/RAM/disk одного сервера | ARCHITECTURAL OBSERVATION | K3s лишь при multi-node/operational demand |
 
+| 017 | Website — публичная витрина возможностей, продуктов, доказательных кейсов и входов для B2B/B2C | PROPOSED-MARKET-POSITIONING | Production Website существует; новая маркетинговая роль/конверсия и CTA ещё не подтверждены |
+| 018 | Ценность E7A для целевых заказчиков: быстрая, надёжная, качественная автоматизация под ключ без ненужной сложности и переплат | OWNER-DIRECTION / CLAIMS-REQUIRE-EVIDENCE | Цены, сроки, гарантии, сегменты и маркетинговые заявления должны иметь доказательства |
+| 019 | Laboratory — вход для разработчиков/партнёров (B2D) и внутреннего штата (B2E), pipeline пополнения команды и выпуска клиентских решений | PROPOSED-PRODUCT-EXTENSION | Wizard/QA charter утверждён концептуально; recruitment/client workspace и роли не реализованы |
+| 020 | Публичный Demo Catalog и раздельные demo/trial: synthetic showcase, guided B2B demo, invite-only developer sandbox | PROPOSED | Портал/демо поддомен не развёрнуты; сценарии и ресурсные лимиты требуют решения |
+| 021 | Website/Identity/Laboratory не смешивают маркетинговый lead, кандидатскую запись, tenant-клиента и developer privileges | PROPOSED-SECURITY-GUARDRAIL | Ограничение доступа по умолчанию, privacy review и identity membership обязательны до подключения |
+
 ## Открытые ADR
+
+Website: приоритет B2B/B2C/B2D, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
+
 
 Identity IdP/assurance/privacy, service auth, migration Bot login; Platform delivery durability/UNKNOWN/provider ACK/idempotency, secure connector SDK; Jobs execution/leases; почта provider vs MTA; Product Kit code/profile migrations; Laboratory QA/runner sandbox; Infra DNS/TLS ownership, secrets, backup RPO/RTO, K3s threshold; schema и immutable versioning standards.
 
