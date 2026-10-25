@@ -19,3 +19,8 @@ Do not store secrets, private links or deployment credentials here.
 **Единственный источник организационных архитектурных требований:** [E7A Governance](governance/README.md). Здесь хранятся философия, ownership, Identity, Laboratory, Infra, Platform (Delivery/Jobs/Connectors/Results), три Kit, реальные и проектные примеры, контроль версий стандартов и release policy. Текущий документ [ECOSYSTEM_ARCHITECTURE.md](ECOSYSTEM_ARCHITECTURE.md) сохранён как первоначальный исторический snapshot; при противоречии использовать актуальный пакет governance после его принятия в main.
 
 Это **не** разрешение на создание/запуск Identity, Platform, почты, worker pools, Kubernetes или запуск GitHub Actions CI. Опубликованные документы не доказывают работоспособность будущих сервисов.
+
+
+## B2C-first strategy, team and E7A Brandbook
+
+Владелец зафиксировал **B2C как первое направление** с сохранением B2B. Начальная цель — [M1 Product-in-Use](governance/growth-strategy-and-first-milestone.md), функциональная [минимальная команда и 4.0 FTE ориентир](governance/team-and-capacity.md), единая [фирменная айдентика и правила применения](brandbook/README.md). В [Merchandise/hoodie](brandbook/merchandise-and-hoodie.md) описаны варианты худи и других носителей **как будущие дизайнерские референсы, не готовые товары**. Этот документ не разрешает production изменения или публичную продажу фирменной продукции.
