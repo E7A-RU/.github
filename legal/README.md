@@ -4,6 +4,7 @@
 
 ## Разделы
 
+- **[Практическая инструкция: как подать E7A на товарный знак, работая по найму, и когда нужен НПД](trademark-filing-and-employed-income-russia.md)**
 - [Статус бизнеса: НПД, ИП или ООО, налоги, команда](business-structure-russia.md)
 - [Охрана названия, логотипа, дизайна, software и стикеров: товарные знаки, авторское право, патенты](brand-ip-and-patents-russia.md)
 - [Product compliance: B2C/B2B, data/privacy, SaaS, платежи, худи/мерч](product-compliance-russia.md)
