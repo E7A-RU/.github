@@ -39,6 +39,9 @@
 - [Infra: профессорские серверы и эксплуатация](infra-operations.md)
 - [Версии стандартов и управление изменениями](standards-and-change-control.md)
 - [Реестр архитектурных решений и открытых вопросов](decision-log.md)
+- [Architecture Consistency Report — противоречия, риски, проверки](architecture-consistency-report.md)
+- [Impact Matrix — репозитории, зависимости, версии стандартов](repository-impact-matrix.md)
+- [10 практических задач и M1-гейты](implementation-priorities.md)
 
 ### Контрактные примеры (пока не runtime API)
 
