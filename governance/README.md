@@ -29,6 +29,8 @@
 
 - [Product Manifest — пример](../contracts/product-manifest.example.yaml)
 - [Пакет интеграционных операций — пример](../contracts/operation-batch.example.json)
+- [Подключение продукта к организационному стандарту — пример](../contracts/standards-consumer.example.json)
+- [Манифест capabilities коннектора — пример](../contracts/connector-capabilities.example.json)
 - [Evidence проверки релиза — пример](../contracts/release-evidence.example.json)
 
 **Правило достоверности:** помечать отдельно APPROVED-CONCEPT, PROPOSED, IMPLEMENTED-SOURCE, VERIFIED-TEST и RUNNING-VERIFIED. PR, README, npm manifest, образ контейнера или готовый CLI сами по себе не являются доказательством production runtime.
