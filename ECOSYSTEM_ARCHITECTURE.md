@@ -2,7 +2,7 @@
 
 **Статус:** философия и зоны ответственности согласованы. Не означает работающие Identity/Platform/Laboratory runtime, завершённые Kit или разрешение на деплой. Существующие Draft PR проверяются на точном SHA перед merge.
 
-Полная версия и ADR: [E7A Infra — Operating Model](https://github.com/E7A-RU/infra/blob/docs/ecosystem-operating-model-20261025/docs/architecture/ecosystem-operating-model.md).
+**Историческая ссылка на раннюю консолидацию:** [E7A Infra — Operating Model](https://github.com/E7A-RU/infra/blob/docs/ecosystem-operating-model-20261025/docs/architecture/ecosystem-operating-model.md). **Новый канонический источник организации — [governance/README.md](governance/README.md)**. Этот файл сохраняется как snapshot первого согласования, а не второй нормативный текст.
 
 ## Роли
 
