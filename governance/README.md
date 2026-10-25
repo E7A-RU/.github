@@ -17,6 +17,9 @@
 
 - [Философия и принципы](ecosystem-charter.md)
 - [Матрица владения и данные](ownership-and-data.md)
+- [Website: ценностное предложение, B2B/B2C и публичные маршруты](market-positioning-and-entrypoints.md)
+- [Laboratory: пути разработчика, партнёра и сотрудника (B2D/B2E)](developer-and-partner-lifecycle.md)
+- [Demo: витрина, песочницы и пробные сценарии](demo-and-trials.md)
 - [Laboratory, три Kit, QA и выпуск](product-factory-and-kits.md)
 - [Identity, Trust, SSO и доступ к продуктам](identity-and-trust.md)
 - [Platform: СГДС, Jobs, коннекторы, Mail](platform-delivery-jobs-integrations.md)
