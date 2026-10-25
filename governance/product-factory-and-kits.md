@@ -43,3 +43,9 @@ Identity доказывает, кто инициировал QA/release и ка�
 ## Безопасность
 
 Тестовые запуски не имеют access к prod PostgreSQL, секретам, сети внутренних admin API и Docker socket без изоляции. Secrets delivery — серверная зона Infra, не pipeline YAML с токенами. Нет автоматического merge, package publication или production push вследствие создания репозитория.
+
+## Входящие маршруты Laboratory (проект дополнения)
+
+Laboratory решает **две организационные задачи**: управляемое привлечение и onboarding инженерных участников (staff/partner/developer), а также выпуск конкретных клиентских решений. Внешний B2B-клиент обычно сначала приходит через Website и получает ограниченный customer project workspace только после квалификации; не каждому клиенту нужен доступ к developer portal. Внутренние сотрудники идут по маршруту **B2E / internal developer experience**, внешние интеграторы — **B2D / partner developer experience**. Recruitment, доступ к private repo и production approve — разные ступени доверия и права.
+
+Канонические описания: [путь разработчика/сотрудника и заказчика](developer-and-partner-lifecycle.md), [публичные входы](market-positioning-and-entrypoints.md), [демо и trial](demo-and-trials.md). До отдельного решения безопасный вариант внешнего доступа — **по приглашению, с изолированным sandbox и подтверждённой Identity**, а не открытая запись с неограниченными ресурсами.
