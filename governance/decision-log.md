@@ -31,12 +31,19 @@
 | 023 | Базовая структура команды для M1 — функциональные роли с предварительной оценкой около 4.0 FTE, возможно совмещение | PROPOSED-CAPACITY | Это не штат/бюджет/зарплаты; нужна проверка ресурсов и назначение owners |
 | 024 | Собственный Brandbook на базе Core/Website, референсы носителей и обязательные концепции худи | APPROVED-DIRECTION / DESIGNS-PROPOSED | Макеты, цвета ткани, тираж, rights, samples и SKU не утверждены |
 
+| 025 | Разработать самостоятельный оригинальный E7A Stickerpack (12 сюжетов MVP) как проект брендбука | APPROVED-DIRECTION / ART-NOT-CREATED | Нарисованные и опубликованные стикеры, права/QA/форматы ещё требуют работы |
+| 026 | Создать юридический контур РФ: НПД/ИП/ООО, товарный знак, авторское право, возможный промышленный образец, data/product compliance | APPROVED-RESEARCH / IMPLEMENTATION-OPEN | Правовое исследование в legal/, но нет регистрации бизнеса, экспертизы по конфликтам или поданной заявки |
+| 027 | Для защиты E7A приоритетно проверить словесный и изобразительный товарные знаки; «патента на бренд в целом» нет | LEGAL-ASSESSMENT / CLEARANCE-OPEN | Физлицо вправе подать заявку; нужны поиск, права и классы МКТУ |
+| 028 | Продажа фирменного худи: отдельная оценка Честного знака, соответствия, маркировки, формы бизнеса и налогов | COMPLIANCE-GATE / SALES-NOT-APPROVED | Никаких утверждённых SKU/тиражей/заказов |
+
 ## Открытые ADR
 
 Website: **B2C приоритет согласован**, открыты выбор флагмана, каналов, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
 
 
 Identity IdP/assurance/privacy, service auth, migration Bot login; Platform delivery durability/UNKNOWN/provider ACK/idempotency, secure connector SDK; Jobs execution/leases; почта provider vs MTA; Product Kit code/profile migrations; Laboratory QA/runner sandbox; Infra DNS/TLS ownership, secrets, backup RPO/RTO, K3s threshold; schema и immutable versioning standards.
+
+Бренд и право: [Stickerpack](../brandbook/stickerpack.md), [Legal overview](../legal/README.md), [товарный знак/патенты](../legal/brand-ip-and-patents-russia.md), [налоговый режим](../legal/business-structure-russia.md), [compliance](../legal/product-compliance-russia.md). Конкретный юридический статус и принадлежность IP остаются фактическими вопросами, не вытекают из этого ADR.
 
 ## Существующие Draft на момент аудита
 
