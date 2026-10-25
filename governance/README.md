@@ -16,6 +16,10 @@
 ## Документы
 
 - [Философия и принципы](ecosystem-charter.md)
+- [B2C-first стратегия и первая измеримая цель M1](growth-strategy-and-first-milestone.md)
+- [Организационная структура и минимальный набор ролей/FTE](team-and-capacity.md)
+- [Брендбук: исходная айдентика и её применение](../brandbook/README.md)
+- [Фирменная продукция и обязательные референсы худи](../brandbook/merchandise-and-hoodie.md)
 - [Матрица владения и данные](ownership-and-data.md)
 - [Website: ценностное предложение, B2B/B2C и публичные маршруты](market-positioning-and-entrypoints.md)
 - [Laboratory: пути разработчика, партнёра и сотрудника (B2D/B2E)](developer-and-partner-lifecycle.md)
