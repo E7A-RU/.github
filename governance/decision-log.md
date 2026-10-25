@@ -21,15 +21,19 @@
 | 015 | Brand Policy отдельно от code licence, UI public UNLICENSED | EXISTING POLICY | PR #1 содержит брендовые правила |
 | 016 | Physical hypervisor/Kubernetes не прибавляет CPU/RAM/disk одного сервера | ARCHITECTURAL OBSERVATION | K3s лишь при multi-node/operational demand |
 
-| 017 | Website — публичная витрина возможностей, продуктов, доказательных кейсов и входов для B2B/B2C | PROPOSED-MARKET-POSITIONING | Production Website существует; новая маркетинговая роль/конверсия и CTA ещё не подтверждены |
-| 018 | Ценность E7A для целевых заказчиков: быстрая, надёжная, качественная автоматизация под ключ без ненужной сложности и переплат | OWNER-DIRECTION / CLAIMS-REQUIRE-EVIDENCE | Цены, сроки, гарантии, сегменты и маркетинговые заявления должны иметь доказательства |
+| 017 | Website — публичная витрина для B2C в приоритете и B2B как второго направления | APPROVED-PRIORITY / PROPOSED-TACTICS | Website production существует; новый маркетинговый funnel и CTA ещё не внедрены |
+| 018 | Ценность E7A: полезные B2C-продукты и качественная автоматизация под ключ без ненужной сложности/переплат; B2C-first | APPROVED-DIRECTION / CLAIMS-REQUIRE-EVIDENCE | Цены, сроки, гарантии и конкретный сегмент требуют подтверждений |
 | 019 | Laboratory — вход для разработчиков/партнёров (B2D) и внутреннего штата (B2E), pipeline пополнения команды и выпуска клиентских решений | PROPOSED-PRODUCT-EXTENSION | Wizard/QA charter утверждён концептуально; recruitment/client workspace и роли не реализованы |
 | 020 | Публичный Demo Catalog и раздельные demo/trial: synthetic showcase, guided B2B demo, invite-only developer sandbox | PROPOSED | Портал/демо поддомен не развёрнуты; сценарии и ресурсные лимиты требуют решения |
 | 021 | Website/Identity/Laboratory не смешивают маркетинговый lead, кандидатскую запись, tenant-клиента и developer privileges | PROPOSED-SECURITY-GUARDRAIL | Ограничение доступа по умолчанию, privacy review и identity membership обязательны до подключения |
 
+| 022 | Первая цель M1 Product-in-Use: один B2C продукт, Website → Demo → Use → Feedback → безопасный повторяемый выпуск | APPROVED-GOAL / FLAGSHIP-PROPOSED | Reader — кандидат, флагман ещё не выбран; реальные KPI требуют baseline |
+| 023 | Базовая структура команды для M1 — функциональные роли с предварительной оценкой около 4.0 FTE, возможно совмещение | PROPOSED-CAPACITY | Это не штат/бюджет/зарплаты; нужна проверка ресурсов и назначение owners |
+| 024 | Собственный Brandbook на базе Core/Website, референсы носителей и обязательные концепции худи | APPROVED-DIRECTION / DESIGNS-PROPOSED | Макеты, цвета ткани, тираж, rights, samples и SKU не утверждены |
+
 ## Открытые ADR
 
-Website: приоритет B2B/B2C/B2D, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
+Website: **B2C приоритет согласован**, открыты выбор флагмана, каналов, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
 
 
 Identity IdP/assurance/privacy, service auth, migration Bot login; Platform delivery durability/UNKNOWN/provider ACK/idempotency, secure connector SDK; Jobs execution/leases; почта provider vs MTA; Product Kit code/profile migrations; Laboratory QA/runner sandbox; Infra DNS/TLS ownership, secrets, backup RPO/RTO, K3s threshold; schema и immutable versioning standards.
@@ -37,3 +41,6 @@ Identity IdP/assurance/privacy, service auth, migration Bot login; Platform deli
 ## Существующие Draft на момент аудита
 
 [Core #25](https://github.com/E7A-RU/core/pull/25), [Website #57](https://github.com/E7A-RU/website/pull/57), [Reader #7](https://github.com/E7A-RU/reader/pull/7), [Bot #6](https://github.com/E7A-RU/bot/pull/6), [Org #1](https://github.com/E7A-RU/.github/pull/1), [Infra #1](https://github.com/E7A-RU/infra/pull/1), [Laboratory #1](https://github.com/E7A-RU/laboratory/pull/1). Состояние PR может измениться позднее; проверять живое состояние перед merge. Прежний Core Platform RFC не удалять без явной reconciliation; исходные README и Brand Policy не переписывать.
+
+
+Стратегия: [M1 и этапы](growth-strategy-and-first-milestone.md); [roles/FTE](team-and-capacity.md); бренд: [Brandbook](../brandbook/README.md), [Hoodie](../brandbook/merchandise-and-hoodie.md).
