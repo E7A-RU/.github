@@ -1,0 +1,39 @@
+{
+  "_comment": "ILLUSTRATIVE schema sample. This is not a real passing check, approval or deployment.",
+  "schemaVersion": "e7a.release-evidence/v0-proposal",
+  "repository": "E7A-RU/analytics",
+  "environment": "staging",
+  "productId": "analytics",
+  "architectureKit": "full-stack",
+  "exactSourceCommit": "replace-with-real-head-sha",
+  "immutableArtifactDigest": "replace-with-tested-oci-digest",
+  "governance": {
+    "repository": "E7A-RU/.github",
+    "revision": "replace-with-approved-immutable-revision"
+  },
+  "quality": {
+    "status": "NOT_RUN",
+    "checks": [
+      "frozen-deps",
+      "lint",
+      "typecheck",
+      "unit",
+      "contract",
+      "security-audit",
+      "container-smoke"
+    ],
+    "logReference": "operator-supplied-immutable-log-reference",
+    "runnerIsolation": "self-hosted-sandbox",
+    "skippedChecks": []
+  },
+  "approval": {
+    "status": "PENDING",
+    "approvedBy": null,
+    "expiresAt": null
+  },
+  "production": {
+    "autoApply": false,
+    "healthStatus": "NOT_CHECKED",
+    "rollbackArtifact": "replace-with-known-good-digest"
+  }
+}
