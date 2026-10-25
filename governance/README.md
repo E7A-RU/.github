@@ -25,6 +25,7 @@
 - [Россия: практическая подача E7A на товарный знак и доходы при официальной работе](../legal/trademark-filing-and-employed-income-russia.md)
 - [Россия: организационно-правовая форма и налоги](../legal/business-structure-russia.md)
 - [Россия: товарный знак E7A, промышленный образец и права на стикеры](../legal/brand-ip-and-patents-russia.md)
+- **[E7A: предварительный поиск Роспатента, EA7 Armani, риск класса 25](../legal/trademark-clearance-e7a-preliminary-2026-10-25.md)**
 - [Россия: цифровые продукты, privacy, payments, hoodies/мерч](../legal/product-compliance-russia.md)
 - [Матрица владения и данные](ownership-and-data.md)
 - [Website: ценностное предложение, B2B/B2C и публичные маршруты](market-positioning-and-entrypoints.md)
