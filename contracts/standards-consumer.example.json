@@ -1,0 +1,24 @@
+{
+  "_comment": "ILLUSTRATIVE standards consumer metadata; replace revision with a real reviewed Git SHA. No automation installed.",
+  "schemaVersion": "e7a.governance-consumer/v0-proposal",
+  "repository": "E7A-RU/bot",
+  "standard": {
+    "repository": "E7A-RU/.github",
+    "ref": "replace-with-approved-commit-sha"
+  },
+  "kit": "service-worker",
+  "core": {
+    "uiVersion": null,
+    "serverVersion": "use-verified-exact-version-if-adopted"
+  },
+  "services": {
+    "identityContract": "planned",
+    "platformDeliveryContract": "planned"
+  },
+  "updatePolicy": {
+    "proposePullRequestOnly": true,
+    "exactHeadSelfHostedChecks": true,
+    "autoMerge": false,
+    "autoDeploy": false
+  }
+}
