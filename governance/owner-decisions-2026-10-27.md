@@ -1,5 +1,7 @@
 # Owner decisions — consolidated architecture baseline (rounds 1–10)
 
+**Subsequent eight owner approvals:** see [final architectural baseline](final-architecture-baseline-2026-10-27.md), which additionally governs tenant hierarchy, IdP, trusted Jobs, Billing, Audit failure, F2 recovery, owner-only critical release exception and market selection.
+
 **Decision date:** 2026-10-27. **Status:** OWNER-APPROVED DIRECTION / DRAFT GOVERNANCE PR; not approved as a released governance standard until PR review and merge. **IMPLEMENTED, TESTED and RUNNING are not implied.**
 
 This document supersedes conflicting *proposals* in earlier governance drafts by decision priority; it does **not** delete historical text or retroactively claim deployed services. Consult [decision log](decision-log.md), [consistency report](architecture-consistency-report.md), and [impact matrix](repository-impact-matrix.md). For any already APPROVED decision in a different document, owner reconciliation remains required.
