@@ -1,6 +1,6 @@
 # M1 delivery priorities and explicit decision gates
 
-**Status: PROPOSED execution backlog.** Новые решения владельца 2026-10-27 в [консолидированном baseline](owner-decisions-2026-10-27.md) имеют приоритет над устаревшими вариантами ниже. Owner-approved strategic direction is **B2C-first**, B2B second. Reader is a possible flagship, **not selected**. This is not evidence of tasks completed, approved headcount or operating services.
+**Status: PROPOSED execution backlog.** [Final owner baseline](final-architecture-baseline-2026-10-27.md) establishes early foundation and recovery targets; the historical M1 task numbering below is not a current exhaustive engineering plan. Новые решения владельца 2026-10-27 в [консолидированном baseline](owner-decisions-2026-10-27.md) имеют приоритет над устаревшими вариантами ниже. Owner-approved strategic direction is **B2C-first**, B2B second. Reader is a possible flagship, **not selected**. This is not evidence of tasks completed, approved headcount or operating services.
 
 ## Ранний фундамент — принятое изменение очередности
 
