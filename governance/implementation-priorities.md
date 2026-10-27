@@ -1,6 +1,10 @@
 # M1 delivery priorities and explicit decision gates
 
-**Status: PROPOSED execution backlog.** Owner-approved strategic direction is **B2C-first**, B2B second. Reader is a possible flagship, **not selected**. This is not evidence of tasks completed, approved headcount or operating services.
+**Status: PROPOSED execution backlog.** Новые решения владельца 2026-10-27 в [консолидированном baseline](owner-decisions-2026-10-27.md) имеют приоритет над устаревшими вариантами ниже. Owner-approved strategic direction is **B2C-first**, B2B second. Reader is a possible flagship, **not selected**. This is not evidence of tasks completed, approved headcount or operating services.
+
+## Ранний фундамент — принятое изменение очередности
+
+Перед расширением продуктовой линейки: контракт и первый интеграционный вертикальный срез **Identity, Platform (Delivery/Jobs/Connectors/Results), Central Audit и bounded Billing Foundation**; при этом Website развивается параллельно. F1 проверяет живой end-to-end slice, F2 — отдельную эксплуатационную готовность, M1 — доказанную полезность B2C продукта. Список из десяти задач ниже остаётся историческим планом M1 и **не является единственным актуальным порядком реализации фундамента**. Пересобрать инициативы в отдельные PR после утверждения релизной версии Governance.
 
 ## Product-in-Use definition
 
@@ -30,7 +34,7 @@ Suggested preliminary measures (targets require product discovery): successful o
 - **G2 / MVP:** independent product repo, Core UI only if valuable, anonymous browser execution allowed; basic manual QA acceptable with retained evidence.
 - **G3 / Launch:** Website links and safe Demo, HTTPS, owner + independent release reviewer, backups where stateful, rollback plan.
 - **G4 / Product-in-Use:** actual feedback and product use, second safe release; no fictitious metrics.
-- **G5 / Shared services:** only then consider Identity, Platform, automated Laboratory, advanced orchestrators if repeated observed need justifies ownership and operating costs.
+- **G5 / Shared services expansion:** Identity, Platform four contours, Central Audit and bounded Billing **already enter foundation scope**; only advanced expansions, operational scale and orchestrators wait for observed demand.
 
 ## What can remain manual at M1
 
@@ -41,7 +45,7 @@ A human release gate, a versioned checklist, manual support intake, limited user
 1. M1 flagship choice, discovery sample and success thresholds.
 2. Named people for Product, QA reviewer, Infra operator and backup; **4 FTE is an indicative capacity model, not staffed reality**.
 3. Production capacity/support promise and target jurisdiction/privacy review.
-4. Whether any real demand justifies Identity, Platform or an external Partner sandbox.
+4. Exact F1/F2 acceptance thresholds and independent reviewer capacity; Identity, Platform, Audit and bounded Billing are already approved foundation priorities.
 5. Ratification of governance baseline and treatment of each architectural exception.
 
 Related: [growth strategy](growth-strategy-and-first-milestone.md), [team](team-and-capacity.md), [demo](demo-and-trials.md), [governance standards](standards-and-change-control.md).
