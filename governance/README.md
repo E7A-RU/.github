@@ -15,6 +15,7 @@
 
 ## Документы
 
+- **[Финальный архитектурный baseline: восемь заключительных решений и устранение противоречий](final-architecture-baseline-2026-10-27.md)**
 - **[Решения владельца: раунды 1–10, 2026-10-27 — актуальный архитектурный baseline](owner-decisions-2026-10-27.md)**
 - [Философия и принципы](ecosystem-charter.md)
 - [B2C-first стратегия и первая измеримая цель M1](growth-strategy-and-first-milestone.md)
