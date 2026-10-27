@@ -72,6 +72,12 @@
 | 048 | Temporary owner-only critical release approval, with compensating evidence and reassessment | Exception to prior independent two-human requirement; not misrepresented as independent review |
 | 049 | Multi-region architecture, first market unselected | Legal residency, customer region and payment jurisdiction must be chosen before launch |
 
+## Новое продуктовое направление Games — 2026-10-27
+
+| ID | Decision | Consequence |
+| --- | --- | --- |
+| 050 | Games добавлено как самостоятельное направление / портфель потенциальных независимых игровых продуктов | OWNER-REQUESTED DIRECTION; жанры, аудитория, репозитории, монетизация, статус M1 — **OPEN**. [Games charter](games-product-direction.md); никаких созданных runtime/repo. |
+
 ## Открытые ADR
 
 Website: **B2C приоритет согласован**, открыты выбор флагмана, каналов, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
