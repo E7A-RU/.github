@@ -12,6 +12,10 @@
 6. Founder is presently the only human performing E7A governance/engineering roles; **4 FTE is aspirational capacity, not personnel.** For now **owner-only approval for critical releases is explicitly accepted as a temporary exception** to the former two-human approval recommendation, not a claim of independence. Make exception visible, time-bounded and reviewed each critical deployment; require stronger automatic evidence (risk/threat model, immutable build, tests, backup/rollback), out-of-band recovery, and no agent self-approval. No unreviewed self-hosted escalation. Revisit when a second reviewer/operator is available or risk increases. For high-impact migrations/keys, defer release if controls insufficient.
 7. No automatic production apply, no unauthorized consumer repo modifications and no new production service merely by ratifying Governance.
 
+## Games — new owner-requested direction
+
+[Games charter](games-product-direction.md) is a **new independent portfolio direction**, not an existing runtime, confirmed flagship or mandatory shared game engine. Individual games require charters, own domain data and releases. Browser/local-first games can be anonymous; multiplayer, child-oriented experiences, UGC, virtual currencies or gambling-like mechanics require separate security/legal decisions. Games may compete for M1 through discovery, but no game is selected by this decision.
+
 ## Tenant and namespace ontology — approved semantics
 
 - `Person` is a canonical *physical human*, stable identity independent from account or session. `ServicePrincipal` is a separate nonhuman subject. `AuthenticationAccount`/OIDC `sub` and `SecurityActor` remain distinct concepts; **do not assume OIDC sub = Person ID**.
