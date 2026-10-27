@@ -17,6 +17,7 @@
 | Platform (future repo not confirmed) | Delivery, Jobs, Connectors, Results, own operational metadata | service identities optional; Infra runtime when built | PROPOSED; validate two consumers before service extraction |
 | Central Audit (future repo not confirmed) | Central protected security/compliance event collector and schema; domain logs remain domain-owned | Infra, optional Identity actor context | APPROVED DIRECTION / NOT VERIFIED RUNNING |
 | Billing Foundation (future repo not confirmed) | Plan/price/order/subscription/entitlements/event authority | Reference to tenant/subject IDs, payment adapter only after compliance | APPROVED DIRECTION / NO LIVE PAYMENTS |
+| Games (direction; repo not created) | Independent game product portfolio; each approved title owns gameplay, assets, domain state and releases | Optional Core, Identity, Platform and Billing by game needs | OWNER-REQUESTED DIRECTION / concrete titles and repos PROPOSED |
 | Planner (future repo not confirmed) | Domain plans/tasks and optional owned DB | Core + Identity only if login required | PROPOSED; do not create prematurely |
 
 **Status discipline:** conceptual APPROVED describes an owner-approved direction; PROPOSED describes options; IMPLEMENTED requires source reference; TESTED requires exact-SHA tests; RUNNING requires timestamped runtime health/ownership evidence; DEPRECATED requires migration owner/date. “Unknown” means evidence not collected.
