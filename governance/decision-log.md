@@ -57,6 +57,21 @@
 - 040 — Billing Foundation включён в F1 как контракты и минимально достаточная модель, платежи только после compliance gate.
 - 041 — Физлицо как первоначальный планируемый правообладатель, proprietary default, unified contributor framework плюс договоры по проектам; фактическую цепочку прав и юридические условия проверить отдельно.
 
+## Заключительные решения владельца — 2026-10-27
+
+**APPROVED-DIRECTION / GOVERNANCE DRAFT:** [final architecture baseline](final-architecture-baseline-2026-10-27.md). Решения 042–049:
+
+| ID | Decision | Consequence |
+| --- | --- | --- |
+| 042 | Person → Personal Space / Organisation → Workspaces → product resources | Ownership context agreed; canonical tenant mapping requires TEN-001 ADR |
+| 043 | Mature OIDC IdP + E7A Person/Claims/Policy | Own authentication cryptography prohibited; IdP vendor not yet selected |
+| 044 | Trusted Platform Jobs only; arbitrary user code in isolated Sandbox | Host privileges and cross-tenant secrets never exposed to untrusted jobs |
+| 045 | Initial Billing: plans/orders/subscriptions/entitlements/events, payment after compliance | No payment acceptance or ledger completion claimed |
+| 046 | Central Audit failure behavior risk-dependent | Critical actions fail-closed or bounded separately audited emergency procedure |
+| 047 | F2 tested recovery with RPO/RTO, off-host backups, no mandatory HA | Downtime allowed per explicit SLO and disaster drill |
+| 048 | Temporary owner-only critical release approval, with compensating evidence and reassessment | Exception to prior independent two-human requirement; not misrepresented as independent review |
+| 049 | Multi-region architecture, first market unselected | Legal residency, customer region and payment jurisdiction must be chosen before launch |
+
 ## Открытые ADR
 
 Website: **B2C приоритет согласован**, открыты выбор флагмана, каналов, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
