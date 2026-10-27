@@ -1,6 +1,6 @@
 # Repository Impact Matrix and dependency register
 
-**Status: PROPOSED migration plan, no consumer repo mutation.** Canonical source is [governance](README.md); all consumers adopt a **released immutable commit SHA/tag**, not this Draft branch's moving head.
+**Status: PROPOSED migration plan, no consumer repo mutation.** Important: historical queue below is superseded in sequencing by [final owner baseline](final-architecture-baseline-2026-10-27.md): Identity, Platform, Audit and bounded Billing enter F1; operational status remains unverified. Canonical source is [governance](README.md); all consumers adopt a **released immutable commit SHA/tag**, not this Draft branch's moving head.
 
 ## Components and ownership
 
@@ -15,6 +15,8 @@
 | [infra](https://github.com/E7A-RU/infra) | Compute/network/TLS/secrets/storage provisioning and controlled deployment; not product business data | product manifests; owner approvals | Protect KS54/Lobachevsky; no changes outside separate Infra PR |
 | Identity (future repo not confirmed) | Person/org identities, assurance, SSO, entitlements, audit, own DB | OIDC contracts, Infra runtime when built | PROPOSED; do not make mandatory to Reader |
 | Platform (future repo not confirmed) | Delivery, Jobs, Connectors, Results, own operational metadata | service identities optional; Infra runtime when built | PROPOSED; validate two consumers before service extraction |
+| Central Audit (future repo not confirmed) | Central protected security/compliance event collector and schema; domain logs remain domain-owned | Infra, optional Identity actor context | APPROVED DIRECTION / NOT VERIFIED RUNNING |
+| Billing Foundation (future repo not confirmed) | Plan/price/order/subscription/entitlements/event authority | Reference to tenant/subject IDs, payment adapter only after compliance | APPROVED DIRECTION / NO LIVE PAYMENTS |
 | Planner (future repo not confirmed) | Domain plans/tasks and optional owned DB | Core + Identity only if login required | PROPOSED; do not create prematurely |
 
 **Status discipline:** conceptual APPROVED describes an owner-approved direction; PROPOSED describes options; IMPLEMENTED requires source reference; TESTED requires exact-SHA tests; RUNNING requires timestamped runtime health/ownership evidence; DEPRECATED requires migration owner/date. “Unknown” means evidence not collected.
@@ -39,7 +41,8 @@
 | P1 | bot | Pin revision and record product/platform contract boundaries | Existing Bot workers/DB remain independently owned |
 | P2 | infra | Add declarative sandbox/runner safeguarding proposal | Lobachevsky and KS54 isolation demonstrated before any execution |
 | P2 | laboratory | Add governance compliance **proposal** and evidence schema without production permission | QA ≠ deploy; no Docker socket/secret exposure |
-| Future | identity / platform / planner | Separate design/feasibility ADR only when demanded by product evidence | No auto-created service, shared database or unapproved cost |
+| P0–P1 | identity / platform / audit / billing | Separate architecture and F1 implementation PRs after owner-approved foundation gates | No automatic production service, payment acceptance or data migration |
+| Future | planner | Product-discovery ADR | No premature runtime |
 
 Cross-cutting Brand Policy: no third-party official E7A branding without written permission; factual reference exception stays intact. External integrations must never infer consent from SSO entitlements.
 
