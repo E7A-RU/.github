@@ -42,6 +42,21 @@
 
 | 031 | Первая регистрация E7A — **один комбинированный знак E7AMark + E7A в МКТУ 42**, после clearance и фиксации макета | APPROVED-STRATEGY / NOT-FILED | Одна заявка: 17 000 ₽ первоначально и ещё 18 000 ₽ при успехе; не равна двум самостоятельным знакам. [План](../legal/e7a-combined-mark-first-filing-strategy.md) |
 
+## Решения владельца 2026-10-27 (раунды 1–10)
+
+**APPROVED-DIRECTION, NOT IMPLEMENTED:** [единая консолидированная запись с границами, статусами и миграцией](owner-decisions-2026-10-27.md). Исторические решения и гипотезы выше сохраняются. Для ранее записанных PROPOSED положений, которым новые решения противоречат, применяются пометки **SUPERSEDED-AS-PROPOSAL** только в части названных границ, не как переписывание исторического контекста.
+
+- 032 — Architecture-first, F1/F2/M1, B2C-first и Website dual-route.
+- 033 — Core = versioned shared libraries/contracts/optional Starter, не runtime.
+- 034 — Identity Person vs Account vs Actor; расширяемый профиль, проверенные привязки, MFA/passkeys/password/OIDC/federation, multi-organisation scopes.
+- 035 — Central Audit capability и единый защищённый контракт событий с ранней реализации.
+- 036 — Platform four contours upfront; transactional internal state and external UNKNOWN, SDK + provider adapters, multi-step workflows, independently aggregated results.
+- 037 — Bot Studio целевым образом = конструктор бизнес-логик; общие коннекторы переносятся в Platform отдельными проверяемыми PR, исходный runtime неизменён.
+- 038 — Laboratory/Infra: приглашения, QA VM на Lobachevsky, Dev/Staging/Production, multi-node API поэтапно.
+- 039 — R0/R1 возможен auto-merge после локальных/self-hosted exact-head gates; production всегда требует owner approval; 4 FTE ориентир, фактически один человек.
+- 040 — Billing Foundation включён в F1 как контракты и минимально достаточная модель, платежи только после compliance gate.
+- 041 — Физлицо как первоначальный планируемый правообладатель, proprietary default, unified contributor framework плюс договоры по проектам; фактическую цепочку прав и юридические условия проверить отдельно.
+
 ## Открытые ADR
 
 Website: **B2C приоритет согласован**, открыты выбор флагмана, каналов, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
