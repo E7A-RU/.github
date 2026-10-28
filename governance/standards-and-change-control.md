@@ -14,7 +14,7 @@
 1. RFC/PR обновляет governance с changelog, impact map, владельцами и security review.
 2. После approval публикуется неизменяемая версия или commit SHA; в consumers пока остаётся прежняя совместимая версия.
 3. Self-hosted Laboratory checker получает manifests продуктов, сравнивает их pinned standard revision, SDK package versions, Identity/Platform API constraints и тесты совместимости.
-4. Создаёт **предложения** отдельных Draft PR и reports, а не пушит в main и не включает массовый deploy.
+4. Создаёт **предложения** отдельных Draft PR и reports. До отдельного owner-approved внедрения risk classifier любые auto-merge выключены. После доказанной проверки R0/R1 отдельные PR могут быть автоматически объединены согласно политике, но изменения R2/R3 и production require human approval; массового deploy нет.
 5. Для каждого consumer необходим exact-head SHA test/log, package readback при adoption Core, тесты поведения и независимое owner approval.
 6. Infra получает подтверждённый release manifest; staging/prod отдельно, продакшен требует явного разрешения, health и rollback.
 7. Результат проверки различает PASS, FAIL, SKIPPED, UNKNOWN; пропущенный из-за lock процесс не является пройденным.
