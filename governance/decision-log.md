@@ -93,3 +93,12 @@ Identity IdP/assurance/privacy, service auth, migration Bot login; Platform deli
 
 
 Стратегия: [M1 и этапы](growth-strategy-and-first-milestone.md); [roles/FTE](team-and-capacity.md); бренд: [Brandbook](../brandbook/README.md), [Hoodie](../brandbook/merchandise-and-hoodie.md).
+
+## Решения владельца по назначению и управлению Governance (2026-10-28)
+
+| ID | Решение | Статус |
+| --- | --- | --- |
+| 051 | PR #1 предназначен для утверждения первичных организационных и архитектурных стандартов E7A, не runtime readiness | OWNER-APPROVED / MERGE-PENDING |
+| 052 | Жёстко закрепляются архитектурные и security-инварианты, техническая реализация остаётся изменяемой через ADR | OWNER-APPROVED / MERGE-PENDING |
+| 053 | Founder / Owner E7A лично отвечает за дальнейшее развитие и утверждение обязательных стандартов | OWNER-APPROVED / MERGE-PENDING |
+
