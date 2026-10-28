@@ -57,3 +57,7 @@
 **Правило достоверности:** помечать отдельно APPROVED-CONCEPT, PROPOSED, IMPLEMENTED-SOURCE, VERIFIED-TEST и RUNNING-VERIFIED. PR, README, npm manifest, образ контейнера или готовый CLI сами по себе не являются доказательством production runtime.
 
 **Связанные Draft:** [Core #25](https://github.com/E7A-RU/core/pull/25), [Website #57](https://github.com/E7A-RU/website/pull/57), [Reader #7](https://github.com/E7A-RU/reader/pull/7), [Bot #6](https://github.com/E7A-RU/bot/pull/6), [Infra #1](https://github.com/E7A-RU/infra/pull/1), [Laboratory #1](https://github.com/E7A-RU/laboratory/pull/1), [.github #1](https://github.com/E7A-RU/.github/pull/1). Draft ≠ принято в main. Документацию синхронизировать через контролируемые PR, не автосливать.
+
+## Смысл утверждения Governance v1
+
+Владелец E7A подтвердил: слияние PR #1 после отдельного разрешения утверждает **первичные организационные и архитектурные стандарты**, а не готовность общих сервисов или реализаций продуктов. Канонический владелец и окончательный утверждающий изменений обязательных стандартов — **Founder / Owner E7A**. Исполнение и локальные технические решения могут делегироваться в границах утверждённых правил. [Управление изменениями](standards-and-change-control.md).
