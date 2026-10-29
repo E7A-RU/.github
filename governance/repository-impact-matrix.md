@@ -2,7 +2,7 @@
 
 **Status: PROPOSED migration plan, no consumer repo mutation.** Important: historical queue below is superseded in sequencing by [final owner baseline](final-architecture-baseline-2026-10-27.md): Identity, Platform, Audit and bounded Billing enter F1; operational status remains unverified. Canonical source is [governance](README.md); all consumers adopt a **released immutable commit SHA/tag**, not this Draft branch's moving head.
 
-**Planned internal automation (NOT A REPOSITORY YET):** `E7A-RU/automation` — private extensible self-hosted engineering automation service. First module: `governance-sync`, proposing scoped Draft PRs after approved Governance revisions. Later modules may propose product catalogue, `.github` public profile, README/AGENTS/status docs, safe compliance/release evidence changes. [Charter](engineering-automation.md). Not a customer product or running service; repo creation/App registration/bootstrap are separate.
+**Internal automation repo CREATED / RUNTIME NOT VERIFIED:** [E7A-RU/automation](https://github.com/E7A-RU/automation) — private extensible self-hosted engineering automation service. First module: `governance-sync`, proposing scoped Draft PRs after approved Governance revisions. Later modules may propose product catalogue, `.github` public profile, README/AGENTS/status docs, safe compliance/release evidence changes. [Charter](engineering-automation.md). Not a customer product or running service: main contains README only, [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) proposes plan-only source. GitHub App not registered or installed.
 
 ## Components and ownership
 
