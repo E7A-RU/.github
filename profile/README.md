@@ -16,6 +16,16 @@
 
 ---
 
+## Как познакомиться с E7A
+
+| Для кого | С чего начать |
+| :--- | :--- |
+| **Пользователям** | [e7a.ru](https://e7a.ru) — публичная точка входа; изучите направления и следите за доступностью конкретных продуктов |
+| **Командам и заказчикам** | [Наш подход к B2B-автоматизации](https://github.com/E7A-RU/.github/blob/main/governance/market-positioning-and-entrypoints.md) и [контролируемым Demo](https://github.com/E7A-RU/.github/blob/main/governance/demo-and-trials.md) |
+| **Разработчикам и партнёрам** | [Product Lifecycle](https://github.com/E7A-RU/.github/blob/main/governance/product-lifecycle-checklists.md) · [три Product Kit](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md) · [Governance](https://github.com/E7A-RU/.github/tree/main/governance) |
+
+*E7A combines independent software products, shared engineering standards and human-approved releases. Our public documentation distinguishes shipped capabilities from proposals and prototypes.*
+
 ## Что мы создаём
 
 | **Продукты для людей** | **Автоматизация для бизнеса** | **Инженерный фундамент** |
@@ -50,7 +60,7 @@
 | **[Laboratory](https://github.com/E7A-RU/laboratory)** | Product Factory: Wizard, три Product Kit, QA, Sandbox, Release Gate | Планируемый продукт, не универсальный backend |
 | **[Infra](https://github.com/E7A-RU/infra)** | Инвентарь серверов, окружения, секреты, backup/recovery, контролируемые релизы | Отдельная эксплуатационная граница; общая платформа ещё не подтверждена |
 | **[Central Audit / Billing Foundation](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md)** | Защищённый аудит; тарифы, заказы, подписки, entitlements | Утверждённые архитектурные направления, не готовые платежи |
-| **[Engineering Automation](https://github.com/E7A-RU/.github/blob/main/governance/engineering-automation.md)** | Поддержка стандартов, подготовка PR, синхронизация документации и инженерные операции | Внутренний проект; отдельный runtime/App пока не созданы |
+| **[Engineering Automation](https://github.com/E7A-RU/automation)** | Приватный внутренний проект: стандарты, планирование обновлений и безопасная подготовка Draft PR | Репозиторий создан; read-only планировщик в Draft PR, GitHub App и runtime не запущены |
 
 ## Принципы разработки
 
@@ -88,6 +98,12 @@ M1 PRODUCT-IN-USE ── реальное использование + обра�
 ```
 
 Разработка Website и проверка B2C-гипотез происходят параллельно техническому Foundation. **Reader и Games — кандидаты**, а не автоматически назначенные первые флагманы. [Подробный Roadmap →](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md)
+
+## Инженерная открытость и границы доступа
+
+Мы публикуем [организационные стандарты](https://github.com/E7A-RU/.github/tree/main/governance), [roadmap](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md) и [визуальные концепты](https://github.com/E7A-RU/.github/tree/main/brandbook). При этом исходники отдельных продуктов, данные и операционные настройки могут оставаться приватными: **открытая архитектура не означает открытый доступ к внутренней инфраструктуре**.
+
+Версии стандартов имеют неизменяемый SHA. Обновления предлагаются продуктам через отдельные PR; это не запускает массовую публикацию, пересборку или деплой. За производственным выпуском и изменением глобальных правил остаётся человеческое решение.
 
 ## Открытая инженерная документация
 
