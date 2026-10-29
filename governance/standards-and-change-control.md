@@ -2,6 +2,8 @@
 
 **Статус:** согласованная целевая governance-модель; автоматический compliance crawler/PR bot ещё не реализованы. [Final baseline](final-architecture-baseline-2026-10-27.md) утверждает будущий risk-gated R0/R1 auto-merge при самостоятельном owner-approved внедрении, но **не** auto-deploy. Исторический процесс Draft PR ниже описывает безопасный стартовый режим, пока auto-merge отсутствует.
 
+**Актуальный механизм версий:** [approved release descriptor](standards-release.json), [self-hosted consumer Draft PR propagation proposal](standards-propagation.md) и [product acceptance checklist](product-lifecycle-checklists.md). Автоматическое распространение **не активировано** и не должно выполнять GitHub-hosted Actions, merge или deployment.
+
 ## Единственный нормативный источник
 
 - E7A-RU/.github/governance — канонические организационные требования; BRAND_POLICY.md — самостоятельная публичная политика.
@@ -41,4 +43,4 @@ GitHub-hosted Actions CI по текущей E7A политике запрещё
 - **Normative invariants:** независимость продуктовых данных и релизов, privacy/security, разделение Core/Identity/Platform/Laboratory/Infra, контроль production и брендовая политика. Изменение таких норм — отдельный мотивированный ADR, impact matrix и явное утверждение Owner.
 - **Implementation freedom:** выбор IdP, брокера, БД, фреймворка, внутренних алгоритмов и layout разрешён техническому владельцу при соблюдении совместимости и контрольных критериев; не замораживать технологии в Governance без необходимости.
 - **Authority:** текущий accountable owner организационного стандарта и окончательный approver его нормативных изменений — Founder / Owner E7A. Он может делегировать подготовку/проверку, но делегирование полномочия изменить нормы требует отдельной фиксируемой записи. Его роль не означает, что он лично проверил все runtime сервисы.
-- **Release identity:** после owner-approved merge baseline закрепляется точным SHA и версией стандарта. Пока PR Draft, версию нельзя выдавать за опубликованный immutable release.
+- **Release identity:** после owner-approved merge baseline закрепляется точным SHA и версией стандарта. Исходный PR #1 был утверждён и объединён (squash) в `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`; это **первый approved baseline**. Последующие правки документации не заменяют его автоматически: новая версия требует отдельного owner-approved release descriptor.
