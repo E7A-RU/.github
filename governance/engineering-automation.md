@@ -1,6 +1,6 @@
 # E7A Automation — внутренняя инженерная автоматизация
 
-**Статус: OWNER DIRECTION / ARCHITECTURE PROPOSAL / NOT RUNNING.** Новый нейтральный проект `E7A-RU/automation` — рекомендуемый **отдельный приватный репозиторий**, **ещё не создан**. Название GitHub App — `E7A Automation` (уникальность имени и доступные настройки проверить при регистрации). Этот документ заменяет узкую концепцию `governance-sync` как единственного назначения сервиса: **Governance Sync становится первым модулем**, а не именем всей платформы.
+**Статус: OWNER-APPROVED DIRECTION / PRIVATE REPO INITIALIZED / PLAN-ONLY SOURCE IN DRAFT PR / NOT RUNNING (2026-10-30).** Приватный репозиторий [E7A-RU/automation](https://github.com/E7A-RU/automation) создан. Bootstrap README уже в main; [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) содержит TypeScript plan-only source/tests. GitHub App, токены записи и runtime **не созданы/не запущены**. Название GitHub App — `E7A Automation` (уникальность имени и доступные настройки проверить при регистрации). Этот документ заменяет узкую концепцию `governance-sync` как единственного назначения сервиса: **Governance Sync становится первым модулем**, а не именем всей платформы.
 
 **Ответственность:** internal engineering automation / developer operations. Это не E7A Platform (клиентские интеграции/СГДС/Jobs/Results), не Laboratory (Wizard/QA/Release Gate), не Infra (серверы/production apply), не Core (библиотеки) и не продуктовая бизнес-логика.
 
@@ -92,7 +92,7 @@
 
 ## Инициализация проекта и roadmap
 
-**Репозиторий:** `E7A-RU/automation` (private, proposed, not created). **GitHub App:** `E7A Automation` (organization-owned, private; not registered/installed). Старая рабочая метка `governance-sync` используется **только как название первого модуля**, а не репозитория.
+**Репозиторий:** `E7A-RU/automation` (private, CREATED; README in main, source in Draft PR #1). **GitHub App:** `E7A Automation` (organization-owned, private; NOT REGISTERED/INSTALLED). Старая рабочая метка `governance-sync` используется **только как название первого модуля**, а не репозитория.
 
 | Этап | Что делаем | Критерий |
 | --- | --- | --- |
@@ -103,6 +103,8 @@
 | A4 — Scoped GitHub App | separate owner approval for App registration, read tokens, then selected write permissions | one canary Draft PR only |
 | A5 — Controlled operations | approved self-hosted timer/worker, secure secrets and audits via Infra, emergency disable | external QA and safe stop/recovery |
 | A6 — Extensions | catalog/profile sync, repo docs/status, compliance reports and dependency proposals | each module has own threat model and canary |
+
+**Текущая реализация:** [Automation Draft PR #1](https://github.com/E7A-RU/automation/pull/1) использует только примеры consumer revisions и read-only CLI. Никаких PR в других репозиториях автоматически не создаёт; успешные локальные тесты не являются доказательством живой интеграции.
 
 **Исключения:** empty `identity`/`platform` repos require bootstrap before Draft PR; product-independent activities cannot be allowed to expand scope into production Infra or shared messaging Platform without another ADR.
 
