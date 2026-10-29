@@ -4,6 +4,8 @@
 
 Для нового продукта начинайте с [шаблона Product Charter](templates/product-charter.md); для каждого релиза оформляйте [Release Gate и evidence](templates/release-gate.md). Заполнение шаблонов не даёт права deploy.
 
+**Kit-specific обязательный маршрут:** [Browser-only → Full-stack → Service/Worker: полный roadmap и gates для каждого](kit-implementation-roadmaps.md). Для stateful Full-stack/Service — [PostgreSQL-first Backend Reference](backend-reference-architecture.md). Для PR-автоматизации стандартов — [GitHub App costs/resources](github-app-cost-and-resources.md). Чеклисты этого документа выполняются **в дополнение** к Kit-specific, а не вместо них.
+
 ## Ownership and applicability
 
 Each independently deployable product has an explicit **Product Owner, Engineering Owner, Data Owner, Security/Privacy contact, QA reviewer, Infra operator and Production approver**. People may temporarily overlap, but roles must be visible; owner-only critical approvals are an explicit temporary risk exception, not two independent humans. Products use one of three **Kit** contracts: Browser-only, Full-stack or Service/Worker. Choose no mandatory shared runtime unless functional need and failure semantics are documented.
@@ -28,10 +30,10 @@ A repo, a Draft PR, a green static scan, a package tag and a production health s
 
 ## Gate B — architecture, Kit and data boundary
 
-- [ ] Select Browser-only / Full-stack / Service/Worker with reason; Core Starter imported/pinned without forking shared template.
+- [ ] Select Browser-only / Full-stack / Service/Worker with reason; [Kit-specific roadmap](kit-implementation-roadmaps.md) selected and linked from Product Charter; Core Starter imported/pinned without forking shared template.
 - [ ] Repository and ownership map; `governanceRevision` pin to immutable accepted SHA or tag; product local ADR does not weaken organization policy.
 - [ ] Product identities distinguished: Person, Account/OIDC `sub`, SecurityActor, Organization, Workspace, tenant, product resource. No implicit automatic merges.
-- [ ] Domain DB/storage and schema/migrations owned by product; Infra provisions resources without taking ownership of domain data.
+- [ ] Domain DB/storage and schema/migrations owned by product; **PostgreSQL-first** for stateful Full-stack/Service with separate roles and checksummed SQL migrations (unless a justified ADR); Browser-only has **no mandatory DB**. Infra provisions resources without taking ownership of domain data.
 - [ ] Shared capabilities (Identity, trusted Jobs, Delivery, Connectors, Audit, Billing) explicitly **optional or required by user use case**, with versions, permissions and outage behavior.
 - [ ] API/event/SDK contract versions, compatibility/deprecation policy and consumer migration mapped.
 - [ ] Operations permissions scoped to Product + Organization/Workspace + Actor + Capability; privileged paths MFA/audit/expiry.
