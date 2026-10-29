@@ -2,6 +2,8 @@
 
 **Статус:** OWNER-APPROVED STRATEGY / PROPOSED DELIVERY PLAN (2026-10-30). Канонический baseline: [Governance at immutable SHA](https://github.com/E7A-RU/.github/tree/b39ed4aabf97e45edaa0762a29ab57c69f8bbafd/governance). Ниже перечислены **целевые критерии**, а не выполненные этапы, бюджет, обещания сроков или полномочия на production.
 
+**Рекомендованная техническая база:** [Backend TypeScript / PostgreSQL-first](backend-reference-architecture.md), [эталонный roadmap реализации трёх Kit](kit-implementation-roadmaps.md), [ресурсы и расходы Github App](github-app-cost-and-resources.md).
+
 **Практические шаблоны:** [Product Charter](templates/product-charter.md) → [checklists](product-lifecycle-checklists.md) → [Release Gate](templates/release-gate.md).
 
 ## Главные цели и инварианты
