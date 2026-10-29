@@ -1,6 +1,6 @@
 # E7A Governance Sync GitHub App — стоимость, ресурсы и ограничения
 
-**Статус:** оценка инженерного решения, **не созданное и не установленное GitHub App**; расчёт и документация от 2026-10-30. Связанный [Standards Propagation](standards-propagation.md) остаётся концепцией; owner approval и отдельный Infra PR обязательны перед запуском.
+**Статус:** оценка инженерного решения; [отдельный планируемый приватный `E7A-RU/governance-sync`](governance-sync-service.md) и **не созданное/не установленное GitHub App**; расчёт и документация от 2026-10-30. Связанный [Standards Propagation](standards-propagation.md) остаётся концепцией; owner approval и отдельный Infra PR обязательны перед запуском.
 
 ## Что оплачивается
 
