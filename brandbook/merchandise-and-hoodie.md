@@ -2,11 +2,13 @@
 
 **Статус:** арт-дирекшн / concept briefs, **не** готовый товар, склад, производственный макет или утверждённый merchandising release. Геометрию брать из Core assets, палитру — из tokens.css. Изображения и реальные образцы предстоит утвердить отдельно.
 
-## Визуальные мокапы
+**Юридический hold для класса 25:** исследование товарных знаков от 25.10.2026 выявило существенного кандидата **EA7 Giorgio Armani**, имеющего охрану по одежде в РФ. E7A и EA7 различаются, но до заключения патентного поверенного по риску смешения **не оформлять коммерческий выпуск худи как юридически согласованный**. См. [предварительный поиск](../legal/trademark-clearance-e7a-preliminary-2026-10-25.md). Creative brief сохраняется, производство не одобрено.
 
-![E7A — худи и дополнительные носители (концепт)](references/e7a-brand-reference-board.jpg)
+## Визуальные концепт-референсы
 
-[Доска с Quiet Edition / Engineering Edition / Light Study и дополнительными носителями](references/e7a-brand-reference-board.jpg) · [векторная схема](references/e7a-brand-reference-board.svg) · [пояснения и источники](references/README.md). Знаки на доске условные, для финальных макетов обязательны исходники Core; физические образцы ещё не изготовлены.
+![E7A — худи и сопутствующие носители, концепт](references/e7a-brand-reference-board.jpg)
+
+[Quiet Edition / Engineering Edition / Light Study](references/e7a-brand-reference-board.jpg) · [схематичная векторная доска](references/e7a-brand-reference-board.svg) · [источники и ограничения](references/README.md). Условные знаки на концепт-доске не заменяют точную геометрию официальных Core assets; производство и утверждение SKU отдельно.
 
 ## 01 — Essential Hoodie (основной обязательный концепт)
 

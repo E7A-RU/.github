@@ -51,6 +51,8 @@ Capability manifest: connector ID/version, operations (например message.
 
 **Bot Studio compatibility:** исследовать его existing adapter SDK и SQL inbox/outbox как reference. Переносить только neutral protocols, а не Telegram-specific bot dialogs/flow engine, с contract tests и независимыми product PR.
 
+**Актуальная политика:** [Final baseline](final-architecture-baseline-2026-10-27.md) включает универсальные **trusted Jobs** в ранний F1, без разрешения произвольного пользовательского кода; внешние untrusted задачи допускаются только в изолированном Sandbox. Ранее описанная перспектива Jobs-as-a-Service означает поэтапный rollout, не отсрочку контрактов.
+
 ## Workers — кто исполняет?
 
 - **Продуктовые workers** выполняют бизнес-операции конкретного продукта (Bot dialog flow, Planner background tasks).

@@ -1,5 +1,7 @@
 # Матрица владения E7A и границы данных
 
+**Актуализация владельца 2026-10-27:** [consolidated decisions](owner-decisions-2026-10-27.md) — Platform будет владеть общими коннекторами, Bot Studio эволюционирует в конструктор диалогов/бизнес-логики; добавлены Central Audit и Billing Foundation. Записи ниже отражают исходные функциональные границы и не подтверждают миграцию runtime.
+
 **Статус: согласованная целевая архитектура, не перечень запущенных сервисов.**
 
 | Компонент | Что принадлежит | Что не принадлежит |
@@ -12,6 +14,10 @@
 | Website | Бренд, публичная витрина B2B/B2C, маркетинг/SEO, каталог продуктов и безопасные входы в демо/заявки | Корневые credentials, production QA runner, глобальная маршрутизация API |
 | Bot Studio | Сценарии диалогов, integrations/chat, API, PostgreSQL, RabbitMQ, worker и tenant ACL | Общая identity authority или все внешние действия E7A |
 | Reader | Локальные файлы и RSVP, browser state | Обязательная общая БД/логин, загрузки книг по умолчанию |
+| Central Audit (foundation) | Единый формат и защищённый приём/хранение разрешённых audit events | Исходные бизнес-логи продуктов и общий архив всех личных данных |
+| Billing (foundation) | Тарифы, обязательства, subscription/order/payment references и reconciliation contracts | Identity аутентификация, универсальные продуктовые БД, готовый процессинг до юридической готовности |
+| Gateway (existing repo, design in Draft PR) | Управляющий продукт для семейных WireGuard users/devices/peers и их lifecycle на Butlerov | Общая API Gateway всей E7A, криптографический VPN dataplane, производственный root-доступ без Infra approval |
+| Games (направление; отдельные игры — продукты после charter) | Игровые сценарии, контент/сохранения, gameplay, прогресс и отдельные релизы будущих игр | Core/Platform как обязательный игровой движок, общая БД всех игр, автоматически созданный сервис |
 | Planner | Будущие планы/задачи/собственный API по необходимости | Хранение задач внутри Identity |
 | Mailbox product (если появится) | Почтовые ящики и пользовательские письма, права, retention, SLA | Просто SMTP adapter в СГДС |
 
@@ -42,4 +48,4 @@
 
 ## Публичный вход, инженерное участие и демонстрации
 
-Website — **публичная витрина и вход в экосистему** для B2C и B2B (точный приоритет аудитории пока гипотеза). Laboratory — **developer/partner/staff workspace** и Product Factory (B2D/B2E; отдельный ограниченный B2B client view возможен после соглашения). Demo Catalog может отображаться на Website; сценариями владеют продукты, проверками и sandbox — Laboratory и Infra, Identity выдаёт ограниченный trial subject при необходимости. Не приравнивать маркетинговую заявку к разрешению на доступ к коду/инфраструктуре. См. [аудитории](market-positioning-and-entrypoints.md), [онбординг](developer-and-partner-lifecycle.md), [демо](demo-and-trials.md).
+Website — **публичная витрина и вход в экосистему** для B2C и B2B (приоритет **B2C-first утверждён владельцем**; конкретные ценностные предложения и каналы ещё требуют discovery). Laboratory — **developer/partner/staff workspace** и Product Factory (B2D/B2E; отдельный ограниченный B2B client view возможен после соглашения). Demo Catalog может отображаться на Website; сценариями владеют продукты, проверками и sandbox — Laboratory и Infra, Identity выдаёт ограниченный trial subject при необходимости. Не приравнивать маркетинговую заявку к разрешению на доступ к коду/инфраструктуре. См. [аудитории](market-positioning-and-entrypoints.md), [онбординг](developer-and-partner-lifecycle.md), [демо](demo-and-trials.md).

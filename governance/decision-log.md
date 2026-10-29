@@ -38,6 +38,52 @@
 
 | 029 | Практический trademark-файлинг физлица E7A отдельно от регистрации НПД/ИП/ООО; работа по найму совместима с самостоятельным доходом в рамках НПД | VERIFIED-LEGAL-ROUTE / INDIVIDUAL-FACTS-OPEN | Никаких поданных заявок или регистрации НПД; нужны clearance, классы, actual owner и employment IP review |
 
+| 030 | Предварительный clearance E7A: точных совпадений по отчёту не выявлено; риск EA7 в классе 25 и различительной способности E7A | RESEARCH-RECORDED / CLEARANCE-INCOMPLETE | Поданы 0 заявок; WIPO/ФИПС карточки, тысячи fuzzy/phonetic/image выдач и статусы требуют повторной проверки поверенным. Классы 9/42 — первый предметный фокус |
+
+| 031 | Первая регистрация E7A — **один комбинированный знак E7AMark + E7A в МКТУ 42**, после clearance и фиксации макета | APPROVED-STRATEGY / NOT-FILED | Одна заявка: 17 000 ₽ первоначально и ещё 18 000 ₽ при успехе; не равна двум самостоятельным знакам. [План](../legal/e7a-combined-mark-first-filing-strategy.md) |
+
+## Решения владельца 2026-10-27 (раунды 1–10)
+
+**APPROVED-DIRECTION, NOT IMPLEMENTED:** [единая консолидированная запись с границами, статусами и миграцией](owner-decisions-2026-10-27.md). Исторические решения и гипотезы выше сохраняются. Для ранее записанных PROPOSED положений, которым новые решения противоречат, применяются пометки **SUPERSEDED-AS-PROPOSAL** только в части названных границ, не как переписывание исторического контекста.
+
+- 032 — Architecture-first, F1/F2/M1, B2C-first и Website dual-route.
+- 033 — Core = versioned shared libraries/contracts/optional Starter, не runtime.
+- 034 — Identity Person vs Account vs Actor; расширяемый профиль, проверенные привязки, MFA/passkeys/password/OIDC/federation, multi-organisation scopes.
+- 035 — Central Audit capability и единый защищённый контракт событий с ранней реализации.
+- 036 — Platform four contours upfront; transactional internal state and external UNKNOWN, SDK + provider adapters, multi-step workflows, independently aggregated results.
+- 037 — Bot Studio целевым образом = конструктор бизнес-логик; общие коннекторы переносятся в Platform отдельными проверяемыми PR, исходный runtime неизменён.
+- 038 — Laboratory/Infra: приглашения, QA VM на Lobachevsky, Dev/Staging/Production, multi-node API поэтапно.
+- 039 — R0/R1 возможен auto-merge после локальных/self-hosted exact-head gates; production всегда требует owner approval; 4 FTE ориентир, фактически один человек.
+- 040 — Billing Foundation включён в F1 как контракты и минимально достаточная модель, платежи только после compliance gate.
+- 041 — Физлицо как первоначальный планируемый правообладатель, proprietary default, unified contributor framework плюс договоры по проектам; фактическую цепочку прав и юридические условия проверить отдельно.
+
+## Заключительные решения владельца — 2026-10-27
+
+**APPROVED-DIRECTION / GOVERNANCE DRAFT:** [final architecture baseline](final-architecture-baseline-2026-10-27.md). Решения 042–049:
+
+| ID | Decision | Consequence |
+| --- | --- | --- |
+| 042 | Person → Personal Space / Organisation → Workspaces → product resources | Ownership context agreed; canonical tenant mapping requires TEN-001 ADR |
+| 043 | Mature OIDC IdP + E7A Person/Claims/Policy | Own authentication cryptography prohibited; IdP vendor not yet selected |
+| 044 | Trusted Platform Jobs only; arbitrary user code in isolated Sandbox | Host privileges and cross-tenant secrets never exposed to untrusted jobs |
+| 045 | Initial Billing: plans/orders/subscriptions/entitlements/events, payment after compliance | No payment acceptance or ledger completion claimed |
+| 046 | Central Audit failure behavior risk-dependent | Critical actions fail-closed or bounded separately audited emergency procedure |
+| 047 | F2 tested recovery with RPO/RTO, off-host backups, no mandatory HA | Downtime allowed per explicit SLO and disaster drill |
+| 048 | Temporary owner-only critical release approval, with compensating evidence and reassessment | Exception to prior independent two-human requirement; not misrepresented as independent review |
+| 049 | Multi-region architecture, first market unselected | Legal residency, customer region and payment jurisdiction must be chosen before launch |
+
+## Новое продуктовое направление Games — 2026-10-27
+
+| ID | Decision | Consequence |
+| --- | --- | --- |
+| 050 | Games добавлено как самостоятельное направление / портфель потенциальных независимых игровых продуктов | OWNER-REQUESTED DIRECTION; жанры, аудитория, репозитории, монетизация, статус M1 — **OPEN**. [Games charter](games-product-direction.md); никаких созданных runtime/repo. |
+
+## Gateway — отдельный существующий продукт (2026-10-30)
+
+| ID | Решение | Статус |
+| --- | --- | --- |
+| 054 | E7A Gateway добавлен в продуктовую линейку как самостоятельный WireGuard control-plane продукт для семейных устройств на Butlerov; **не** общий API Gateway и не Infra | EXISTING REPO / DESIGN IN DRAFT PR / IMPLEMENTATION UNVERIFIED. [Границы и риски](gateway-product-direction.md). Запуск, миграция peers, изменение сетей и merge не разрешены. |
+
 ## Открытые ADR
 
 Website: **B2C приоритет согласован**, открыты выбор флагмана, каналов, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
@@ -53,3 +99,12 @@ Identity IdP/assurance/privacy, service auth, migration Bot login; Platform deli
 
 
 Стратегия: [M1 и этапы](growth-strategy-and-first-milestone.md); [roles/FTE](team-and-capacity.md); бренд: [Brandbook](../brandbook/README.md), [Hoodie](../brandbook/merchandise-and-hoodie.md).
+
+## Решения владельца по назначению и управлению Governance (2026-10-28)
+
+| ID | Решение | Статус |
+| --- | --- | --- |
+| 051 | PR #1 предназначен для утверждения первичных организационных и архитектурных стандартов E7A, не runtime readiness | OWNER-APPROVED / MERGE-PENDING |
+| 052 | Жёстко закрепляются архитектурные и security-инварианты, техническая реализация остаётся изменяемой через ADR | OWNER-APPROVED / MERGE-PENDING |
+| 053 | Founder / Owner E7A лично отвечает за дальнейшее развитие и утверждение обязательных стандартов | OWNER-APPROVED / MERGE-PENDING |
+

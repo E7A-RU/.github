@@ -43,11 +43,11 @@
 
 Website служит визуальной baseline, Core — источником UI и tokens. Product-specific страницы, Laboratory, Infra console, Demo и будущий Identity используют согласованные версии UI, но сохраняют собственное поведение и accessibility. Публичное B2C-позиционирование — главное на первом этапе; B2B брендируем единым стилем, а не отдельной чужой идентичностью. У Demo mock states явно помечать как demo; фирменный дизайн не является доказательством реализованной интеграции.
 
-## Визуальные референсы и мокапы
+## Визуальные концепт-референсы
 
-![E7A — концептуальная доска бренд-идентичности и мерча](references/e7a-brand-reference-board.jpg)
+![E7A — концептуальная доска бренда и мерча](references/e7a-brand-reference-board.jpg)
 
-[Открыть доску в полном размере](references/e7a-brand-reference-board.jpg) · [векторная схема](references/e7a-brand-reference-board.svg) · [описание референсов и требования к доработке](references/README.md). Это **концептуальные** изображения, не замена точных E7ALogo/E7AMark из Core и не утверждённая production-спецификация.
+[Полная доска](references/e7a-brand-reference-board.jpg) · [векторная схема](references/e7a-brand-reference-board.svg) · [пояснения, источники и ограничения](references/README.md). Все знаки на доске **условные**, не официальные E7ALogo/E7AMark из Core и не производственные файлы. Для любых официальных макетов обязательны исходники Core, брендовый review и отдельное согласование.
 
 ## Носители фирменного стиля — дизайн-референсы
 

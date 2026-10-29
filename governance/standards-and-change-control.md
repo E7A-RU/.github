@@ -1,6 +1,6 @@
 # Единый стандарт: управление версиями и зависимостями
 
-**Статус:** согласованная целевая governance-модель; автоматический compliance crawler/PR bot ещё не реализованы.
+**Статус:** согласованная целевая governance-модель; автоматический compliance crawler/PR bot ещё не реализованы. [Final baseline](final-architecture-baseline-2026-10-27.md) утверждает будущий risk-gated R0/R1 auto-merge при самостоятельном owner-approved внедрении, но **не** auto-deploy. Исторический процесс Draft PR ниже описывает безопасный стартовый режим, пока auto-merge отсутствует.
 
 ## Единственный нормативный источник
 
@@ -14,7 +14,7 @@
 1. RFC/PR обновляет governance с changelog, impact map, владельцами и security review.
 2. После approval публикуется неизменяемая версия или commit SHA; в consumers пока остаётся прежняя совместимая версия.
 3. Self-hosted Laboratory checker получает manifests продуктов, сравнивает их pinned standard revision, SDK package versions, Identity/Platform API constraints и тесты совместимости.
-4. Создаёт **предложения** отдельных Draft PR и reports, а не пушит в main и не включает массовый deploy.
+4. Создаёт **предложения** отдельных Draft PR и reports. До отдельного owner-approved внедрения risk classifier любые auto-merge выключены. После доказанной проверки R0/R1 отдельные PR могут быть автоматически объединены согласно политике, но изменения R2/R3 и production require human approval; массового deploy нет.
 5. Для каждого consumer необходим exact-head SHA test/log, package readback при adoption Core, тесты поведения и независимое owner approval.
 6. Infra получает подтверждённый release manifest; staging/prod отдельно, продакшен требует явного разрешения, health и rollback.
 7. Результат проверки различает PASS, FAIL, SKIPPED, UNKNOWN; пропущенный из-за lock процесс не является пройденным.
@@ -34,3 +34,11 @@ GitHub-hosted Actions CI по текущей E7A политике запрещё
 ## Контроль изменений
 
 Каждый PR: affected products, standards revision before/after, контрактные изменения, owner, QA evidence, security/privacy, rollout, rollback и возможность приостановки. Аргумент «привести всё к актуальному стандарту» не даёт права переписывать все репозитории или сливать чужие Draft.
+
+## Подтверждение владельца: нормативная стабильность и полномочия (2026-10-28)
+
+- **Scope Governance v1:** первичные организационные и архитектурные стандарты, принципы владения, границы ответственности и обязательные safeguards. Это не паспорт готовности runtime, не релиз Core и не автоматическое разрешение deployments.
+- **Normative invariants:** независимость продуктовых данных и релизов, privacy/security, разделение Core/Identity/Platform/Laboratory/Infra, контроль production и брендовая политика. Изменение таких норм — отдельный мотивированный ADR, impact matrix и явное утверждение Owner.
+- **Implementation freedom:** выбор IdP, брокера, БД, фреймворка, внутренних алгоритмов и layout разрешён техническому владельцу при соблюдении совместимости и контрольных критериев; не замораживать технологии в Governance без необходимости.
+- **Authority:** текущий accountable owner организационного стандарта и окончательный approver его нормативных изменений — Founder / Owner E7A. Он может делегировать подготовку/проверку, но делегирование полномочия изменить нормы требует отдельной фиксируемой записи. Его роль не означает, что он лично проверил все runtime сервисы.
+- **Release identity:** после owner-approved merge baseline закрепляется точным SHA и версией стандарта. Пока PR Draft, версию нельзя выдавать за опубликованный immutable release.
