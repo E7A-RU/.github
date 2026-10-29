@@ -39,7 +39,7 @@
 
 ### G0 — Governance adoption (сначала)
 
-- [ ] Спроектировать [E7A Automation](engineering-automation.md) как отдельный приватный внутренний сервис (`E7A-RU/automation`), где `governance-sync` — первый модуль; bootstrap repo, plan-only проверки, GitHub App и canary — разные gates, а не автоматический эффект merge.
+- [ ] Спроектировать [E7A Automation](engineering-automation.md) как отдельный приватный внутренний сервис (`E7A-RU/automation`), где `governance-sync` — первый модуль; репозиторий [создан](https://github.com/E7A-RU/automation), plan-only исходники в [Draft PR #1](https://github.com/E7A-RU/automation/pull/1); GitHub App, верификация приватных потребителей, canary и размещение на Infra — отдельные gates, а не автоматический эффект merge.
 
 - [ ] Выпустить [реестр принятия стандарта](repository-impact-matrix.md) с точным baseline SHA, owner и статусами.
 - [ ] В каждом существующем consumer PR сослаться на approved revision; исторический Standard v1 оставить read-only archive.
