@@ -2,6 +2,8 @@
 
 **Status: PROPOSED migration plan, no consumer repo mutation.** Important: historical queue below is superseded in sequencing by [final owner baseline](final-architecture-baseline-2026-10-27.md): Identity, Platform, Audit and bounded Billing enter F1; operational status remains unverified. Canonical source is [governance](README.md); all consumers adopt a **released immutable commit SHA/tag**, not this Draft branch's moving head.
 
+**Planned internal automation (NOT A REPOSITORY YET):** `E7A-RU/governance-sync` — private self-hosted standards helper proposing scoped Draft PRs after an owner-approved Governance version. [Charter](governance-sync-service.md). Not a customer product and not running; repo creation/bootstrap is separate.
+
 ## Components and ownership
 
 | Component / repo | Responsibility and data ownership | Dependencies | Verified disposition / next action |
