@@ -17,6 +17,7 @@
 | Platform (future repo not confirmed) | Delivery, trusted Jobs, Connectors, Results and own operational metadata | scoped service identities; Infra runtime when built | APPROVED EARLY F1 SCOPE / implementation unverified; per-provider readiness separately gated |
 | Central Audit (future repo not confirmed) | Central protected security/compliance event collector and schema; domain logs remain domain-owned | Infra, optional Identity actor context | APPROVED DIRECTION / NOT VERIFIED RUNNING |
 | Billing Foundation (future repo not confirmed) | Plan/price/order/subscription/entitlements/event authority | Reference to tenant/subject IDs, payment adapter only after compliance | APPROVED DIRECTION / NO LIVE PAYMENTS |
+| [gateway](https://github.com/E7A-RU/gateway) | Standalone WireGuard family/device access control plane and product-owned records on Butlerov | Existing WireGuard dataplane, Infra host/network safeguards; Core optional; Identity planned | README in main; design Draft PR #1; NO implementation/runtime verification. [Charter](gateway-product-direction.md) |
 | Games (direction; repo not created) | Independent game product portfolio; each approved title owns gameplay, assets, domain state and releases | Optional Core, Identity, Platform and Billing by game needs | OWNER-REQUESTED DIRECTION / concrete titles and repos PROPOSED |
 | Planner (future repo not confirmed) | Domain plans/tasks and optional owned DB | Core + Identity only if login required | PROPOSED; do not create prematurely |
 
@@ -41,6 +42,7 @@
 | P1 | reader | Pin revision and verify browser-only/local-first acceptance | No registration/backend gate added |
 | P1 | bot | Pin revision and record product/platform contract boundaries | Existing Bot workers/DB remain independently owned |
 | P2 | infra | Add declarative sandbox/runner safeguarding proposal | Lobachevsky and KS54 isolation demonstrated before any execution |
+| P1 | gateway | Review dedicated draft PR, confirm subnet/routing/secret boundary and rollback | Existing MikroTik/VDS/S-UI unaffected, no production apply without owner approval |
 | P2 | laboratory | Add governance compliance **proposal** and evidence schema without production permission | QA ≠ deploy; no Docker socket/secret exposure |
 | P0–P1 | identity / platform / audit / billing | Separate architecture and F1 implementation PRs after owner-approved foundation gates | No automatic production service, payment acceptance or data migration |
 | Future | planner | Product-discovery ADR | No premature runtime |
