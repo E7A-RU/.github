@@ -1,6 +1,6 @@
 # E7A Backend Reference Architecture — PostgreSQL-first
 
-**Статус: предлагаемая реализация утверждённых архитектурных границ.** Этот документ описывает **рекомендуемый baseline** для новых stateful продуктов E7A, а не уже работающий общий backend или обязательный стек для Browser-only. Требует owner review через этот Governance PR. Основные инварианты утверждены в [Governance](README.md); инфраструктурные изменения — отдельный [Infra gate](infra-operations.md).
+**Статус: OWNER-APPROVED RECOMMENDED BACKEND BASELINE (2026-10-30), runtime НЕ реализован этим документом.** Этот документ описывает **предпочтительную архитектуру** новых stateful продуктов E7A, а не обязательный стек для Browser-only; альтернативы допустимы по обоснованному ADR. Основные инварианты утверждены в [Governance](README.md); инфраструктурные изменения — отдельный [Infra gate](infra-operations.md).
 
 ## Краткое решение
 
