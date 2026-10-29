@@ -12,6 +12,8 @@
 
 **4. Release Gate.** Собирает release manifest, status checks, risk/rollback/approvals, provenance и evidence. **Готовность к выпуску ≠ разрешение на production apply**. Laboratory направляет одобренный релиз в Infra, Infra исполняет и измеряет здоровье.
 
+**Эталонная процедура для Wizard:** после выбора Kit предлагать [полный roadmap Browser-only / Full-stack / Service-Worker](kit-implementation-roadmaps.md), [Product Charter](templates/product-charter.md) и [Release Gate](templates/release-gate.md), а для stateful backend — [PostgreSQL-first reference](backend-reference-architecture.md). Шаблон Starter может быть необязательным, но чеклист конкретного Kit — не пропускается.
+
 ## Три профиля Kit (целевые)
 
 | Kit | Что включено | Где backend | Пример |
