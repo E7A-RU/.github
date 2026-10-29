@@ -2,6 +2,8 @@
 
 **Status: APPROVED GOVERNANCE PRINCIPLES / CHECKLIST TEMPLATE PROPOSED FOR ADOPTION.** Source: [Governance](README.md), [roadmap](roadmap.md), [Product Factory](product-factory-and-kits.md), [Infra](infra-operations.md). Checkboxes below represent **requirements to verify for each product**, not claims about already completed tasks. Evidence = exact SHA/artifact digest/run URL or dated operator readback. A green box without evidence is not PASS.
 
+Для нового продукта начинайте с [шаблона Product Charter](templates/product-charter.md); для каждого релиза оформляйте [Release Gate и evidence](templates/release-gate.md). Заполнение шаблонов не даёт права deploy.
+
 ## Ownership and applicability
 
 Each independently deployable product has an explicit **Product Owner, Engineering Owner, Data Owner, Security/Privacy contact, QA reviewer, Infra operator and Production approver**. People may temporarily overlap, but roles must be visible; owner-only critical approvals are an explicit temporary risk exception, not two independent humans. Products use one of three **Kit** contracts: Browser-only, Full-stack or Service/Worker. Choose no mandatory shared runtime unless functional need and failure semantics are documented.
