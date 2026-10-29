@@ -4,7 +4,7 @@
 
 **Decision (Owner, 2026-10-30): APPROVED DIRECTION / IMPLEMENTATION NOT AUTHORIZED BY THIS DOCUMENT.** Dedicated **private** repository is recommended: `E7A-RU/governance-sync` (**NOT YET CREATED**). Register a separate **private organization-owned GitHub App** after initial code/security review. Do not confuse repository creation, GitHub App registration, installation, and self-hosted runtime activation.
 
-Canonical governance: [Standards Propagation](standards-propagation.md), [GitHub App cost/resources](github-app-cost-and-resources.md), [Standards release descriptor](standards-release.json), [Product lifecycle](product-lifecycle-checklists.md), [Approved baseline](README.md). Production infrastructure/host changes remain separate Infra-owner decisions.
+Canonical governance: [Standards Propagation](../standards-propagation.md), [GitHub App cost/resources](../github-app-cost-and-resources.md), [Standards release descriptor](../standards-release.json), [Product lifecycle](../product-lifecycle-checklists.md), [Approved baseline](../README.md). Production infrastructure/host changes remain separate Infra-owner decisions.
 
 ## 1. Why its own repo
 
@@ -34,7 +34,7 @@ At current revision only **DESIGNED** is supported. The owner must separately ap
 
 ## 4. Source of truth and trigger
 
-The current first approved version is [`governance/standards-release.json`](standards-release.json), with full immutable `revision=b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`. A later documentation merge is **not** automatically a new standard version.
+The current first approved version is [`governance/standards-release.json`](../standards-release.json), with full immutable `revision=b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`. A later documentation merge is **not** automatically a new standard version.
 
 New distribution event exists only when **Owner explicitly approves a versioned release descriptor referencing the exact merged governance commit**. The worker must verify that target SHA is real and approved (reviewed merged PR / explicit authorized decision record), not trust editable `approvedBy` text alone. It must fail closed on invalid format, mismatched SHA, disallowed authorizer, unmerged ref or replayed release.
 
