@@ -1,0 +1,114 @@
+{
+  "$comment": "DESIGN EXAMPLE ONLY. NOT A DEPLOYED SERVICE, INSTALLED APP, AUTHORIZATION OR SCHEDULER.",
+  "schemaVersion": "e7a.automation/v0-proposal",
+  "service": {
+    "name": "e7a-automation",
+    "repository": "E7A-RU/automation",
+    "visibility": "private",
+    "executionMode": "plan-only",
+    "runtimeEnabled": false,
+    "autoMerge": false,
+    "productionDeploy": false,
+    "githubHostedActionsCI": false
+  },
+  "governance": {
+    "sourceRepository": "E7A-RU/.github",
+    "releaseDescriptor": "governance/standards-release.json",
+    "trustedRevision": "c74bce10bc9eac6bb2e604a7db6b14d33b7c7645",
+    "requireOwnerApprovedMergedSha": true
+  },
+  "targets": {
+    "repositoryOwner": "E7A-RU",
+    "defaultBranchWrite": false,
+    "allowlist": [
+      "core",
+      "website",
+      "reader",
+      "bot",
+      "planner",
+      "infra",
+      "laboratory",
+      "gateway"
+    ],
+    "notBootstrapped": [
+      "identity",
+      "platform"
+    ],
+    "archivedRepos": "skip",
+    "existingDraftPr": "reconcile-after-lease-check"
+  },
+  "modules": [
+    {
+      "id": "governance-sync",
+      "enabled": false,
+      "input": "approved-governance-release",
+      "mode": "plan-only",
+      "allowedPaths": [
+        "governance-consumer.json",
+        "docs/governance-adoption.md",
+        "docs/governance-upgrade-*.md"
+      ],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "product-catalog-sync",
+      "enabled": false,
+      "input": "approved-product-catalog-change",
+      "mode": "plan-only",
+      "allowedPaths": [
+        "profile/README.md",
+        "README.md",
+        "docs/status.md",
+        "docs/catalogue*.md"
+      ],
+      "requiresHumanReview": true,
+      "publicRedactionRequired": true
+    },
+    {
+      "id": "repo-docs-sync",
+      "enabled": false,
+      "input": "approved-cross-repo-documentation-change",
+      "mode": "plan-only",
+      "allowedPaths": [
+        "README.md",
+        "AGENTS.md",
+        "docs/README.md",
+        "docs/status.md",
+        "docs/governance-adoption.md",
+        "docs/architecture/*.md"
+      ],
+      "highRiskPaths": [
+        "AGENTS.md",
+        "docs/security*.md"
+      ],
+      "requiresHumanReview": true
+    },
+    {
+      "id": "compliance-observer",
+      "enabled": false,
+      "input": "manual-read-only-audit",
+      "mode": "plan-only",
+      "allowedPaths": [],
+      "requiresHumanReview": false
+    }
+  ],
+  "mandatoryChecks": [
+    "canonical-sha",
+    "approval-proof",
+    "repo-and-file-allowlist",
+    "no-secret-diff",
+    "no-hosted-workflows",
+    "no-direct-main",
+    "idempotent-per-repo-per-release",
+    "pr-head-sha-review"
+  ],
+  "writeCanary": {
+    "approved": false,
+    "repository": null,
+    "allowCreateDraftPr": false
+  },
+  "secrets": {
+    "source": "infra-managed-secret-store",
+    "appPrivateKeyInRepo": false
+  }
+}

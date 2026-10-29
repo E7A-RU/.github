@@ -1,56 +1,124 @@
 <div align="center">
-  <img src="./assets/hero.svg" alt="E7A — технологический фундамент, независимые продукты" width="100%" />
+
+  <img src="./assets/hero.svg" alt="E7A — engineering ecosystem with independent products" width="100%" />
+
+  <h1>E7A</h1>
+  <h3>Проектируем, разрабатываем и развиваем полезные цифровые продукты</h3>
+  <p><strong>B2C-first · B2B automation · Engineering-first</strong></p>
+  <p>Единая система инженерных принципов — самостоятельные продукты, понятные границы ответственности и релизы, которые можно проверить и безопасно откатить.</p>
+  <p>
+    <a href="https://e7a.ru">Веб-сайт E7A</a> ·
+    <a href="#продуктовая-линейка">Наши продукты</a> ·
+    <a href="https://github.com/E7A-RU/.github/tree/main/governance">Governance</a> ·
+    <a href="https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md">Roadmap</a>
+  </p>
 </div>
 
-# E7A — экосистема самостоятельных цифровых продуктов
+---
 
-**Engineering clarity · Product independence · Human control.**
+## Как познакомиться с E7A
 
-Мы проектируем и развиваем полезные B2C-продукты, а также решения для автоматизации B2B. В основе — единые инженерные принципы, дизайн-система и проверяемые процессы выпуска, а не один универсальный backend.
+| Для кого | С чего начать |
+| :--- | :--- |
+| **Пользователям** | [e7a.ru](https://e7a.ru) — публичная точка входа; изучите направления и следите за доступностью конкретных продуктов |
+| **Командам и заказчикам** | [Наш подход к B2B-автоматизации](https://github.com/E7A-RU/.github/blob/main/governance/market-positioning-and-entrypoints.md) и [контролируемым Demo](https://github.com/E7A-RU/.github/blob/main/governance/demo-and-trials.md) |
+| **Разработчикам и партнёрам** | [Product Lifecycle](https://github.com/E7A-RU/.github/blob/main/governance/product-lifecycle-checklists.md) · [три Product Kit](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md) · [Governance](https://github.com/E7A-RU/.github/tree/main/governance) |
 
-[**Сайт E7A**](https://e7a.ru) · [**Governance**](https://github.com/E7A-RU/.github/blob/main/governance/README.md) · [**Roadmap**](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md) · [**Как мы запускаем продукты**](https://github.com/E7A-RU/.github/blob/main/governance/product-lifecycle-checklists.md)
+*E7A combines independent software products, shared engineering standards and human-approved releases. Our public documentation distinguishes shipped capabilities from proposals and prototypes.*
 
-## Принципы E7A
+## Что мы создаём
 
-1. **Один стандарт, независимые продукты.** У каждого продукта свой код, доменные данные, ответственность за доступ и релизы; общий компонент не становится владельцем чужой БД.
-2. **Core — инженерный фундамент, не работающий backend.** UI, типизированные контракты, SDK, дизайн-система и необязательный Product Starter.
-3. **Foundation — общие возможности с чёткими границами.** Identity, Platform (Delivery/СГДС, Jobs, Connectors, Results), Audit, Billing Foundation, Laboratory и Infra развиваются независимо и подключаются по необходимости.
-4. **Privacy/security by design.** Минимальные полномочия, изоляция пользователей и организаций, проверенные миграции и восстановление. Анонимные и локальные приложения не обязаны использовать Identity.
-5. **Evidence before claims.** Проектирование ≠ исходники ≠ успешные тесты ≠ работающий сервис. Production требует отдельного согласования владельца.
-6. **Права и бренд.** Официальные знаки и визуальный стиль E7A не предоставляются для стороннего брендинга без предварительного письменного разрешения. [Brand Policy](https://github.com/E7A-RU/.github/blob/main/BRAND_POLICY.md); наличие публичного npm-пакета не означает предоставления лицензии на код или бренд.
+| **Продукты для людей** | **Автоматизация для бизнеса** | **Инженерный фундамент** |
+| :--- | :--- | :--- |
+| Удобные пользовательские инструменты, чтение, планирование, игровые гипотезы | Диалоги, боты, интеграции, повторяемые бизнес-процессы | Общая дизайн-система, типизированные контракты, безопасность, управляемая инфраструктура |
 
-## Карта экосистемы
+Мы не сводим экосистему к единственному серверу или универсальному backend. Каждый продукт сохраняет **свои данные, свой релиз и собственную ответственность**, а общие возможности подключает по контрактам тогда, когда они действительно нужны.
 
-| Компонент | Назначение | Подтверждённый уровень / направление |
-| --- | --- | --- |
-| [Website](https://github.com/E7A-RU/website) · [e7a.ru](https://e7a.ru) | Публичная витрина, B2C-открытие продуктов, B2B-заявки и демо | Действующий сайт; новые сценарии внедряются отдельно |
-| [Core](https://github.com/E7A-RU/core) | Версионированные UI, server contracts и Starter | Публичный `@e7a-ru/ui@0.2.1` опубликован; другие пакеты/версии — независимо |
-| [Reader](https://github.com/E7A-RU/reader) | Локальное приватное чтение документов в браузере | MVP в исходниках; production-развёртывание не подтверждено |
-| [Bot Studio](https://github.com/E7A-RU/bot) | Конструктор диалогов/бизнес-логики, собственный Bot runtime | Существующий runtime, развитие; общие коннекторы будут мигрировать по отдельным PR |
-| [Planner](https://github.com/E7A-RU/planner) | Рабочие графики, задачи и календари | Дизайн/Starter в Draft, scope MVP отдельно утверждается |
-| [Gateway](https://github.com/E7A-RU/gateway) | Управление персональным WireGuard-доступом | Разработка Control Plane; production Gateway не подтверждён |
-| [Games](https://github.com/E7A-RU/.github/blob/main/governance/games-product-direction.md) | Направление браузерных и небольших мобильных игр | Зарегистрировано как направление; будущая витрина, игры не анонсированы |
-| [Identity](https://github.com/E7A-RU/identity) | Person/Accounts/SSO/OIDC, организации и права доступа | Foundation направление; реализация не подтверждена |
-| [Platform](https://github.com/E7A-RU/platform) | Delivery/СГДС, trusted Jobs, Connectors, Results | Foundation направление; реализация не подтверждена |
-| [Laboratory](https://github.com/E7A-RU/laboratory) | Product Factory: Wizard, три Kit, QA, Sandbox и Release Gate | Архитектура; работающий портал не подтверждён |
-| [Infra](https://github.com/E7A-RU/infra) | Среды, секреты, резервирование, наблюдаемость и контролируемые релизы | Архитектура; общая Infra-платформа не подтверждена |
-| Audit / Billing Foundation | Централизованный защищённый аудит и коммерческие контракты | Отдельные Foundation-направления, не заявлены работающими |
 
-> Часть репозиториев **приватные**: ссылки на них доступны участникам E7A с разрешённым доступом. Отсутствие публичного доступа не означает, что продукт запущен или доступен для заказа.
+## Продуктовая линейка
 
-## Как мы реализуем продукты
+### Пользовательские продукты и направления
 
-**Три утверждённых Product Kit:** [Browser-only](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md#1-browser-only-kit), [Full-stack](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md#2-full-stack-kit) и [Service/Worker](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md#3-serviceworker-kit). Для stateful backend стандартный выбор — **PostgreSQL-first** с продуктовой БД и проверяемыми SQL-миграциями; без принудительного backend для browser-only.
+| Продукт | Для чего | Текущий публично заявляемый этап |
+| :--- | :--- | :--- |
+| **[E7A Website](https://e7a.ru)** | Главная точка входа: каталог, знакомство с продуктами, будущие Demo и B2B-запросы | Существующий сайт; новые сценарии внедряются отдельно |
+| **[Reader](https://github.com/E7A-RU/reader)** | Быстрое, приватное чтение своих документов прямо в браузере | Browser-first MVP в исходниках; публичный запуск не подтверждён |
+| **[Bot Studio](https://github.com/E7A-RU/bot)** | Создание диалогов и сценариев бизнес-автоматизации | Существующий Bot runtime; Studio и общие интеграции развиваются |
+| **[Planner](https://github.com/E7A-RU/planner)** | Рабочие графики, задачи, календари и планирование | Проектирование / Draft Starter; MVP ещё не утверждён |
+| **[Gateway](https://github.com/E7A-RU/gateway)** | Контроль доступа устройств к личному WireGuard-шлюзу | TypeScript/PostgreSQL исходники в разработке; не подтверждён как запущенный продукт |
+| **[Games](https://github.com/E7A-RU/.github/blob/main/governance/games-product-direction.md)** | Направление браузерных и небольших мобильных игр; будущая витрина | Зарегистрированное направление, без анонса готовой игры |
 
-**Этапы:** Governance → Foundation F1 (проверенная интеграция) → F2 (восстановление/эксплуатация) → M1 (реальное использование первого B2C-продукта). Это цели, а не заявления, что всё уже работает.
+*Многие репозитории приватны: переход по ссылке доступен только участникам с правами. Указанный статус не является заявлением о доступности конкретной функции прямо сейчас.*
 
-[Roadmap](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md) · [Backend reference architecture](https://github.com/E7A-RU/.github/blob/main/governance/backend-reference-architecture.md) · [Product Charter](https://github.com/E7A-RU/.github/blob/main/governance/templates/product-charter.md) · [Release checklist](https://github.com/E7A-RU/.github/blob/main/governance/templates/release-gate.md)
+### Основа экосистемы
 
-## Как мы работаем с изменениями
+| Компонент | Зона ответственности | Фактическая граница |
+| :--- | :--- | :--- |
+| **[Core](https://github.com/E7A-RU/core)** | Дизайн-система, React UI, typed SDK/contracts, необязательный Product Starter | Не backend и не центральная БД. Публичный `@e7a-ru/ui@0.2.1` опубликован |
+| **[Identity](https://github.com/E7A-RU/identity)** | Person / Account / Organization / Workspace, OIDC, доступ, проверенные claims | Репозиторий создан; работающий сервис не подтверждён |
+| **[Platform](https://github.com/E7A-RU/platform)** | Delivery/СГДС, trusted Jobs, Connectors, Results | Самостоятельная Foundation capability, ещё не RUNNING |
+| **[Laboratory](https://github.com/E7A-RU/laboratory)** | Product Factory: Wizard, три Product Kit, QA, Sandbox, Release Gate | Планируемый продукт, не универсальный backend |
+| **[Infra](https://github.com/E7A-RU/infra)** | Инвентарь серверов, окружения, секреты, backup/recovery, контролируемые релизы | Отдельная эксплуатационная граница; общая платформа ещё не подтверждена |
+| **[Central Audit / Billing Foundation](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md)** | Защищённый аудит; тарифы, заказы, подписки, entitlements | Утверждённые архитектурные направления, не готовые платежи |
+| **[Engineering Automation](https://github.com/E7A-RU/automation)** | Приватный внутренний проект: стандарты, планирование обновлений и безопасная подготовка Draft PR | Репозиторий создан; read-only планировщик в Draft PR, GitHub App и runtime не запущены |
 
-Организационные правила принимает владелец E7A. Они версионируются в [.github/governance](https://github.com/E7A-RU/.github/blob/main/governance/README.md); каждому затронутому репозиторию отдельный Draft PR предлагает безопасную адаптацию. Никакого неконтролируемого массового merge или production deployment. **GitHub-hosted Actions CI не используем**; предусмотрено только отдельно разрешённое применение Actions для выпуска пакетов Core.
+## Принципы разработки
 
-**Контакты и сотрудничество:** [e7a.ru](https://e7a.ru). Доступ к внутренним инженерным инструментам и репозиториям предоставляется по отдельному согласованию.
+| | Наш подход |
+| :--- | :--- |
+| **01 — Product ownership** | Каждый продукт владеет своим доменом, данными, ролями и жизненным циклом. Нет единой бизнес-БД для всех |
+| **02 — TypeScript / PostgreSQL** | TypeScript-first; для stateful backend предпочтителен PostgreSQL с независимой продуктовой БД, проверяемыми SQL-миграциями и восстановлением |
+| **03 — Privacy & security** | Отдельные субъекты Person / Account / SecurityActor, минимальные полномочия, независимые границы доверия, no secrets in Git |
+| **04 — Reusable, not coupled** | Core выпускает пакеты и контракты; Identity, Platform, Infra и Laboratory не подменяют друг друга |
+| **05 — Evidence before release** | Исходники ≠ пройденные тесты ≠ работающее production. Каждое утверждение о готовности требует подтверждения |
+| **06 — Human control** | Изменения глобальных правил утверждает владелец; production без отдельного разрешения не меняется |
+
+### Три пути создания нового продукта
+
+| Kit | Типичная задача | Данные и runtime |
+| :--- | :--- | :--- |
+| **[Browser-only](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md)** | Reader, локальное приложение или браузерная игра | Работает в браузере; сервер, учётная запись и PostgreSQL **не обязательны** |
+| **[Full-stack](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md)** | Продукт с собственными API и состоянием | TypeScript frontend/backend + продуктовая PostgreSQL, если требуется долговременное хранение |
+| **[Service / Worker](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md)** | Интеграции, события, фоновые операции | Версионированные контракты, идемпотентность, retries, Results и PostgreSQL при durable state |
+
+**Стандартный процесс:** идея → Product Charter → Kit и ADR → реализация → локальная/self-hosted проверка → staging → отдельное разрешение на production → наблюдение и следующий безопасный релиз.
+
+[**Product Lifecycle Checklists**](https://github.com/E7A-RU/.github/blob/main/governance/product-lifecycle-checklists.md) · [**Backend Reference Architecture**](https://github.com/E7A-RU/.github/blob/main/governance/backend-reference-architecture.md) · [**Product Charter Template**](https://github.com/E7A-RU/.github/blob/main/governance/templates/product-charter.md)
+
+## Roadmap: от фундамента к пользовательской ценности
+
+```text
+GOVERNANCE  ── единые архитектурные правила и границы ответственности
+      ↓
+FOUNDATION F1 ── проверенная интеграция необходимых общих capabilities
+      ↓
+FOUNDATION F2 ── восстановление, безопасность и эксплуатационная готовность
+      ↓
+M1 PRODUCT-IN-USE ── реальное использование + обратная связь + повторный релиз
+```
+
+Разработка Website и проверка B2C-гипотез происходят параллельно техническому Foundation. **Reader и Games — кандидаты**, а не автоматически назначенные первые флагманы. [Подробный Roadmap →](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md)
+
+## Инженерная открытость и границы доступа
+
+Мы публикуем [организационные стандарты](https://github.com/E7A-RU/.github/tree/main/governance), [roadmap](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md) и [визуальные концепты](https://github.com/E7A-RU/.github/tree/main/brandbook). При этом исходники отдельных продуктов, данные и операционные настройки могут оставаться приватными: **открытая архитектура не означает открытый доступ к внутренней инфраструктуре**.
+
+Версии стандартов имеют неизменяемый SHA. Обновления предлагаются продуктам через отдельные PR; это не запускает массовую публикацию, пересборку или деплой. За производственным выпуском и изменением глобальных правил остаётся человеческое решение.
+
+## Открытая инженерная документация
+
+- [**Governance**](https://github.com/E7A-RU/.github/tree/main/governance) — организационные решения и границы компонентов
+- [**Brandbook**](https://github.com/E7A-RU/.github/tree/main/brandbook) — визуальные принципы и концептуальные референсы
+- [**Standards & change control**](https://github.com/E7A-RU/.github/blob/main/governance/standards-and-change-control.md) — версионирование глобальных правил, review, ADR и обновление потребителей
+- [**E7A Automation**](https://github.com/E7A-RU/.github/blob/main/governance/engineering-automation.md) — будущая внутренняя автоматизация Draft PR без автоматического merge
+- [**E7A Brand Usage Policy**](https://github.com/E7A-RU/.github/blob/main/BRAND_POLICY.md) — использование имени, логотипов и фирменных материалов сторонними лицами допускается только по предварительному письменному разрешению правообладателей; публичность библиотеки не предоставляет лицензию на исходный код
 
 ---
-*E7A · Системность, безопасность и уважение к вниманию.*
+
+<div align="center">
+
+**E7A · Технологии, которые можно понимать, проверять и развивать.**
+
+[Сайт](https://e7a.ru) · [Roadmap](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md) · [Governance](https://github.com/E7A-RU/.github/tree/main/governance)
+
+</div>

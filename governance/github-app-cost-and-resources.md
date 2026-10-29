@@ -1,6 +1,6 @@
-# E7A Governance Sync GitHub App — стоимость, ресурсы и ограничения
+# E7A Automation GitHub App — стоимость, ресурсы и ограничения
 
-**Статус:** оценка инженерного решения; [отдельный планируемый приватный `E7A-RU/governance-sync`](governance-sync-service.md) и **не созданное/не установленное GitHub App**; расчёт и документация от 2026-10-30. Связанный [Standards Propagation](standards-propagation.md) остаётся концепцией; owner approval и отдельный Infra PR обязательны перед запуском.
+**Статус:** оценка инженерного решения; [отдельный планируемый приватный репозиторий `E7A-RU/automation`](engineering-automation.md), **Governance Sync — первый модуль**, собственная App **ещё не зарегистрирована и не установлена**; расчёт и документация от 2026-10-30. Связанный [Standards Propagation](standards-propagation.md) остаётся концепцией; owner approval и отдельный Infra PR обязательны перед запуском.
 
 ## Что оплачивается
 
@@ -22,7 +22,7 @@
 
 ## Доступ к GitHub
 
-- Одна **private organization-owned GitHub App**, установка только на нужные репозитории.
+- Для первых read-only/Governance Sync функций допустима **одна private organization-owned GitHub App** с установкой только на выбранные репозитории. Будущие модули, требующие других прав, проходят новый security review; при необходимости используются отдельные Apps / credentials, без универсального God-token.
 - App permissions: `Metadata: read`, `Contents: read` для `.github`, `Contents: write` и `Pull requests: write` только в выбранных product repos. GitHub app repository-level permissions действуют в рамках installation scope; различать чтение и запись внутри одного repo может потребовать **две App установки/учётные роли** или сервисный enforce allowlist — это security ADR, а не гарантия API уровня.
 - У приложения нет `administration`, `actions:write`, `deployments:write`, `secrets`, `workflows`, `merge` или других ненужных полномочий. **Важное уточнение:** право `Pull requests: write` позволяет управлять PR, а контролировать недопустимый merge следует защитой веток и кодом/policy — не утверждать, будто GitHub имеет отдельный `no-merge` permission.
 - Короткоживущие installation tokens действуют **около 1 часа**; создавать при запуске, не хранить длительно. Секрет App private key хранить в Infra secret store с ротацией.

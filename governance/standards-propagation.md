@@ -2,7 +2,7 @@
 
 **Status: OWNER-APPROVED DIRECTION / SOFTWARE NOT CREATED, DEPLOYED OR SCHEDULED.** This is the approved organizational intent made executable only after a separately authorized Infra/Laboratory deployment. It must **not** use GitHub-hosted Actions CI, auto-merge, auto-deploy, or mutate a product's business code without product-owner review.
 
-**Отдельный репозиторий и полный процесс:** [Governance Sync Service Charter](governance-sync-service.md). Репозиторий `E7A-RU/governance-sync` — планируемое имя, но **ещё не создан**; регистрация private GitHub App является отдельным действием владельца.
+**Новое решение о масштабе:** [E7A Automation](engineering-automation.md) — проектируемый отдельный приватный `E7A-RU/automation`; `governance-sync` — **первый модуль**, а не имя репозитория. Репозиторий [создан](https://github.com/E7A-RU/automation), но **GitHub App пока не зарегистрирована**, токены не выдавались и runtime не запущен, регистрация и активация требуют отдельного approval.
 
 ## Цель
 
@@ -42,7 +42,7 @@ Every product stores a **minimal** `governance-consumer.json` or equivalent mani
 4. **Select affected:** use `impactedConsumers` and dependency matrix. Never blindly modify all products; if mandatory universal rule is modified, explicitly list all registered consumers and explain why. Empty, archived, externally owned or uninitialized repositories → report `BOOTSTRAP_REQUIRED` or `SKIPPED`, do not initialize automatically.
 5. **Detect existing work:** search open Draft PRs or stable branch `governance/adopt-<sha-prefix>` for the same target release. If already present, update the report or skip; do not create duplicate PRs. If a product has unmerged older adoption PR, flag that dependency rather than opening a conflicting PR.
 6. **Plan-only default:** compute proposed manifest diff, README link and migration checklist without a Git write. Show owner a per-repo report, compatibility expectations, security/privacy impact and required manual actions.
-7. **Apply only when explicitly enabled:** update the allowlisted governance pointer + migration report on a product branch and create **Draft PR** with `oldRevision`, `newRevision`, affected rules, risk tier, breaking changes, tests needed, exceptions and Product Owner. Do not change runtime code, secrets, dependencies or lockfiles as part of baseline propagation unless a separate product-specific PR is approved.
+7. **Apply only when explicitly enabled:** update governance pointer, migration report and affected product **README/AGENTS/docs/status/architecture references** in a NEW product branch and create **Draft PR** with `oldRevision`, `newRevision`, affected rules, risk tier, breaking changes, tests and Product Owner. Each nontrivial doc transform requires a versioned per-module allowlist, schema/static checks and human product review; AGENTS is a protected high-sensitivity file, never blindly rewritten. Do not change runtime code, secrets, workflows, dependencies or lockfiles as part of baseline propagation without separately approved product-specific automation.
 8. **QA/evidence:** local or isolated self-hosted exact-head compatibility checks; never fabricate PASS. On failure, Draft remains blocked. Product owner/agent may expand the PR with implementation after review.
 9. **Merge:** automatic merging of generated **architecture/governance** updates is **disabled**, regardless of separate approved R0/R1 implementation auto-merge policy. No release, package publication, DNS, secrets, network or production modifications follow from the PR.
 
@@ -50,7 +50,7 @@ Every product stores a **minimal** `governance-consumer.json` or equivalent mani
 
 - Repo allowlist fixed and versioned; no arbitrary `owner/repo` input from events.
 - Canonical SHA must be verified under `E7A-RU/.github`; read releases from trusted default branch only.
-- Writes restricted to `docs/governance-adoption.md`, `governance-consumer.json` and bot-owned migration report. Product README modification only if separately scoped/tested. Do not rewrite historical Standard v1 snapshots after archival.
+- **Default writes** limited to `docs/governance-adoption.md`, `governance-consumer.json` and bot-owned migration reports. **Optional controlled doc-sync scope** may additionally include `README.md`, `AGENTS.md`, `docs/README.md`, `docs/status.md`, reviewed architecture references, and product manifests; each path is explicitly enabled per module/repo and reviewed in a Draft PR. AGENTS, brand/legal/security claims and product readiness statuses are protected/high-review paths. Do not rewrite historical Standard v1 snapshots after archival.
 - PR labels/comments do **not** give production approval; privileged authorizations are independent and time-bound.
 - Concurrency lock per repo + governance revision; exponential backoff for API rate limits; durable job audit, reconciliation and observable fail modes.
 - Prompt injection prevention: PR descriptions, README content, changelogs and comments are **untrusted data**, never executable agent instructions.
@@ -81,6 +81,6 @@ gateway    : MANUAL_REVIEW (network and key policy)
 Status: PLAN_ONLY / NO_GITHUB_WRITES
 ```
 
-Cross references: [Roadmap](roadmap.md), [Product checklist](product-lifecycle-checklists.md), [standards change control](standards-and-change-control.md), [consumer register](repository-impact-matrix.md), [release descriptor](standards-release.json).
+Cross references: [E7A Automation charter](engineering-automation.md), [Roadmap](roadmap.md), [Product checklist](product-lifecycle-checklists.md), [standards change control](standards-and-change-control.md), [consumer register](repository-impact-matrix.md), [release descriptor](standards-release.json).
 
 **A released governance SHA is a decision baseline, not proof of consumer compliance, local tests or production uptime.**

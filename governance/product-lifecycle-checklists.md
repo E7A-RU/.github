@@ -85,7 +85,7 @@ A repo, a Draft PR, a green static scan, a package tag and a production health s
 ## Gate F — maintenance, updates and retirement
 
 - [ ] Health/incident coverage and degradation goals measured; vulnerability/patch management with per-consumer versioning.
-- [ ] Governance version updates trigger a **Draft PR proposal**, impact report and human review; no automatic product deployment.
+- [ ] Governance version and significant product catalogue changes trigger a **Draft PR proposal**, impact report and human review through the proposed [E7A Automation](engineering-automation.md); allowlisted product README/AGENTS/status/manifest edits may be proposed where needed. No silent direct main changes, automatic product merge or deployment.
 - [ ] User feedback, accessibility, privacy incidents, billing disputes and operational cost reviewed.
 - [ ] Each release requires repeatable testing and safe rollback; no silent whole-ecosystem package upgrade.
 - [ ] On retirement: export/delete domain data by retention requirements, revoke credentials/entitlements, remove endpoints and DNS through owner-authorized Infra plan; immutable audit retained only per legal/security policy.

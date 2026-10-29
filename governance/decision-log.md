@@ -118,3 +118,16 @@ Identity IdP/assurance/privacy, service auth, migration Bot login; Platform deli
 | 057 | Public organization profile `profile/README.md` is a governed consumer of product map and principles; update with material product/standard changes | OWNER-APPROVED DIRECTION; claims require current evidence and privacy review |
 
 Earlier decision IDs 051–053 retain historical MERGE-PENDING text. Governance PR #1 actually merged at `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`. This new decision set becomes part of the next reviewed organizational revision after merging its PR; the original `v1.0.0` descriptor still references the immutable earlier baseline until independently versioned.
+
+## Owner clarification — E7A Automation scope (2026-10-30)
+
+| ID | Decision | Status |
+| --- | --- | --- |
+| 058 | Rename the proposed private internal engineering automation repository from `E7A-RU/governance-sync` to **`E7A-RU/automation`**. The organization-owned GitHub App will be called **E7A Automation**; `governance-sync` becomes its **first module**, not its complete scope. | OWNER-DIRECTED CHANGE / NOT YET IMPLEMENTED. [Current charter](engineering-automation.md) |
+| 059 | Approved architecture direction: allowlist-based internal automation should prepare **Draft PRs** to update affected product-level README, AGENTS, governance pin, status, architecture references, manifests and catalog/profile documentation — with impact and exact-SHA checks and human review. No automatic main commits, auto-merges, production deployments or hosted Actions CI. | OWNER-DIRECTED CHANGE / AUTOMATION NOT CREATED OR ACTIVE |
+
+**Supersession:** Decision 056 described the *previous narrower working name* `governance-sync`. Decision 058 supersedes **its name and exclusive scope**; all prior security and separate-approval requirements still apply. Historical first proposal is archived at [archive/governance-sync-initial-proposal-2026-10-30.md](archive/governance-sync-initial-proposal-2026-10-30.md). This clarification takes effect as a released organizational standard only after the associated PR is owner-approved and merged, and (for consumer propagation) separately versioned in `standards-release.json`.
+
+### Engineering implementation evidence after decisions 058–059
+
+The private [E7A-RU/automation](https://github.com/E7A-RU/automation) repository now exists and has a bootstrap README in `main`. [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) proposes a dependency-free TypeScript, read-only, plan-only impact planner and unit/negative tests. Local test results are evidence only for the working copy; the implementation still needs exact-head verification and no GitHub App, write token, hosted timer, cross-repo PR write or production deployment exists. This is **implementation evidence**, not a new owner-authorized runtime stage.
