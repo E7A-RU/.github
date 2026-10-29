@@ -78,6 +78,12 @@
 | --- | --- | --- |
 | 050 | Games добавлено как самостоятельное направление / портфель потенциальных независимых игровых продуктов | OWNER-REQUESTED DIRECTION; жанры, аудитория, репозитории, монетизация, статус M1 — **OPEN**. [Games charter](games-product-direction.md); никаких созданных runtime/repo. |
 
+## Gateway — отдельный существующий продукт (2026-10-30)
+
+| ID | Решение | Статус |
+| --- | --- | --- |
+| 054 | E7A Gateway добавлен в продуктовую линейку как самостоятельный WireGuard control-plane продукт для семейных устройств на Butlerov; **не** общий API Gateway и не Infra | EXISTING REPO / DESIGN IN DRAFT PR / IMPLEMENTATION UNVERIFIED. [Границы и риски](gateway-product-direction.md). Запуск, миграция peers, изменение сетей и merge не разрешены. |
+
 ## Открытые ADR
 
 Website: **B2C приоритет согласован**, открыты выбор флагмана, каналов, маркетинговые сегменты, реальные кейсы, лидогенерация/CRM и privacy; Laboratory: open signup vs invite-only, кандидаты/HR data owner, staff roles, клиентский кабинет; Demo: публичная точка входа и первый безопасный сценарий, TTL/budget/anti-abuse, synthetic vs live integration. Эти решения **ещё не подтверждены** как реализованная маркетинговая стратегия или запущенный интерфейс.
