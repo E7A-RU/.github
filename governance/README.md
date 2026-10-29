@@ -15,6 +15,10 @@
 
 ## Документы
 
+- **[Эталонная backend-архитектура E7A: TypeScript + PostgreSQL-first](backend-reference-architecture.md)**
+- **[Три Product Kit: roadmap Browser-only / Full-stack / Service-Worker](kit-implementation-roadmaps.md)**
+- [GitHub App: стоимость, ресурсы и безопасный запуск](github-app-cost-and-resources.md)
+
 - **[Roadmap E7A — Governance → F0 → F1 → F2 → M1 и портфель продуктов](roadmap.md)**
 - **[Жизненный цикл нового продукта: обязательные checklist и evidence gates](product-lifecycle-checklists.md)**
 - [Шаблон Product Charter](templates/product-charter.md) · [шаблон Release Gate и evidence](templates/release-gate.md)
