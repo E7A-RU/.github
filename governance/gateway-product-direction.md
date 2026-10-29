@@ -23,11 +23,9 @@ Initial user need: provision/revoke family members' devices using official free 
 
 Gateway may initially keep locally owned identities/access mappings and migrate securely to E7A Identity later; this is a **bounded compatibility bridge**, not authorization to duplicate canonical Person records as a new organization-wide authority.
 
-## Existing topology described in Gateway draft — operationally unverified here
+## Operational topology confidentiality
 
-Gateway architecture notes claim Butlerov Debian 13; `wg-home` UDP/443 with MikroTik in `10.90.0.1/30`; `wg-exit` to existing VDS and policy routing table 100; special Mac test policy route via S-UI; nginx TCP/443 exposing pre-existing `/control/` S-UI. **Treat these as Gateway PR's operator-read diagnostic claims, not confirmed current production evidence in this governance review.**
-
-Critical invariant: **No changes** to existing `wg-home`, `wg-exit`, MikroTik PBR, VDS, s-ui routing, nginx or production firewall without a separate owner-approved rollout and tested rollback. UDP/443 and TCP/443 are different transports, but an available TCP endpoint is not evidence of mobile UDP reachability. Do not allocate arbitrary `10.91.0.0/24` peer space without interface address/route/NAT/return-path proof.
+The Gateway private Draft PR includes detailed network addresses, routes, host services and test exceptions. **Those operational details are intentionally not replicated in public organizational Governance.** Verify current state only from approved, access-controlled inventory before any change. Protect current tunnels, routing, firewall, LAN access and management interfaces; a published DNS name does not prove UDP reachability or authorization to expose a management panel.
 
 ## Implementation and safety requirements
 
