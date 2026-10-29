@@ -17,7 +17,7 @@
 
 - **[Эталонная backend-архитектура E7A: TypeScript + PostgreSQL-first](backend-reference-architecture.md)**
 - **[Три Product Kit: roadmap Browser-only / Full-stack / Service-Worker](kit-implementation-roadmaps.md)**
-- **[E7A Automation: универсальная внутренняя автоматизация и Draft PR во всех затронутых репозиториях](engineering-automation.md)** — `governance-sync` первый модуль
+- **[E7A Automation: универсальная внутренняя автоматизация и Draft PR во всех затронутых репозиториях](engineering-automation.md)** — `governance-sync` первый модуль; [пример отключённой конфигурации](../contracts/automation-modules.example.json)
 - [Изначальный узкий план Governance Sync — теперь архив](governance-sync-service.md)
 - [GitHub App: стоимость, ресурсы и безопасный запуск](github-app-cost-and-resources.md)
 
