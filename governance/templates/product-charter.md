@@ -24,9 +24,9 @@
 
 ## Engineering architecture
 
-- Kit: `Browser-only | Full-stack | Service/Worker`; version of optional Core Starter:
+- Kit: `Browser-only | Full-stack | Service/Worker`; [corresponding detailed implementation roadmap](../kit-implementation-roadmaps.md) chosen and accepted; version of optional Core Starter:
 - Core SDK package versions and lockfile policy:
-- Product-owned API, domain DB/retention, migration strategy:
+- Product-owned API, domain DB/retention, migration strategy; [PostgreSQL-first default](../backend-reference-architecture.md) for stateful backend and explicit exception ADR if deviating:
 - Auth model `Anonymous / Identity opt-in / Identity required for named user actions`:
 - Person vs Account vs SecurityActor and tenant/workspace scope:
 - External dependencies: Identity, Platform capabilities, Audit, Billing, external providers, all with version and failure mode:
