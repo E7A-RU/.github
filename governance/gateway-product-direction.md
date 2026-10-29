@@ -1,6 +1,6 @@
 # E7A Gateway — independent network-access product
 
-**Status: EXISTING PRIVATE REPOSITORY / DESIGN IN DRAFT PR / EXECUTABLE IMPLEMENTATION UNVERIFIED.** Source of evidence: [E7A-RU/gateway](https://github.com/E7A-RU/gateway), `main` at `906cb871cae355f04bce76a66cbcf01077e2e738`, [Gateway PR #1](https://github.com/E7A-RU/gateway/pull/1) head `6a13aae01dec8cb272766eac9f0e39125d042558` (reviewed 2026-10-30). These are read-only repository observations, **not verification of live Butlerov network state**.
+**Status: EXISTING PRIVATE REPOSITORY / DESIGN + MOCK IMPLEMENTED SOURCE IN DRAFT PR / TEST EXECUTION UNVERIFIED / NOT RUNNING.** Source of evidence: [E7A-RU/gateway](https://github.com/E7A-RU/gateway), `main` at `906cb871cae355f04bce76a66cbcf01077e2e738`, [Gateway PR #1](https://github.com/E7A-RU/gateway/pull/1) head `de6f494eb033402dd64dc20a310d42484af965bf` (reviewed 2026-10-30). The Gateway agent reports TypeScript contracts, in-memory mock provisioning and API adapter, and written negative/unit tests; typecheck, lint, unit tests and dependency audit are **NOT TESTED**. No real WireGuard helper, UI, durable DB or running Gateway is claimed. These are repository/agent-reported observations, **not verification of live Butlerov network state**.
 
 ## Product charter
 
