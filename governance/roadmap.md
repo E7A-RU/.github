@@ -39,6 +39,8 @@
 
 ### G0 — Governance adoption (сначала)
 
+- [ ] Спроектировать [Governance Sync](governance-sync-service.md) как отдельный приватный внутренний сервис; bootstrap repo, plan-only проверки, GitHub App и canary — разные gates, а не автоматический эффект merge.
+
 - [ ] Выпустить [реестр принятия стандарта](repository-impact-matrix.md) с точным baseline SHA, owner и статусами.
 - [ ] В каждом существующем consumer PR сослаться на approved revision; исторический Standard v1 оставить read-only archive.
 - [ ] Завершить отдельно проверяемые документальные PR; при diverged/head conflicts применять безопасную синхронизацию, не переписывая чужой runtime.
