@@ -2,6 +2,8 @@
 
 **Статус:** OWNER-APPROVED STRATEGY / PROPOSED DELIVERY PLAN (2026-10-30). Канонический baseline: [Governance at immutable SHA](https://github.com/E7A-RU/.github/tree/b39ed4aabf97e45edaa0762a29ab57c69f8bbafd/governance). Ниже перечислены **целевые критерии**, а не выполненные этапы, бюджет, обещания сроков или полномочия на production.
 
+**Практические шаблоны:** [Product Charter](templates/product-charter.md) → [checklists](product-lifecycle-checklists.md) → [Release Gate](templates/release-gate.md).
+
 ## Главные цели и инварианты
 
 - **B2C-first**, B2B автоматизация — самостоятельное второе коммерческое направление; Website развивается параллельно Foundation.
