@@ -1,17 +1,17 @@
 <div align="center">
 
-<img src="./assets/hero.svg" alt="E7A — engineering ecosystem with independent products" width="100%" />
+  <img src="./assets/hero.svg" alt="E7A — engineering ecosystem with independent products" width="100%" />
 
-# E7A
-
-### Проектируем, разрабатываем и развиваем полезные цифровые продукты
-
-**B2C-first · B2B automation · Engineering-first**
-
-Единая система инженерных принципов — самостоятельные продукты, понятные границы ответственности и релизы, которые можно проверить и безопасно откатить.
-
-[**Веб-сайт E7A**](https://e7a.ru) · [**Наши продукты ↓**](#продуктовая-линейка) · [**Governance**](https://github.com/E7A-RU/.github/tree/main/governance) · [**Roadmap**](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md)
-
+  <h1>E7A</h1>
+  <h3>Проектируем, разрабатываем и развиваем полезные цифровые продукты</h3>
+  <p><strong>B2C-first · B2B automation · Engineering-first</strong></p>
+  <p>Единая система инженерных принципов — самостоятельные продукты, понятные границы ответственности и релизы, которые можно проверить и безопасно откатить.</p>
+  <p>
+    <a href="https://e7a.ru">Веб-сайт E7A</a> ·
+    <a href="#продуктовая-линейка">Наши продукты</a> ·
+    <a href="https://github.com/E7A-RU/.github/tree/main/governance">Governance</a> ·
+    <a href="https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md">Roadmap</a>
+  </p>
 </div>
 
 ---
