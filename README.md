@@ -44,3 +44,7 @@ Do not store secrets, private links or deployment credentials here.
 ### Первый товарный знак E7A: утверждённая экономная стратегия
 
 [Одна комбинированная заявка E7AMark + E7A (класс 42)](legal/e7a-combined-mark-first-filing-strategy.md), после проверки сходства и фиксации окончательной композиции. Пошлины: 17 000 ₽ на первом этапе, 35 000 ₽ за полную успешную процедуру без дополнительных расходов. Это **не две отдельные регистрации слова и изображения**, заявка ещё не подана.
+
+## Организационная дорожная карта и запуск продуктов
+
+Принятый [Governance v1](governance/README.md), [Roadmap экосистемы](governance/roadmap.md) и [обязательные чеклисты жизненного цикла продукта](governance/product-lifecycle-checklists.md) определяют путь от идеи и Product Kit до QA, staging, owner-approved production и поддержки. [Предлагаемая self-hosted синхронизация стандартов](governance/standards-propagation.md) будет создавать только Draft PR в затронутых репозиториях после выпуска новой утверждённой версии; пока автоматизация не включена, GitHub-hosted Actions CI запрещён.

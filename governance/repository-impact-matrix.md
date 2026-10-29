@@ -13,8 +13,8 @@
 | [bot](https://github.com/E7A-RU/bot) | Bot domain logic, tenant ACL, messaging scenarios and owned persistence | own API/DB/workers; optional Core and external providers | No assumed migration to Platform; compatibility assessment |
 | [laboratory](https://github.com/E7A-RU/laboratory) | Product factory specs, runner evidence, approvals, Developer/Partner/Staff DX | Core Starter + future Identity optional by phase; Infra sandbox | Capability is conceptual until runtime evidence; create pinned standard consumer check proposal |
 | [infra](https://github.com/E7A-RU/infra) | Compute/network/TLS/secrets/storage provisioning and controlled deployment; not product business data | product manifests; owner approvals | Protect KS54/Lobachevsky; no changes outside separate Infra PR |
-| Identity (future repo not confirmed) | Person/org identities, assurance, SSO, access policies and own DB | Mature IdP + own Person/Claims/Policy, Infra runtime when built | APPROVED EARLY F1 SCOPE / implementation unverified; not mandatory to Reader |
-| Platform (future repo not confirmed) | Delivery, trusted Jobs, Connectors, Results and own operational metadata | scoped service identities; Infra runtime when built | APPROVED EARLY F1 SCOPE / implementation unverified; per-provider readiness separately gated |
+| [identity](https://github.com/E7A-RU/identity) (repository exists, empty at audit) | Person/org identities, assurance, SSO, access policies and own DB | Mature IdP + own Person/Claims/Policy, Infra runtime when built | APPROVED EARLY F1 SCOPE / implementation unverified; not mandatory to Reader |
+| [platform](https://github.com/E7A-RU/platform) (repository exists, empty at audit) | Delivery, trusted Jobs, Connectors, Results and own operational metadata | scoped service identities; Infra runtime when built | APPROVED EARLY F1 SCOPE / implementation unverified; per-provider readiness separately gated |
 | Central Audit (future repo not confirmed) | Central protected security/compliance event collector and schema; domain logs remain domain-owned | Infra, optional Identity actor context | APPROVED DIRECTION / NOT VERIFIED RUNNING |
 | Billing Foundation (future repo not confirmed) | Plan/price/order/subscription/entitlements/event authority | Reference to tenant/subject IDs, payment adapter only after compliance | APPROVED DIRECTION / NO LIVE PAYMENTS |
 | [gateway](https://github.com/E7A-RU/gateway) | Standalone WireGuard family/device access control plane and product-owned records on Butlerov | Existing WireGuard dataplane, Infra host/network safeguards; Core optional; Identity planned | README in main; Draft PR #1 adds documented TypeScript contracts, mock simulator/API adapter and written tests (IMPLEMENTED SOURCE; execution NOT TESTED); no live WireGuard helper/UI/DB or running Gateway. [Charter](gateway-product-direction.md) |
@@ -45,7 +45,7 @@
 | P1 | gateway | Review dedicated draft PR, confirm subnet/routing/secret boundary and rollback | Existing MikroTik/VDS/S-UI unaffected, no production apply without owner approval |
 | P2 | laboratory | Add governance compliance **proposal** and evidence schema without production permission | QA ≠ deploy; no Docker socket/secret exposure |
 | P0–P1 | identity / platform / audit / billing | Separate architecture and F1 implementation PRs after owner-approved foundation gates | No automatic production service, payment acceptance or data migration |
-| Future | planner | Product-discovery ADR | No premature runtime |
+| P2 | [planner](https://github.com/E7A-RU/planner) | Design PR #1 plus Core Starter in Draft; independent product approval | No unapproved MVP / production runtime |
 
 Cross-cutting Brand Policy: no third-party official E7A branding without written permission; factual reference exception stays intact. External integrations must never infer consent from SSO entitlements.
 
@@ -59,3 +59,22 @@ Cross-cutting Brand Policy: no third-party official E7A branding without written
 | Deployment | operator, distinct authorization, product artifact digest, target environment, rollback and health timestamps |
 
 Existing [contract examples](../contracts/standards-consumer.example.json) and [release evidence](../contracts/release-evidence.example.json) illustrate non-runtime shapes; neither is proof of a live registry.
+
+## Consumer adoption inventory — 2026-10-30
+
+The organizational standard became canonical at immutable commit `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd` by .github PR #1. **Working Draft documentation branches have been updated** with a local `governance-adoption.md` and a README link; historic local Standard v1 copies are labeled superseded. **This is implementation in Draft PR source, not merged consumer adoption.**
+
+| Consumer | Draft PR / adoption path | Known limitation |
+| --- | --- | --- |
+| [core](https://github.com/E7A-RU/core/pull/25) | `docs/governance-adoption.md` | Package release/adoption are independent |
+| [website](https://github.com/E7A-RU/website/pull/57) | `docs/governance-adoption.md` | Live Website and public demos are not certified by docs |
+| [reader](https://github.com/E7A-RU/reader/pull/7) | `docs/governance-adoption.md` | Browser-only anonymous behavior must remain valid |
+| [bot](https://github.com/E7A-RU/bot/pull/6) | `docs/governance-adoption.md` | Connector migration remains future controlled PR |
+| [planner](https://github.com/E7A-RU/planner/pull/1) | `docs/governance-adoption.md` | Design/Starter, no approved MVP |
+| [infra](https://github.com/E7A-RU/infra/pull/1) | `docs/architecture/governance-adoption.md` | No changes to Lobachevsky/Butlerov or runtime |
+| [laboratory](https://github.com/E7A-RU/laboratory/pull/1) | `docs/architecture/governance-adoption.md` | Product Factory scope replaces archived incubator concept |
+| [gateway](https://github.com/E7A-RU/gateway/pull/1) | `docs/governance-adoption.md` | Mock-only, tests and production not verified |
+| [identity](https://github.com/E7A-RU/identity) | Not yet adopted | Repository **exists but is empty**; requires separately approved initial bootstrap commit before normal PR workflow |
+| [platform](https://github.com/E7A-RU/platform) | Not yet adopted | Repository **exists but is empty**; same bootstrap restriction |
+
+Product direction Games is registered by Governance; **no Games repository is implied**. Each future consumer must pin approved standard SHA (or immutable published tag) in its own controlled PR and perform relevant exact-head documentation/implementation checks before merge. No CI, releases or production actions follow automatically from this inventory.

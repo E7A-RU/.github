@@ -1,0 +1,28 @@
+{
+  "schemaVersion": 1,
+  "releaseId": "e7a-governance-v1-initial",
+  "version": "1.0.0",
+  "status": "APPROVED_BASELINE",
+  "revision": "b39ed4aabf97e45edaa0762a29ab57c69f8bbafd",
+  "approvedBy": "E7A Owner",
+  "effectiveAt": "2026-10-29",
+  "changeClass": "INITIAL",
+  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/1",
+  "policyRoot": "governance/",
+  "brandPolicyPath": "BRAND_POLICY.md",
+  "impactedConsumers": [
+    "core",
+    "website",
+    "reader",
+    "bot",
+    "planner",
+    "infra",
+    "laboratory",
+    "gateway",
+    "identity",
+    "platform"
+  ],
+  "notes": "Initial accepted organizational standard. Adoption by each consumer is independent. This record does not enable a bot, publish packages, merge consumer PRs, or deploy services.",
+  "botAutoMerge": false,
+  "productionAutoDeploy": false
+}

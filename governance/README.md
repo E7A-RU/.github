@@ -1,6 +1,6 @@
 # E7A Governance — единый источник архитектурных решений
 
-**Status: approved conceptual baseline as of 2026-10-25; proposed in Draft PR, not yet merged into main.** Никаких сервисов, автоматических деплоев или глобального входа само наличие файлов не создаёт.
+**Status: owner-approved organizational/architectural Governance v1, merged in PR #1 on 2026-10-29** and pinned to `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`. Subsequent improvements require their own approved PR and release descriptor. Никаких сервисов, автоматических деплоев или глобального входа документы сами по себе не создают.
 
 ## Иерархия источников истины
 
@@ -8,12 +8,18 @@
 2. **E7A-RU/core** — исполняемые исходники версионированных SDK, UI, типизированных server contracts и текущего опционального Product Starter.
 3. **E7A-RU/laboratory** — реализация Wizard, QA, release evidence, approvals, реестр продуктовых потребителей стандартов.
 4. **E7A-RU/infra** — реализация декларативной инфраструктуры, серверов, runtime, мониторинга, резервного копирования и deployment.
-5. **Identity / Platform (планируемые самостоятельные продукты)** — свои модели, контракты, runtime и данные после отдельных ADR.
+5. **Identity / Platform (репозитории созданы, пока не имеют подтверждённого runtime)** — самостоятельные контракты и собственные данные после отдельных ADR. Central Audit и Billing Foundation также самостоятельные обязанности, их реализация не подтверждена.
 6. **Каждый продукт** — собственные схемы, процессы, бизнес-логика, доменные политики и релизные материалы.
 
 Общий стандарт определяет **что и зачем**, продуктовый репозиторий — **как реализовано у него**. Локальные документы дополняют, но не ослабляют организационные политики. При несовместимости обязательна запись о конфликте и отдельный ADR; не менять десятки README без контроля версии.
 
 ## Документы
+
+- **[Roadmap E7A — Governance → F0 → F1 → F2 → M1 и портфель продуктов](roadmap.md)**
+- **[Жизненный цикл нового продукта: обязательные checklist и evidence gates](product-lifecycle-checklists.md)**
+- [Шаблон Product Charter](templates/product-charter.md) · [шаблон Release Gate и evidence](templates/release-gate.md)
+- **[Автоматическое распространение утверждённых стандартов в Draft PR](standards-propagation.md)** — концепция self-hosted механизма, **не запущен**
+- **[Реестр опубликованной версии стандарта](standards-release.json)** — неизменяемый baseline SHA, не executable automation
 
 - **[Финальный архитектурный baseline: восемь заключительных решений и устранение противоречий](final-architecture-baseline-2026-10-27.md)**
 - **[Решения владельца: раунды 1–10, 2026-10-27 — актуальный архитектурный baseline](owner-decisions-2026-10-27.md)**
@@ -57,7 +63,7 @@
 
 **Правило достоверности:** помечать отдельно APPROVED-CONCEPT, PROPOSED, IMPLEMENTED-SOURCE, VERIFIED-TEST и RUNNING-VERIFIED. PR, README, npm manifest, образ контейнера или готовый CLI сами по себе не являются доказательством production runtime.
 
-**Связанные Draft:** [Core #25](https://github.com/E7A-RU/core/pull/25), [Website #57](https://github.com/E7A-RU/website/pull/57), [Reader #7](https://github.com/E7A-RU/reader/pull/7), [Bot #6](https://github.com/E7A-RU/bot/pull/6), [Infra #1](https://github.com/E7A-RU/infra/pull/1), [Laboratory #1](https://github.com/E7A-RU/laboratory/pull/1), [.github #1](https://github.com/E7A-RU/.github/pull/1). Draft ≠ принято в main. Документацию синхронизировать через контролируемые PR, не автосливать.
+**Исторический перечень Draft на момент первоначального аудита (PR #1 уже объединён):** [Core #25](https://github.com/E7A-RU/core/pull/25), [Website #57](https://github.com/E7A-RU/website/pull/57), [Reader #7](https://github.com/E7A-RU/reader/pull/7), [Bot #6](https://github.com/E7A-RU/bot/pull/6), [Infra #1](https://github.com/E7A-RU/infra/pull/1), [Laboratory #1](https://github.com/E7A-RU/laboratory/pull/1), [.github #1](https://github.com/E7A-RU/.github/pull/1). Draft ≠ принято в main. Документацию синхронизировать через контролируемые PR, не автосливать.
 
 ## Смысл утверждения Governance v1
 
