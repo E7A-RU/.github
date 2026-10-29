@@ -106,6 +106,8 @@
 
 **Исключения:** empty `identity`/`platform` repos require bootstrap before Draft PR; product-independent activities cannot be allowed to expand scope into production Infra or shared messaging Platform without another ADR.
 
+**Машинно-читаемый макет:** [contracts/automation-modules.example.json](../contracts/automation-modules.example.json) содержит отключённые по умолчанию модули, file/repository allowlists, запрет auto-merge и требования к canary. **Это JSON-пример, а не действующая конфигурация.**
+
 See [standards propagation](standards-propagation.md), [GitHub App cost/resources](github-app-cost-and-resources.md), [Repository Impact Matrix](repository-impact-matrix.md), [release descriptor](standards-release.json), [Product Lifecycle](product-lifecycle-checklists.md).
 
 **Conclusion:** E7A Automation may manage multiple tightly scoped engineering workflows, starting with Governance Sync. All cross-repo updates produce **reviewable Draft PRs**, never unilateral changes to main.
