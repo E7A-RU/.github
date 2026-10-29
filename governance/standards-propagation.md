@@ -1,6 +1,8 @@
 # Controlled Governance propagation — автоматические Draft PR в продуктах
 
-**Status: PROPOSED AUTOMATION / NOT DEPLOYED OR SCHEDULED.** This is the approved organizational intent made executable only after a separately authorized Infra/Laboratory deployment. It must **not** use GitHub-hosted Actions CI, auto-merge, auto-deploy, or mutate a product's business code without product-owner review.
+**Status: OWNER-APPROVED DIRECTION / SOFTWARE NOT CREATED, DEPLOYED OR SCHEDULED.** This is the approved organizational intent made executable only after a separately authorized Infra/Laboratory deployment. It must **not** use GitHub-hosted Actions CI, auto-merge, auto-deploy, or mutate a product's business code without product-owner review.
+
+**Отдельный репозиторий и полный процесс:** [Governance Sync Service Charter](governance-sync-service.md). Репозиторий `E7A-RU/governance-sync` — планируемое имя, но **ещё не создан**; регистрация private GitHub App является отдельным действием владельца.
 
 ## Цель
 
