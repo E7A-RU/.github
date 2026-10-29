@@ -16,6 +16,7 @@
 | Reader | Локальные файлы и RSVP, browser state | Обязательная общая БД/логин, загрузки книг по умолчанию |
 | Central Audit (foundation) | Единый формат и защищённый приём/хранение разрешённых audit events | Исходные бизнес-логи продуктов и общий архив всех личных данных |
 | Billing (foundation) | Тарифы, обязательства, subscription/order/payment references и reconciliation contracts | Identity аутентификация, универсальные продуктовые БД, готовый процессинг до юридической готовности |
+| Gateway (existing repo, design in Draft PR) | Управляющий продукт для семейных WireGuard users/devices/peers и их lifecycle на Butlerov | Общая API Gateway всей E7A, криптографический VPN dataplane, производственный root-доступ без Infra approval |
 | Games (направление; отдельные игры — продукты после charter) | Игровые сценарии, контент/сохранения, gameplay, прогресс и отдельные релизы будущих игр | Core/Platform как обязательный игровой движок, общая БД всех игр, автоматически созданный сервис |
 | Planner | Будущие планы/задачи/собственный API по необходимости | Хранение задач внутри Identity |
 | Mailbox product (если появится) | Почтовые ящики и пользовательские письма, права, retention, SLA | Просто SMTP adapter в СГДС |
