@@ -2,9 +2,9 @@
 
 **Статус:** согласованная целевая governance-модель; автоматический compliance crawler/PR bot ещё не реализованы. [Final baseline](final-architecture-baseline-2026-10-27.md) утверждает будущий risk-gated R0/R1 auto-merge при самостоятельном owner-approved внедрении, но **не** auto-deploy. Исторический процесс Draft PR ниже описывает безопасный стартовый режим, пока auto-merge отсутствует.
 
-**Актуальный механизм версий:** [approved release descriptor](standards-release.json), [self-hosted consumer Draft PR propagation proposal](standards-propagation.md) и [product acceptance checklist](product-lifecycle-checklists.md). Автоматическое распространение **не активировано** и не должно выполнять GitHub-hosted Actions, merge или deployment.
+**Актуальный механизм версий:** [approved release descriptor](standards-release.json), [E7A Automation](engineering-automation.md), [self-hosted consumer Draft PR propagation proposal](standards-propagation.md) и [product acceptance checklist](product-lifecycle-checklists.md). Автоматическое распространение **не активировано** и не должно выполнять GitHub-hosted Actions, merge или deployment.
 
-**Публичный профиль организации:** изменения продуктового реестра, утверждённых принципов или roadmap должны включать review файла `profile/README.md` в `.github` в том же Governance PR. Публичные заявления о стадии продукта подтверждаются отдельными доказательствами; приватные адреса, конфигурации и доступы на этой странице не публикуются.
+**Публичный профиль организации:** изменения продуктового реестра, утверждённых принципов или roadmap должны включать review файла `profile/README.md` в `.github` в том же Governance PR. Сервис E7A Automation сможет сгенерировать этот diff вместе с PR в затронутых потребителях, но не объединяет PR и не меняет main самостоятельно. Публичные заявления о стадии продукта подтверждаются отдельными доказательствами; приватные адреса, конфигурации и доступы на этой странице не публикуются.
 
 ## Единственный нормативный источник
 
