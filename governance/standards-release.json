@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "releaseId": "e7a-governance-v1-initial",
-  "version": "1.0.0",
+  "releaseId": "e7a-governance-v1.1.0",
+  "version": "1.1.0",
   "status": "APPROVED_BASELINE",
-  "revision": "b39ed4aabf97e45edaa0762a29ab57c69f8bbafd",
+  "revision": "c74bce10bc9eac6bb2e604a7db6b14d33b7c7645",
   "approvedBy": "E7A Owner",
-  "effectiveAt": "2026-10-29",
-  "changeClass": "INITIAL",
-  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/1",
+  "effectiveAt": "2026-10-30",
+  "changeClass": "MINOR",
+  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/4",
   "policyRoot": "governance/",
   "brandPolicyPath": "BRAND_POLICY.md",
   "impactedConsumers": [
@@ -22,7 +22,7 @@
     "identity",
     "platform"
   ],
-  "notes": "Initial accepted organizational standard. Adoption by each consumer is independent. This record does not enable a bot, publish packages, merge consumer PRs, or deploy services.",
+  "notes": "Owner-approved recommended PostgreSQL-first backend architecture, separate three-Kit implementation roadmaps, updated GitHub organization profile and proposed private governance-sync App/repo. Scope may be NO_IMPACT in specific consumers after review. Sync App is not created or activated; consumer adaptations remain independent Draft PRs. Initial v1.0.0 remains in Git history.",
   "botAutoMerge": false,
   "productionAutoDeploy": false
 }
