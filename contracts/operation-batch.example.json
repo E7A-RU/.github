@@ -1,0 +1,80 @@
+{
+  "_comment": "ILLUSTRATIVE contract only; no E7A API implements this request yet. Identifiers and recipients are synthetic.",
+  "schemaVersion": "e7a.integrations.operation-batch/v0-proposal",
+  "batchId": "batch_example_4521",
+  "initiator": {
+    "subjectId": "e7a_person_example",
+    "application": "planner",
+    "tenantId": "tenant_example"
+  },
+  "subscriptions": [
+    {
+      "subjectId": "e7a_person_example",
+      "scope": "operations:read:own",
+      "delivery": "signed-webhook-or-poll"
+    }
+  ],
+  "requestedActions": [
+    {
+      "clientOperationId": "send-max-file",
+      "connector": "max",
+      "capability": "file.send",
+      "credentialRef": "vault-ref-example-max",
+      "recipientRef": "contact_petr_alias",
+      "mediaRef": "product-owned-object-ref",
+      "idempotencyKey": "max-file-example-v1"
+    },
+    {
+      "clientOperationId": "send-telegram-text",
+      "connector": "telegram",
+      "capability": "message.send",
+      "credentialRef": "vault-ref-example-telegram",
+      "recipientRef": "contact_vasiliy_alias",
+      "body": {
+        "text": "Пример сообщения"
+      },
+      "idempotencyKey": "tg-text-example-v1"
+    },
+    {
+      "clientOperationId": "publish-instagram-article",
+      "connector": "instagram",
+      "capability": "post.publish",
+      "credentialRef": "vault-ref-example-instagram",
+      "targetRef": "approved-business-account",
+      "contentRef": "product-owned-publication-draft",
+      "requiresCapabilityPreflight": true,
+      "idempotencyKey": "ig-article-example-v1"
+    }
+  ],
+  "immediateResponse": {
+    "status": "ACCEPTED",
+    "note": "Only durable acceptance; not proof of provider delivery or publication",
+    "operationIds": [
+      "op_max_1",
+      "op_tg_1",
+      "op_ig_1"
+    ]
+  },
+  "exampleFinalResult": {
+    "overall": "PARTIALLY_SUCCEEDED",
+    "operations": [
+      {
+        "operationId": "op_max_1",
+        "status": "DELIVERED",
+        "evidence": "provider-acceptance-only"
+      },
+      {
+        "operationId": "op_tg_1",
+        "status": "DELIVERED",
+        "evidence": "provider-acceptance-only"
+      },
+      {
+        "operationId": "op_ig_1",
+        "status": "FAILED",
+        "reasonCode": "CONNECTOR_PERMISSION_DENIED",
+        "providerPostId": null
+      }
+    ],
+    "fanout": "Only subscribers with scope and tenant access may see authorized result fields"
+  }
+}

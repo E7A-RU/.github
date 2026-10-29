@@ -1,0 +1,38 @@
+# ИЛЛЮСТРАЦИЯ. Не готовый provisioning API и не команда apply.
+schemaVersion: "e7a.product/v0-proposal"
+product:
+  id: analytics
+  repository: E7A-RU/analytics
+  hostname: analytics.e7a.ru # пример, DNS не настроен
+  ownerTeam: example-product-team
+architecture:
+  kit: full-stack # browser-only | full-stack | service-worker
+  coreStarterVersion: proposed # конкретная immutable версия утверждается отдельно
+  standard:
+    repository: E7A-RU/.github
+    revision: replace-with-approved-governance-commit-sha
+runtime:
+  api:
+    imageDigest: replace-with-reviewed-immutable-digest
+    readinessPath: /health
+  resources:
+    cpus: 1
+    memory: 512Mi
+  desiredEnvironment: staging # prod только по отдельному approval
+dependencies:
+  identity:
+    mode: registered-subjects # anonymous / registered-subjects
+    audience: analytics
+  platform:
+    capabilities: [delivery]
+  database:
+    postgres: true
+    ownership: product # db/schema/roles принадлежат analytics
+  workers:
+    kind: none # none | product-owned | platform-jobs
+operations:
+  exposure: reverse-proxy-only
+  backup: required-for-durable-data
+  monitoring: required
+  releaseApproval: human-required
+  productionAutoApply: false
