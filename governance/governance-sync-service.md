@@ -1,6 +1,6 @@
 # Governance Sync — историческое имя первого модуля E7A Automation
 
-**Статус:** прежнее название отдельного репозитория и сервиса **заменено**. Текущее целевое имя приватного репозитория — **`E7A-RU/automation`**, GitHub App — **`E7A Automation`**. Ни репозиторий, ни App не созданы; runtime не запущен.
+**Статус:** прежнее название отдельного репозитория и сервиса **заменено**. Текущее целевое имя приватного репозитория — **`E7A-RU/automation`**, GitHub App — **`E7A Automation`**. Репозиторий [E7A-RU/automation](https://github.com/E7A-RU/automation) создан, [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) предлагает plan-only код; App не зарегистрирована, runtime не запущен.
 
 **Актуальная архитектура:** [E7A Automation](engineering-automation.md).
 
