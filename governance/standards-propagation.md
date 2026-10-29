@@ -28,6 +28,8 @@ Maintain the consumer register in [Impact Matrix](repository-impact-matrix.md) a
 
 Every product stores a **minimal** `governance-consumer.json` or equivalent manifest referencing `standard.revision`, contract version, kit, exceptions and local implementation owner. This is a pointer; full organizational standards are never copied into consumer repositories. The current `docs/governance-adoption.md` in consumer Draft PRs is a transition bridge, not proof that all consumers have merged the pin.
 
+Оценка минимальных расходов, прав GitHub App, вариантов poller/webhook и первоначальных resource limits: [GitHub App cost and resources](github-app-cost-and-resources.md). Регистрация/установка App и выпуск токенов **не являются выполненными действиями**.
+
 ## Self-hosted bot lifecycle (not active now)
 
 1. **Trigger:** explicit owner-approved `standards-release.json` change in organizational `main`. A small self-hosted scheduled poller (e.g. systemd timer on an approved isolated E7A node), or verified webhook to an owned receiver, may notice the change. **Do not use GitHub Actions for this.**
