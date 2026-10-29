@@ -20,6 +20,8 @@ Versioning policy:
 
 Use the **full SHA**, not `main` or a mutable branch, for the consumer pin. A Git tag is optional only when protected and verified immutable.
 
+**Public profile is an explicit consumer of Governance:** a change to product roster, Foundation boundaries, branding or release posture must include a same-PR review/update of `profile/README.md` in `.github`. Do not wait for a separate product sync bot; ensure public status claims have evidence. GitHub shows `profile/README.md` as the organization homepage. Public profile changes never expose private network inventory or secrets.
+
 ## Source-of-truth consumer manifest
 
 Maintain the consumer register in [Impact Matrix](repository-impact-matrix.md) and a separately reviewed machine-readable consumer manifest when the bot is deployed. Typical repos:
