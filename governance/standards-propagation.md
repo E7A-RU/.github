@@ -2,7 +2,7 @@
 
 **Status: OWNER-APPROVED DIRECTION / SOFTWARE NOT CREATED, DEPLOYED OR SCHEDULED.** This is the approved organizational intent made executable only after a separately authorized Infra/Laboratory deployment. It must **not** use GitHub-hosted Actions CI, auto-merge, auto-deploy, or mutate a product's business code without product-owner review.
 
-**Новое решение о масштабе:** [E7A Automation](engineering-automation.md) — проектируемый отдельный приватный `E7A-RU/automation`; `governance-sync` — **первый модуль**, а не имя репозитория. Репозиторий и GitHub App пока **не созданы**, регистрация и активация требуют отдельного approval.
+**Новое решение о масштабе:** [E7A Automation](engineering-automation.md) — проектируемый отдельный приватный `E7A-RU/automation`; `governance-sync` — **первый модуль**, а не имя репозитория. Репозиторий [создан](https://github.com/E7A-RU/automation), но **GitHub App пока не зарегистрирована**, токены не выдавались и runtime не запущен, регистрация и активация требуют отдельного approval.
 
 ## Цель
 
