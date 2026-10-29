@@ -17,6 +17,7 @@
 
 - **[Roadmap E7A — Governance → F0 → F1 → F2 → M1 и портфель продуктов](roadmap.md)**
 - **[Жизненный цикл нового продукта: обязательные checklist и evidence gates](product-lifecycle-checklists.md)**
+- [Шаблон Product Charter](templates/product-charter.md) · [шаблон Release Gate и evidence](templates/release-gate.md)
 - **[Автоматическое распространение утверждённых стандартов в Draft PR](standards-propagation.md)** — концепция self-hosted механизма, **не запущен**
 - **[Реестр опубликованной версии стандарта](standards-release.json)** — неизменяемый baseline SHA, не executable automation
 
