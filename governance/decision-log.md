@@ -108,3 +108,13 @@ Identity IdP/assurance/privacy, service auth, migration Bot login; Platform deli
 | 052 | Жёстко закрепляются архитектурные и security-инварианты, техническая реализация остаётся изменяемой через ADR | OWNER-APPROVED / MERGE-PENDING |
 | 053 | Founder / Owner E7A лично отвечает за дальнейшее развитие и утверждение обязательных стандартов | OWNER-APPROVED / MERGE-PENDING |
 
+
+## Owner decisions — Backend, organization profile and Governance Sync (2026-10-30)
+
+| ID | Decision | Status |
+| --- | --- | --- |
+| 055 | **PostgreSQL-first** is the recommended default for stateful Full-stack and Service/Worker products, using dedicated product database/roles, explicit SQL migrations and transactional boundaries. Browser-only does not require DB. TypeScript-first with documented ADR exceptions. [Backend reference](backend-reference-architecture.md) | OWNER-APPROVED RECOMMENDATION; not a running backend or forced retroactive migration |
+| 056 | Own **private E7A Governance Sync service and proposed dedicated repository `E7A-RU/governance-sync`**, separate from Core/Laboratory/Infra/Platform. Private organization-owned GitHub App, restricted repos, plan-only → reviewed canary → Draft PR automation. No hosted Actions CI, auto-merge or prod deployment. [Implementation charter](governance-sync-service.md) | OWNER-APPROVED DIRECTION / REPOSITORY & APP NOT CREATED; write scopes and host deployment need separate authorization |
+| 057 | Public organization profile `profile/README.md` is a governed consumer of product map and principles; update with material product/standard changes | OWNER-APPROVED DIRECTION; claims require current evidence and privacy review |
+
+Earlier decision IDs 051–053 retain historical MERGE-PENDING text. Governance PR #1 actually merged at `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`. This new decision set becomes part of the next reviewed organizational revision after merging its PR; the original `v1.0.0` descriptor still references the immutable earlier baseline until independently versioned.

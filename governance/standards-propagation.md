@@ -1,6 +1,8 @@
 # Controlled Governance propagation — автоматические Draft PR в продуктах
 
-**Status: PROPOSED AUTOMATION / NOT DEPLOYED OR SCHEDULED.** This is the approved organizational intent made executable only after a separately authorized Infra/Laboratory deployment. It must **not** use GitHub-hosted Actions CI, auto-merge, auto-deploy, or mutate a product's business code without product-owner review.
+**Status: OWNER-APPROVED DIRECTION / SOFTWARE NOT CREATED, DEPLOYED OR SCHEDULED.** This is the approved organizational intent made executable only after a separately authorized Infra/Laboratory deployment. It must **not** use GitHub-hosted Actions CI, auto-merge, auto-deploy, or mutate a product's business code without product-owner review.
+
+**Отдельный репозиторий и полный процесс:** [Governance Sync Service Charter](governance-sync-service.md). Репозиторий `E7A-RU/governance-sync` — планируемое имя, но **ещё не создан**; регистрация private GitHub App является отдельным действием владельца.
 
 ## Цель
 
@@ -20,6 +22,8 @@ Versioning policy:
 
 Use the **full SHA**, not `main` or a mutable branch, for the consumer pin. A Git tag is optional only when protected and verified immutable.
 
+**Public profile is an explicit consumer of Governance:** a change to product roster, Foundation boundaries, branding or release posture must include a same-PR review/update of `profile/README.md` in `.github`. Do not wait for a separate product sync bot; ensure public status claims have evidence. GitHub shows `profile/README.md` as the organization homepage. Public profile changes never expose private network inventory or secrets.
+
 ## Source-of-truth consumer manifest
 
 Maintain the consumer register in [Impact Matrix](repository-impact-matrix.md) and a separately reviewed machine-readable consumer manifest when the bot is deployed. Typical repos:
@@ -27,6 +31,8 @@ Maintain the consumer register in [Impact Matrix](repository-impact-matrix.md) a
 `core`, `website`, `reader`, `bot`, `planner`, `infra`, `laboratory`, `gateway`, then `identity` and `platform` after their empty-repo bootstrap.
 
 Every product stores a **minimal** `governance-consumer.json` or equivalent manifest referencing `standard.revision`, contract version, kit, exceptions and local implementation owner. This is a pointer; full organizational standards are never copied into consumer repositories. The current `docs/governance-adoption.md` in consumer Draft PRs is a transition bridge, not proof that all consumers have merged the pin.
+
+Оценка минимальных расходов, прав GitHub App, вариантов poller/webhook и первоначальных resource limits: [GitHub App cost and resources](github-app-cost-and-resources.md). Регистрация/установка App и выпуск токенов **не являются выполненными действиями**.
 
 ## Self-hosted bot lifecycle (not active now)
 

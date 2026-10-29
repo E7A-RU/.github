@@ -4,6 +4,8 @@
 
 **Актуальный механизм версий:** [approved release descriptor](standards-release.json), [self-hosted consumer Draft PR propagation proposal](standards-propagation.md) и [product acceptance checklist](product-lifecycle-checklists.md). Автоматическое распространение **не активировано** и не должно выполнять GitHub-hosted Actions, merge или deployment.
 
+**Публичный профиль организации:** изменения продуктового реестра, утверждённых принципов или roadmap должны включать review файла `profile/README.md` в `.github` в том же Governance PR. Публичные заявления о стадии продукта подтверждаются отдельными доказательствами; приватные адреса, конфигурации и доступы на этой странице не публикуются.
+
 ## Единственный нормативный источник
 
 - E7A-RU/.github/governance — канонические организационные требования; BRAND_POLICY.md — самостоятельная публичная политика.

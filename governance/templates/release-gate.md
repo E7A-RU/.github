@@ -2,6 +2,8 @@
 
 > **TEMPLATE / NOT A DEPLOYMENT AUTHORIZATION.** Use together with [Product Lifecycle checklists](../product-lifecycle-checklists.md), [Infra](../infra-operations.md), [approved Governance](../README.md). This document is product-local evidence, not the canonical authorization record by itself.
 
+See also the [applicable Kit roadmap](../kit-implementation-roadmaps.md) and [backend DB/security acceptance](../backend-reference-architecture.md) when stateful. A browser-only app is **not** required to invent a database/worker.
+
 ## Product and immutable release
 
 - Product/repository: `<id and owner/repo>`

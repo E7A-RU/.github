@@ -48,3 +48,5 @@ Do not store secrets, private links or deployment credentials here.
 ## Организационная дорожная карта и запуск продуктов
 
 Принятый [Governance v1](governance/README.md), [Roadmap экосистемы](governance/roadmap.md) и [обязательные чеклисты жизненного цикла продукта](governance/product-lifecycle-checklists.md) определяют путь от идеи и Product Kit до QA, staging, owner-approved production и поддержки. [Предлагаемая self-hosted синхронизация стандартов](governance/standards-propagation.md) будет создавать только Draft PR в затронутых репозиториях после выпуска новой утверждённой версии; пока автоматизация не включена, GitHub-hosted Actions CI запрещён.
+
+**Технические стандарты:** [Backend: TypeScript/PostgreSQL-first](governance/backend-reference-architecture.md) · [три Product Kit и отдельные пошаговые roadmap](governance/kit-implementation-roadmaps.md) · [GitHub App: ресурсы и стоимость](governance/github-app-cost-and-resources.md) · [публичный профиль организации](profile/README.md).
