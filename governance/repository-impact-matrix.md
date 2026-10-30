@@ -1,6 +1,6 @@
 # Repository Impact Matrix and dependency register
 
-**Status: PROPOSED migration plan, no consumer repo mutation.** Important: historical queue below is superseded in sequencing by [final owner baseline](final-architecture-baseline-2026-10-27.md): Identity, Platform, Audit and bounded Billing enter F1; operational status remains unverified. Canonical source is [governance](README.md); all consumers adopt a **released immutable commit SHA/tag**, not this Draft branch's moving head.
+**Status: current-source adoption register plus historical migration plan; documentation merges observed, runtime acceptance separate.** Important: historical queue below is superseded in sequencing by [final owner baseline](final-architecture-baseline-2026-10-27.md): Identity, Platform, Audit and bounded Billing enter F1; operational status remains unverified. Canonical source is [governance](README.md); consumers pin the **released immutable Governance v1.1.0 revision** `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`, not a moving branch. More recent organizational documentation changes do not silently create a new version.
 
 **Internal automation repo CREATED / RUNTIME NOT VERIFIED:** [E7A-RU/automation](https://github.com/E7A-RU/automation) — private extensible self-hosted engineering automation service. First module: `governance-sync`, proposing scoped Draft PRs after approved Governance revisions. Later modules may propose product catalogue, `.github` public profile, README/AGENTS/status docs, safe compliance/release evidence changes. [Charter](engineering-automation.md). Not a customer product or running service: main contains README only, [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) proposes plan-only source. GitHub App not registered or installed.
 
@@ -8,7 +8,7 @@
 
 | Component / repo | Responsibility and data ownership | Dependencies | Verified disposition / next action |
 | --- | --- | --- | --- |
-| [.github](https://github.com/E7A-RU/.github) | Governance, brand policy, architecture decisions; no runtime data | none | Documentation exists in Draft PR #1; approval and immutable revision pending |
+| [.github](https://github.com/E7A-RU/.github) | Governance, brand policy, architecture decisions; no runtime data | none | Governance v1.1.0 approved and released via [descriptor](standards-release.json); public profile updated in merged PR #7; no deployed runtime |
 | [core](https://github.com/E7A-RU/core) | `@e7a-ru/ui`, `@e7a-ru/server`, types, optional Starter; **no** Identity DB | Published package dependencies for consumers, not shared runtime | Source/docs exist; each release must be verified separately |
 | [website](https://github.com/E7A-RU/website) | Public marketing, catalog, demo entry and lead intake; its own records if any | optional Core UI, own hosting | Consumer governance-pin proposal; verify production separately |
 | [reader](https://github.com/E7A-RU/reader) | Browser local-first reading/user files; no mandatory server DB | optional Core UI; browser runtime | Keep anonymous offline/local behavior; acceptance test |
@@ -62,21 +62,32 @@ Cross-cutting Brand Policy: no third-party official E7A branding without written
 
 Existing [contract examples](../contracts/standards-consumer.example.json) and [release evidence](../contracts/release-evidence.example.json) illustrate non-runtime shapes; neither is proof of a live registry.
 
-## Consumer adoption inventory — 2026-10-30
+## Governance consumer adoption — verified GitHub PR outcomes (2026-10-30)
 
-The organizational standard became canonical at immutable commit `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd` by .github PR #1. **Working Draft documentation branches have been updated** with a local `governance-adoption.md` and a README link; historic local Standard v1 copies are labeled superseded. **This is implementation in Draft PR source, not merged consumer adoption.**
+**Release target:** `Governance 1.1.0` at full immutable normative SHA `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645` ([release descriptor](standards-release.json)). The original v1.0.0 baseline remains history. **DOCUMENTATION SOURCE MERGED is not TESTED, RUNNING or production-compliant.** Each merged consumer contains `governance-consumer.json`, exact revision pin, product-specific `governance-adoption.md` and an updated README; future E7A Automation can use these as a **read-only pointer**, not proof of effective controls.
 
-| Consumer | Draft PR / adoption path | Known limitation |
+| Consumer | Status / exact merged GitHub PR | Scope and next gate |
 | --- | --- | --- |
-| [core](https://github.com/E7A-RU/core/pull/25) | `docs/governance-adoption.md` | Package release/adoption are independent |
-| [website](https://github.com/E7A-RU/website/pull/57) | `docs/governance-adoption.md` | Live Website and public demos are not certified by docs |
-| [reader](https://github.com/E7A-RU/reader/pull/7) | `docs/governance-adoption.md` | Browser-only anonymous behavior must remain valid |
-| [bot](https://github.com/E7A-RU/bot/pull/6) | `docs/governance-adoption.md` | Connector migration remains future controlled PR |
-| [planner](https://github.com/E7A-RU/planner/pull/1) | `docs/governance-adoption.md` | Design/Starter, no approved MVP |
-| [infra](https://github.com/E7A-RU/infra/pull/1) | `docs/architecture/governance-adoption.md` | No changes to Lobachevsky/Butlerov or runtime |
-| [laboratory](https://github.com/E7A-RU/laboratory/pull/1) | `docs/architecture/governance-adoption.md` | Product Factory scope replaces archived incubator concept |
-| [gateway](https://github.com/E7A-RU/gateway/pull/1) | `docs/governance-adoption.md` | Mock-only, tests and production not verified |
-| [identity](https://github.com/E7A-RU/identity) | Not yet adopted | Repository **exists but is empty**; requires separately approved initial bootstrap commit before normal PR workflow |
-| [platform](https://github.com/E7A-RU/platform) | Not yet adopted | Repository **exists but is empty**; same bootstrap restriction |
+| [core](https://github.com/E7A-RU/core) | **MERGED** [PR #25](https://github.com/E7A-RU/core/pull/25), squash `7b754eec7f1a48a4105cfe4db098d642758a3c36` | Shared SDK/Starter and package docs, local docs-validator source; no automatic package publishing or consumer deploy |
+| [reader](https://github.com/E7A-RU/reader) | **MERGED** [PR #7](https://github.com/E7A-RU/reader/pull/7), squash `cb25fd14f7d2c48482304915664083efff003975` | Browser-only privacy preserved, Dependabot PR proposals only; no automatic UI adoption |
+| [bot](https://github.com/E7A-RU/bot) | **MERGED** [PR #6](https://github.com/E7A-RU/bot/pull/6), squash `b936be0173fd37275d7577de278c3a6dc3b84628` | Bot owns current API/DB/worker; Platform connector extraction requires parity, QA and separate PR |
+| [infra](https://github.com/E7A-RU/infra) | **MERGED** [PR #1](https://github.com/E7A-RU/infra/pull/1), squash `a102e5bdecaa65debe7250721e8d93afb9c4564b` | Architecture/recovery charter; no infrastructure provisioning or host mutations |
+| [laboratory](https://github.com/E7A-RU/laboratory) | **MERGED** [PR #1](https://github.com/E7A-RU/laboratory/pull/1), squash `973db5f9dbc600004a3af34a13f6ec85b82b5832` | Product Factory documentation and archived concept; no Wizard/QA runtime activated |
+| [website](https://github.com/E7A-RU/website) | **DRAFT — Git-mergeable but operations gate pending** [PR #57](https://github.com/E7A-RU/website/pull/57) | Documentation reconciled with latest `main`, 0 commits behind, no deploy script change; **verify on Lobachevsky that historical reset-first cron remains paused** before merge |
+| [planner](https://github.com/E7A-RU/planner) | **DRAFT** [PR #1](https://github.com/E7A-RU/planner/pull/1) | Design + executable Starter together; product MVP scope still awaits owner approval and exact-head QA |
+| [gateway](https://github.com/E7A-RU/gateway) | **DRAFT** [PR #1](https://github.com/E7A-RU/gateway/pull/1) | PostgreSQL/TypeScript source, no verified helper/runtime/security/DB integration; preserve Butlerov/WireGuard/S-UI |
+| [automation](https://github.com/E7A-RU/automation) | **DRAFT** [PR #1](https://github.com/E7A-RU/automation/pull/1) | PLAN_ONLY source; TypeScript devDependency/exact-head tests and GitHub App permissions not yet accepted; no write tokens |
+| [identity](https://github.com/E7A-RU/identity) | **NOT ADOPTED (empty at last inventory)** | Initial owner-approved bootstrap needed before normal PR flow |
+| [platform](https://github.com/E7A-RU/platform) | **NOT ADOPTED (empty at last inventory)** | Initial owner-approved bootstrap needed before normal PR flow |
 
-Product direction Games is registered by Governance; **no Games repository is implied**. Each future consumer must pin approved standard SHA (or immutable published tag) in its own controlled PR and perform relevant exact-head documentation/implementation checks before merge. No CI, releases or production actions follow automatically from this inventory.
+### Separate PR queues — no implied auto-merge
+
+- [Core Starter #27](https://github.com/E7A-RU/core/pull/27): optional product release CLI **source-only**, no executable exact-head QA; Core package publication and Infra production remain separate.
+- [Reader Dependabot #8](https://github.com/E7A-RU/reader/pull/8): Next.js/eslint-config-next update; compatibility checks, browser/privacy acceptance and lockfile QA pending.
+- [Website Dependabot #60](https://github.com/E7A-RU/website/pull/60) and [#61](https://github.com/E7A-RU/website/pull/61): Next.js and React runtime patches respectively; independent local/build/visual/rollback review and **Website cron safety readback** pending. Do not infer production promotion from mergeability.
+- Games is a Governance product direction, **not** a registered game repo, release or running application.
+- No hosted GitHub Actions CI was introduced during adoption. Core's existing manually owner-authorized **package publishing only** workflow remains the sole documented exception.
+
+**Static documentation check limitations:** the merged documentation PRs were reviewed against the exact GitHub source head with local links validated (Core 70; Reader 10; Bot 51; Infra 6; Laboratory 9 after fixing three archived links). **Executable local/Lobachevsky tests were not run** as part of this documentation sweep; do not record them as PASS. Product runtime, actual deployed SHA, recovery and F1/F2 readiness need independent evidence. Future updates to this table should be generated as Draft PR proposals by E7A Automation after approval, not direct automatic commits to the organizational main.
+
+See [E7A Roadmap](roadmap.md), [product release checklist](product-lifecycle-checklists.md) and [standards propagation](standards-propagation.md).
