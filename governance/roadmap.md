@@ -1,6 +1,6 @@
 # E7A Roadmap — от Governance к работающим продуктам
 
-**Статус:** OWNER-APPROVED STRATEGY / PROPOSED DELIVERY PLAN (2026-10-30). Канонический baseline: [Governance at immutable SHA](https://github.com/E7A-RU/.github/tree/b39ed4aabf97e45edaa0762a29ab57c69f8bbafd/governance). Ниже перечислены **целевые критерии**, а не выполненные этапы, бюджет, обещания сроков или полномочия на production.
+**Статус:** OWNER-APPROVED STRATEGY / PROPOSED DELIVERY PLAN (2026-10-30). Канонический опубликованный baseline: [Governance v1.1.0 at immutable SHA](https://github.com/E7A-RU/.github/tree/c74bce10bc9eac6bb2e604a7db6b14d33b7c7645/governance). Последующие документы Stewardship отдельно приняты в main и не меняют release revision автоматически. Ниже перечислены **целевые критерии**, а не выполненные этапы, бюджет, обещания сроков или полномочия на production.
 
 **Рекомендованная техническая база:** [Backend TypeScript / PostgreSQL-first](backend-reference-architecture.md), [эталонный roadmap реализации трёх Kit](kit-implementation-roadmaps.md), [ресурсы и расходы Github App](github-app-cost-and-resources.md).
 
@@ -21,9 +21,9 @@
 | [Governance](README.md) / .github | Утверждённая версия правил и controlled change management | Первичный baseline принят; consumer adoption и синхронизация ещё проходят PR |
 | [Core](https://github.com/E7A-RU/core) | Версионированные библиотеки и опциональный Product Starter | Репозиторий существует, источник UI и server contracts; каждый новый выпуск отдельно проверяется |
 | [Infra](https://github.com/E7A-RU/infra) | Безопасные ресурсы, QA VM, секреты, backup/restore, staging, controlled apply, node protocol | Целевая концепция / Draft PR; выполнение на Lobachevsky/Butlerov не заявлено |
-| [Identity](https://github.com/E7A-RU/identity) | Mature OIDC IdP + канонические Person/Claims/Policy, roles, organizations, recovery | Репозиторий есть, но на дату ревизии пуст; bootstrap ещё требуется |
+| [Identity](https://github.com/E7A-RU/identity) | Mature OIDC IdP + канонические Person/Claims/Policy, roles, organizations, recovery | Документально инициализирован 2026-10-30: README/AGENTS/maintainership/pin; **реализация и runtime НЕ подтверждены** |
 | Central Audit (repo/ownership TBD) | Единый контракт события, защищённый приём, хранение, tamper evidence, fault policy | F1 priority, runtime не подтверждён; не строить общую продуктовую БД |
-| [Platform](https://github.com/E7A-RU/platform) | Delivery/СГДС + trusted Jobs + Connectors + Results и реальный сквозной сценарий | Репозиторий есть, но на дату ревизии пуст; provider readiness подтверждать по отдельности |
+| [Platform](https://github.com/E7A-RU/platform) | Delivery/СГДС + trusted Jobs + Connectors + Results и реальный сквозной сценарий | Документально инициализирован 2026-10-30; **Delivery/Jobs/Connectors/Results НЕ работают по этому факту**, provider readiness отдельно |
 | Billing Foundation (repo TBD) | Plans, prices, orders, subscriptions, entitlement events | F1 contracts; реальный checkout и деньги только после compliance |
 | [Laboratory](https://github.com/E7A-RU/laboratory) | Product Factory: Wizard/Kits, QA, isolated Sandbox, release evidence, developer portal | Draft Product Factory, runtime не подтверждён |
 | [Website](https://github.com/E7A-RU/website) | Реальный B2C discover/try/use/feedback + B2B request-automation | Отдельная программа UX/marketing/conversion с доказательными claims |
@@ -38,6 +38,8 @@
 ## Roadmap по проверяемым вехам (без фиктивных сроков)
 
 ### G0 — Governance adoption (сначала)
+
+**Source documentation baseline completed 2026-10-30:** 11/11 initialized repository mains now have README/AGENTS/MAINTAINERSHIP/Governance v1.1.0 manifest; see [closeout ledger](consumer-stewardship-sprint-2026-10-30.md). Product runtime QA, Foundation F0/F1/F2 and owner's product scope decisions remain separate.
 
 - [ ] Спроектировать [E7A Automation](engineering-automation.md) как отдельный приватный внутренний сервис (`E7A-RU/automation`), где `governance-sync` — первый модуль; репозиторий [создан](https://github.com/E7A-RU/automation), plan-only исходники в [Draft PR #1](https://github.com/E7A-RU/automation/pull/1); GitHub App, верификация приватных потребителей, canary и размещение на Infra — отдельные gates, а не автоматический эффект merge.
 
