@@ -15,6 +15,10 @@
 
 ## Документы
 
+- **[Product Stewardship: единые правила ВП/агента и владельцев продуктов](product-stewardship.md)**
+- **[Спринт внедрения и QA/PR реестр](consumer-stewardship-sprint-2026-10-30.md)**
+- [Шаблон локального сопровождения каждого продукта](templates/product-maintainership.md)
+
 - **[Эталонная backend-архитектура E7A: TypeScript + PostgreSQL-first](backend-reference-architecture.md)**
 - **[Три Product Kit: roadmap Browser-only / Full-stack / Service-Worker](kit-implementation-roadmaps.md)**
 - **[E7A Automation: универсальная внутренняя автоматизация и Draft PR во всех затронутых репозиториях](engineering-automation.md)** — `governance-sync` первый модуль; [пример отключённой конфигурации](../contracts/automation-modules.example.json)
