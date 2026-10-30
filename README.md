@@ -52,3 +52,5 @@ Do not store secrets, private links or deployment credentials here.
 **Технические стандарты:** [Backend: TypeScript/PostgreSQL-first](governance/backend-reference-architecture.md) · [три Product Kit и отдельные пошаговые roadmap](governance/kit-implementation-roadmaps.md) · [GitHub App: ресурсы и стоимость](governance/github-app-cost-and-resources.md) · [публичный профиль организации](profile/README.md).
 
 **Предлагаемая внутренняя автоматизация:** [E7A Automation](governance/engineering-automation.md) — будущий приватный сервис с модулями Governance Sync, синхронизации публичного профиля и продуктовой документации. Изменения предлагаются через Draft PR с review владельца, а не напрямую в main.
+
+**Для ВП и владельцев продуктов:** [Product Stewardship](governance/product-stewardship.md) · [локальный handoff-шаблон](governance/templates/product-maintainership.md) · [реестр спринта внедрения](governance/consumer-stewardship-sprint-2026-10-30.md). Это процесс контроля PR и QA, не полномочия на merge/production.
