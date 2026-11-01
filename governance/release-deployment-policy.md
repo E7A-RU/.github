@@ -1,6 +1,6 @@
 # E7A — упрощённый release/deployment стандарт для продуктовой линейки
 
-**Статус: OWNER-DIRECTED POLICY / NORMATIVE ONLY AFTER VERSIONED GOVERNANCE RELEASE.** Направление подтверждено владельцем 2026-11-01; применимую immutable ревизию определяет [опубликованный Governance descriptor](standards-release.json). Даже после публикации стандарта этот документ **не активирует** timer, не меняет production, права GitHub App или секреты. Каждому продукту требуется отдельное подтверждение готовности и включение.
+**Статус: APPROVED GOVERNANCE v2.0.0 POLICY (2026-11-01).** Нормативная ревизия `298fe2856f6ac879286f96d089175fa960c88dd8`, подтверждена [опубликованным Governance descriptor](standards-release.json). Даже после публикации стандарта этот документ **не активирует** timer, не меняет production, права GitHub App или секреты. Каждому продукту требуется отдельное подтверждение готовности и включение.
 
 ## Решение и базовый принцип
 
