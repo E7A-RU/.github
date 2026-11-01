@@ -7,7 +7,7 @@
 - Repository: `E7A-RU/<name>`
 - Purpose and boundary:
 - Product Kit: `Browser-only | Full-stack | Service/Worker | Engineering/Infra only | TBD`
-- Governance: **v1.1.0**, immutable normative SHA `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`.
+- Target Governance: **v2.0.0**, immutable normative SHA `298fe2856f6ac879286f96d089175fa960c88dd8`. Existing consumer may still be pinned to v1.1.0 until its own reviewed adoption PR.
 - Local `governance-consumer.json` state: `MERGED | DRAFT | PENDING`
 - Actual status: `DIRECTION | DESIGN | IMPLEMENTED_SOURCE | TESTED_EXACT_SHA | RUNNING_VERIFIED | UNKNOWN`
 - Last verified source SHA and evidence date: `UNKNOWN` unless read/verified.
