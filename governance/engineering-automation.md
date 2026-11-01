@@ -56,7 +56,7 @@
              Exact-SHA QA → approved merge
                            │
         Independent product release, if needed
-          (separate owner approval for prod)
+          (standing authorization OR separate owner approval for prod)
 ```
 
 ### Важное отличие: нормативные и производные документы
