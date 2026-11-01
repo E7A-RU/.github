@@ -1,6 +1,6 @@
 # E7A Roadmap — от Governance к работающим продуктам
 
-**Статус:** OWNER-APPROVED STRATEGY / PROPOSED DELIVERY PLAN (2026-10-30). Канонический опубликованный baseline: [Governance v1.1.0 at immutable SHA](https://github.com/E7A-RU/.github/tree/c74bce10bc9eac6bb2e604a7db6b14d33b7c7645/governance). Последующие документы Stewardship отдельно приняты в main и не меняют release revision автоматически. Ниже перечислены **целевые критерии**, а не выполненные этапы, бюджет, обещания сроков или полномочия на production.
+**Статус:** OWNER-APPROVED STRATEGY / PROPOSED DELIVERY PLAN (2026-10-30). Канонический опубликованный baseline: [Governance v2.0.0 at immutable SHA](https://github.com/E7A-RU/.github/tree/298fe2856f6ac879286f96d089175fa960c88dd8/governance), [release descriptor](standards-release.json). Ранее принятый v1.1.0 baseline и исторические adoption evidence сохраняются; consumers переходят на v2.0.0 отдельными reviewed PR. Ниже перечислены **целевые критерии**, а не выполненные этапы, бюджет, обещания сроков или полномочия на production.
 
 **Рекомендованная техническая база:** [Backend TypeScript / PostgreSQL-first](backend-reference-architecture.md), [эталонный roadmap реализации трёх Kit](kit-implementation-roadmaps.md), [ресурсы и расходы Github App](github-app-cost-and-resources.md).
 
