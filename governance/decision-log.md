@@ -128,6 +128,10 @@ Earlier decision IDs 051–053 retain historical MERGE-PENDING text. Governance 
 
 **Supersession:** Decision 056 described the *previous narrower working name* `governance-sync`. Decision 058 supersedes **its name and exclusive scope**; all prior security and separate-approval requirements still apply. Historical first proposal is archived at [archive/governance-sync-initial-proposal-2026-10-30.md](archive/governance-sync-initial-proposal-2026-10-30.md). This clarification takes effect as a released organizational standard only after the associated PR is owner-approved and merged, and (for consumer propagation) separately versioned in `standards-release.json`.
 
+### Engineering implementation evidence after decisions 058–059
+
+The private [E7A-RU/automation](https://github.com/E7A-RU/automation) repository now exists and has a bootstrap README in `main`. [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) proposes a dependency-free TypeScript, read-only, plan-only impact planner and unit/negative tests. Local test results are evidence only for the working copy; the implementation still needs exact-head verification and no GitHub App, write token, hosted timer, cross-repo PR write or production deployment exists. This is **implementation evidence**, not a new owner-authorized runtime stage.
+
 ## Направление владельца — упрощённый self-hosted release/deployment (2026-11-01)
 
 | ID | Decision | Status |
@@ -135,7 +139,3 @@ Earlier decision IDs 051–053 retain historical MERGE-PENDING text. Governance 
 | 060 | Для E7A выбрать простой продуктовый выпуск: `protected-main merge → self-hosted exact-SHA QA → immutable build → production → health/rollback`; **staging не обязателен**; повторное manual owner approval не требуется для R0/R1 в рамках заранее **отдельно активированного product-specific standing authorization**. Начать с Website на Lobachevsky, далее применять как ориентир для всех продуктов. R2+, сети/ключи/Identity/платежи/миграции и изменение контроллера требуют отдельного согласования. [Новый проект политики](release-deployment-policy.md). | **OWNER-DIRECTED GOVERNANCE CHANGE / PROPOSED FOR PR REVIEW**, NOT AN ACTIVE DEPLOYMENT PERMISSION. Existing v1.1.0 descriptor and previous production gate remain effective until approved normative release, and each product still requires explicit one-time activation. |
 
 Эта запись фиксирует новую owner-директиву и **предлагаемое** изменение прежнего решения 039 о per-release production approval. После утверждения ревизии правило 039 сохраняется как исторический факт, но заменяется новым режимом лишь для охваченных standing authorization low-risk случаев. Сам факт merge этого документа не создаёт работающий timer или релизный токен.
-
-### Engineering implementation evidence after decisions 058–059
-
-The private [E7A-RU/automation](https://github.com/E7A-RU/automation) repository now exists and has a bootstrap README in `main`. [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) proposes a dependency-free TypeScript, read-only, plan-only impact planner and unit/negative tests. Local test results are evidence only for the working copy; the implementation still needs exact-head verification and no GitHub App, write token, hosted timer, cross-repo PR write or production deployment exists. This is **implementation evidence**, not a new owner-authorized runtime stage.
