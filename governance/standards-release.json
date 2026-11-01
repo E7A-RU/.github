@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "releaseId": "e7a-governance-v1.1.0",
-  "version": "1.1.0",
+  "releaseId": "e7a-governance-v2.0.0",
+  "version": "2.0.0",
   "status": "APPROVED_BASELINE",
-  "revision": "c74bce10bc9eac6bb2e604a7db6b14d33b7c7645",
+  "revision": "298fe2856f6ac879286f96d089175fa960c88dd8",
   "approvedBy": "E7A Owner",
-  "effectiveAt": "2026-10-30",
-  "changeClass": "MINOR",
-  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/4",
+  "effectiveAt": "2026-11-01",
+  "changeClass": "MAJOR",
+  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/12",
   "policyRoot": "governance/",
   "brandPolicyPath": "BRAND_POLICY.md",
   "impactedConsumers": [
@@ -20,9 +20,13 @@
     "laboratory",
     "gateway",
     "identity",
-    "platform"
+    "platform",
+    "automation"
   ],
-  "notes": "Owner-approved recommended PostgreSQL-first backend architecture, separate three-Kit implementation roadmaps, updated GitHub organization profile and proposed private governance-sync App/repo. Scope may be NO_IMPACT in specific consumers after review. Sync App is not created or activated; consumer adaptations remain independent Draft PRs. Initial v1.0.0 remains in Git history.",
+  "notes": "Owner decision 060: risk-gated, product-scoped self-hosted exact-SHA QA -> immutable build -> production -> health/rollback. Staging optional by documented risk. R0/R1 may use individually activated standing owner authorization; R2+ / critical changes require individual approval. This is a normative policy change (major), not an active timer or universal deploy permission. Existing consumer v1.1.0 pins remain unchanged until reviewed adoption PRs. No GitHub-hosted Actions CI or permission for E7A Automation to deploy.",
   "botAutoMerge": false,
-  "productionAutoDeploy": false
+  "productionAutoDeploy": false,
+  "productScopedAutoDeployPolicy": "OPT_IN_STANDING_AUTHORIZATION_ONLY",
+  "stagingRequiredByDefault": false,
+  "perReleaseApprovalForAuthorizedLowRisk": false
 }
