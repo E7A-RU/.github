@@ -2,7 +2,7 @@
 
 **Статус: PROPOSED EXECUTION BASELINES for already approved three Kit categories.** Product Factory выбирает Kit; Core предоставляет **опциональный** исходный Starter; каждый продукт владеет исходниками и релизами; Infra управляет инфраструктурой; Laboratory собирает QA evidence. Kit означает **стартовую конфигурацию и acceptance gates**, а не готовое приложение/сервис или mandatory backend.
 
-**Общие правила:** [Governance](README.md), [Product lifecycle](product-lifecycle-checklists.md), [Backend Reference](backend-reference-architecture.md), [Product Charter](templates/product-charter.md), [Release Gate](templates/release-gate.md). Метки `PASS` только с тестовым evidence exact SHA. GitHub-hosted Actions CI запрещён; production всегда требует отдельного решения Owner.
+**Общие правила:** [Governance](README.md), [Product lifecycle](product-lifecycle-checklists.md), [Backend Reference](backend-reference-architecture.md), [Product Charter](templates/product-charter.md), [Release Gate](templates/release-gate.md). Метки `PASS` только с тестовым evidence exact SHA. GitHub-hosted Actions CI запрещён; production допускает заранее активированное ограниченное standing authorization для R0/R1 и требует отдельного решения Owner при повышенном риске (см. [release policy](release-deployment-policy.md)).
 
 ## Общий путь для любого Kit
 
@@ -13,8 +13,8 @@ Discovery & User Job
   → architecture/data/privacy ADR + release/environment plan
   → implementation in independent product repository
   → local/self-hosted exact-SHA checks + negative tests
-  → isolated QA and staging acceptance when applicable
-  → separate owner production approval → Infra controlled apply
+  → isolated QA + immutable artifact; optional staging by risk
+  → standing authorization OR individual approval → Infra controlled auto/apply
   → verify real user value/health → second safe release
 ```
 
@@ -55,9 +55,9 @@ Discovery & User Job
 - [ ] Network inspection: проверка отсутствия передачи личных файлов/данных без явного согласия.
 
 **B4 — Distribution/Release**
-- [ ] Staging/static preview immutable SHA, robots/canonical/privacy notices, cache headers, 404/health.
+- [ ] Проверить immutable SHA/digest, robots/canonical/privacy notices, cache headers, 404/health; staging/static preview **только если требуется риском**.
 - [ ] Проверить поведение без обязательных Foundation сервисов и без логина.
-- [ ] Production owner approval; отдельно URL/DNS/TLS change через Infra при необходимости.
+- [ ] Для обычного релиза — активированное standing authorization или отдельное owner approval; изменения URL/DNS/TLS — отдельный Infra review.
 
 **B5 — Product-in-Use**
 - [ ] Реальные пользователи выполняют сценарий; privacy-respecting feedback, наблюдаемая полезность.
@@ -108,10 +108,10 @@ Discovery & User Job
 - [ ] Test unauthorized cross-tenant reads/writes, CSRF, session expiry/revoke, duplicate requests, row-lock/concurrency, malformed inputs, provider failure.
 - [ ] Restore test from off-host encrypted backup; test schema compatibility and rollback under realistic data.
 
-**F5 — Staging and release**
-- [ ] Separate Development/Staging/Production, QA VM isolated from production secrets.
+**F5 — Operational readiness and release**
+- [ ] Isolated QA without production secrets; staging only if risk/contract requires it.
 - [ ] Infra prepares vhost/TLS, product DB, secret refs, resource budget, migration plan, immutable image SHA/digest.
-- [ ] Staging end-to-end and restore proof → owner production approval → controlled release with rollback.
+- [ ] DB compatibility and restore proof → scoped standing authorization for eligible low-risk changes **or** individual owner approval → controlled release with rollback/forward-recovery. Staging E2E when needed.
 - [ ] Confirm privacy notices, data deletion/support, monitoring, error budget and alerts.
 
 **F6 — Repeatable operation**
@@ -157,10 +157,10 @@ Discovery & User Job
 - [ ] Test tenant isolation, token/key rotation, malicious payloads, abuse/rate limits, runaway retry and operational budgets.
 - [ ] Test Postgres restore/backup if stateful and broker failure/restart if used.
 
-**S4 — Staging/service rollout**
+**S4 — Service rollout (risk-dependent staging)**
 - [ ] Exact image digest, secret refs and minimal runtime/service identity; no public exposure unless required.
-- [ ] Deploy to isolated staging with fake/sandbox provider where available; verify metrics, alerting, failed job visibility.
-- [ ] Feature gate/canary, owner production approval via Infra, graceful drain/rollback and reconciliation after deploy.
+- [ ] Verify metrics, alerting, failed-job visibility and negative cases in isolated QA; staging/fake provider **only where needed** by side-effect risk.
+- [ ] Feature gate/canary when justified, standing authorization for eligible changes **or** individual owner approval, graceful drain/rollback and reconciliation after deploy.
 
 **S5 — Operational scale**
 - [ ] Observed throughput and failure percentages; adjust concurrency/DB pool/broker deliberately.
