@@ -35,13 +35,13 @@ See also the [applicable Kit roadmap](../kit-implementation-roadmaps.md) and [ba
 | Typecheck/build | UNKNOWN | | |
 | Functional/negative/security | UNKNOWN | | |
 | Privacy/tenant | UNKNOWN | | |
-| Staging (optional; NOT_REQUIRED with documented reason) | UNKNOWN | | |
+| Staging (optional) | NOT_REQUIRED (sample; justify risk decision) | | |
 | Backup/restore if required | UNKNOWN | | |
 | Infra risk assessment | UNKNOWN | | |
 
 ## Authorization and rollout
 
-- Laboratory QA evidence ID / artifact digest:
+- Self-hosted QA evidence ID / artifact digest (Laboratory optional):
 - Independent technical reviewer if applicable:
 - Temporary owner-only critical approval exception ID/expiry and compensating controls:
 - **Production authorization:** `NOT_GRANTED` until Infra verifies either (a) active product-specific standing owner authorization and this merge's protected-main/allowlist/QA/digest eligibility, or (b) explicit per-release owner approval bound to SHA/digest/target/validity.
