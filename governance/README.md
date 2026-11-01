@@ -1,6 +1,6 @@
 # E7A Governance — единый источник архитектурных решений
 
-**Status: owner-approved organizational/architectural Governance v1, merged in PR #1 on 2026-10-29** and pinned to `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`. Subsequent improvements require their own approved PR and release descriptor. Никаких сервисов, автоматических деплоев или глобального входа документы сами по себе не создают.
+**Status: owner-approved Governance v2.0.0**, released 2026-11-01. Normative immutable SHA: `298fe2856f6ac879286f96d089175fa960c88dd8` ([release descriptor](standards-release.json)). This major revision changes the release/deploy gate for independently authorized low-risk products, while retaining security controls. Historical v1.0.0/v1.1.0 decisions remain in Git history. Никаких сервисов, автоматических деплоев или глобального входа документы сами по себе не создают.
 
 ## Иерархия источников истины
 
@@ -15,7 +15,7 @@
 
 ## Документы
 
-- **[Упрощённая политика release/deploy для всей линейки](release-deployment-policy.md)** — owner-directed изменение: self-hosted QA → build → production без обязательного staging и второго клика при разрешённом R0/R1; **пока proposed**, не активирует release-процессы автоматически.
+- **[Упрощённая политика release/deploy для всей линейки](release-deployment-policy.md)** — owner-directed изменение: self-hosted QA → build → production без обязательного staging и второго клика при разрешённом R0/R1; **опубликована как нормативное направление Governance v2.0.0**, но не активирует release-процессы без отдельного включения для каждого продукта.
 
 - **[Product Stewardship: единые правила ВП/агента и владельцев продуктов](product-stewardship.md)**
 - **[Спринт внедрения и QA/PR реестр](consumer-stewardship-sprint-2026-10-30.md)**

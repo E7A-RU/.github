@@ -1,6 +1,6 @@
 # E7A Product Stewardship — единый порядок сопровождения репозиториев
 
-**Статус:** организационный процесс на основе уже утверждённого [Governance 1.1.0](standards-release.json). Предлагаемый [упрощённый release/deploy стандарт](release-deployment-policy.md) применяется **после** отдельного Governance approval/version release и product-specific activation. Эта запись конкретизирует ответственность ВП/инженерного агента и владельца продукта, **не** выдаёт права на production, не является новым runtime или отдельным опубликованным нормативным релизом. Утверждённая ревизия: `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`.
+**Статус:** организационный процесс в соответствии с [Governance v2.0.0](standards-release.json), approved immutable revision `298fe2856f6ac879286f96d089175fa960c88dd8`. [Упрощённый release/deploy стандарт](release-deployment-policy.md) действует как нормативное направление, но **не активирует** product auto-deploy без отдельного standing authorization и Infra proof. Эта запись конкретизирует ответственность ВП/агента и владельца продукта, **не** выдаёт права на production и не является runtime.
 
 ## 1. Границы ответственности
 

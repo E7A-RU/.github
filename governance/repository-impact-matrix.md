@@ -1,6 +1,6 @@
 # Repository Impact Matrix and dependency register
 
-**Status: current-source adoption register plus historical migration plan; documentation merges observed, runtime acceptance separate.** Important: historical queue below is superseded in sequencing by [final owner baseline](final-architecture-baseline-2026-10-27.md): Identity, Platform, Audit and bounded Billing enter F1; operational status remains unverified. Canonical source is [governance](README.md); consumers pin the **released immutable Governance v1.1.0 revision** `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`, not a moving branch. More recent organizational documentation changes do not silently create a new version.
+**Status: current-source adoption register plus historical migration plan; documentation merges observed, runtime acceptance separate.** Important: historical queue below is superseded in sequencing by [final owner baseline](final-architecture-baseline-2026-10-27.md): Identity, Platform, Audit and bounded Billing enter F1; operational status remains unverified. Canonical source is [governance](README.md); the **current published Governance v2.0.0 normative revision** is `298fe2856f6ac879286f96d089175fa960c88dd8`, but **existing consumer pins at v1.1.0 remain valid historical adoption state** until reviewed, per-repository v2.0.0 migration PRs. A new normative release does not silently rewrite consumer repos, grant standing authorizations or deploy products.
 
 **Internal automation repo CREATED / RUNTIME NOT VERIFIED:** [E7A-RU/automation](https://github.com/E7A-RU/automation) — private extensible self-hosted engineering automation service. First module: `governance-sync`, proposing scoped Draft PRs after approved Governance revisions. Later modules may propose product catalogue, `.github` public profile, README/AGENTS/status docs, safe compliance/release evidence changes. [Charter](engineering-automation.md). Not a customer product or running service: main contains README, AGENTS, governance-consumer pin and MAINTAINERSHIP; [Draft PR #1](https://github.com/E7A-RU/automation/pull/1) separately proposes plan-only source. GitHub App not registered or installed.
 
@@ -8,7 +8,7 @@
 
 | Component / repo | Responsibility and data ownership | Dependencies | Verified disposition / next action |
 | --- | --- | --- | --- |
-| [.github](https://github.com/E7A-RU/.github) | Governance, brand policy, architecture decisions; no runtime data | none | Governance v1.1.0 approved and released via [descriptor](standards-release.json); public profile updated in merged PR #7; no deployed runtime |
+| [.github](https://github.com/E7A-RU/.github) | Governance, brand policy, architecture decisions; no runtime data | none | Governance v2.0.0 approved and released via [descriptor](standards-release.json), source merged in [PR #12](https://github.com/E7A-RU/.github/pull/12); consumer adoption pending; no runtime activated |
 | [core](https://github.com/E7A-RU/core) | `@e7a-ru/ui`, `@e7a-ru/server`, types, optional Starter; **no** Identity DB | Published package dependencies for consumers, not shared runtime | Source/docs exist; each release must be verified separately |
 | [website](https://github.com/E7A-RU/website) | Public marketing, catalog, demo entry and lead intake; its own records if any | optional Core UI, own hosting | Consumer governance-pin proposal; verify production separately |
 | [reader](https://github.com/E7A-RU/reader) | Browser local-first reading/user files; no mandatory server DB | optional Core UI; browser runtime | Keep anonymous offline/local behavior; acceptance test |
@@ -64,7 +64,7 @@ Existing [contract examples](../contracts/standards-consumer.example.json) and [
 
 ## Governance consumer adoption — verified GitHub PR outcomes (2026-10-30)
 
-**Release target:** `Governance 1.1.0` at full immutable normative SHA `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645` ([release descriptor](standards-release.json)). The original v1.0.0 baseline remains history. **DOCUMENTATION SOURCE MERGED is not TESTED, RUNNING or production-compliant.** Each merged consumer contains `governance-consumer.json`, exact revision pin, product-specific `governance-adoption.md` and an updated README; future E7A Automation can use these as a **read-only pointer**, not proof of effective controls.
+**Historical consumer adoption target (2026-10-30):** `Governance 1.1.0` at immutable SHA `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`. **New target:** `Governance 2.0.0` at `298fe2856f6ac879286f96d089175fa960c88dd8` ([release descriptor](standards-release.json)); no consumer migration asserted until reviewed PR. The original v1.0.0 baseline remains history. **DOCUMENTATION SOURCE MERGED is not TESTED, RUNNING or production-compliant.** Each merged consumer contains `governance-consumer.json`, exact revision pin, product-specific `governance-adoption.md` and an updated README; future E7A Automation can use these as a **read-only pointer**, not proof of effective controls.
 
 | Consumer | Status / exact merged GitHub PR | Scope and next gate |
 | --- | --- | --- |
