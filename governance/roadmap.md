@@ -11,7 +11,7 @@
 - **B2C-first**, B2B автоматизация — самостоятельное второе коммерческое направление; Website развивается параллельно Foundation.
 - **Независимые продукты:** собственный домен, данные, авторизация внутри продукта, версии и релизы. Общие сервисы подключаются по необходимости; анонимные Website/Reader/игры не требуют постоянного общего backend.
 - **Foundation** — инженерная программа, а **не** обязательный единый репозиторий, монолит, уже выпущенная версия ПО или новый продукт.
-- **Безопасность и правдивый статус:** APPROVED → IMPLEMENTED SOURCE → TESTED → STAGING VERIFIED → RUNNING VERIFIED являются разными доказательствами. GitHub Actions hosted CI запрещён, отдельная разрешённая ручная публикация пакетов Core — исключение. Любой production apply требует отдельного owner approval.
+- **Безопасность и правдивый статус:** APPROVED → IMPLEMENTED SOURCE → TESTED → RELEASE ELIGIBLE → RUNNING VERIFIED являются разными доказательствами; staging — optional risk evidence. GitHub Actions hosted CI запрещён, отдельная разрешённая ручная публикация пакетов Core — исключение. Production требует действующего scoped standing authorization либо отдельного owner approval; см. [release/deploy policy](release-deployment-policy.md).
 - **Любая техническая веха проходит через [Product Lifecycle & Checklists](product-lifecycle-checklists.md).** Не смешивать governance adoption PR с релизом продукта.
 
 ## Портфель и этапы
@@ -20,7 +20,7 @@
 | --- | --- | --- |
 | [Governance](README.md) / .github | Утверждённая версия правил и controlled change management | Первичный baseline принят; consumer adoption и синхронизация ещё проходят PR |
 | [Core](https://github.com/E7A-RU/core) | Версионированные библиотеки и опциональный Product Starter | Репозиторий существует, источник UI и server contracts; каждый новый выпуск отдельно проверяется |
-| [Infra](https://github.com/E7A-RU/infra) | Безопасные ресурсы, QA VM, секреты, backup/restore, staging, controlled apply, node protocol | Целевая концепция / Draft PR; выполнение на Lobachevsky/Butlerov не заявлено |
+| [Infra](https://github.com/E7A-RU/infra) | Безопасные ресурсы, self-hosted QA, секреты, backup/restore, risk-triggered staging, controlled auto/apply, node protocol | Целевая концепция / Draft PR; выполнение на Lobachevsky/Butlerov не заявлено |
 | [Identity](https://github.com/E7A-RU/identity) | Mature OIDC IdP + канонические Person/Claims/Policy, roles, organizations, recovery | Документально инициализирован 2026-10-30: README/AGENTS/maintainership/pin; **реализация и runtime НЕ подтверждены** |
 | Central Audit (repo/ownership TBD) | Единый контракт события, защищённый приём, хранение, tamper evidence, fault policy | F1 priority, runtime не подтверждён; не строить общую продуктовую БД |
 | [Platform](https://github.com/E7A-RU/platform) | Delivery/СГДС + trusted Jobs + Connectors + Results и реальный сквозной сценарий | Документально инициализирован 2026-10-30; **Delivery/Jobs/Connectors/Results НЕ работают по этому факту**, provider readiness отдельно |
@@ -66,7 +66,7 @@
 
 ### F1 — Foundation Integrated (minimal vertical slices, in parallel)
 
-- [ ] Infra provides an authorized isolated test/staging environment and safeguards for shared hosts.
+- [ ] Infra provides isolated self-hosted QA and shared-host safeguards; separate staging only if product-specific risk requires it.
 - [ ] Identity can establish a subject through tested IdP flow; product can validate scoped access. No compulsory login for anonymous product paths.
 - [ ] Audit accepts security events with agreed schema and durable degraded-mode behavior.
 - [ ] Platform demonstrates **one** real authorized provider integration end-to-end: accepted → dispatched → provider receipt or UNKNOWN → result subscription/API; other Telegram/MAX/VK/email/Instagram capabilities are individually gated.
@@ -82,8 +82,8 @@
 - [ ] Off-host backups exist for each stateful slice; tested restore and recorded RPO/RTO.
 - [ ] Secret/key rotation and break-glass exercised without depending on failed Identity/Laboratory.
 - [ ] Health, monitoring, alerting, incident contacts, bounded retries/queue backpressure and fallback tested.
-- [ ] Staging release evidence: exact commit + immutable artifact digest, risks, compatibility, test report.
-- [ ] Production action requires separately recorded owner approval and Infra verification; limited one-person exception tracked, no pretend independent reviewer.
+- [ ] Release evidence: exact commit + immutable artifact digest, risks, compatibility, isolated QA test report; staging evidence when required by risk.
+- [ ] Production action requires validated standing authorization for eligible R0/R1 **or** separately recorded owner approval for high-risk change, plus Infra verification; limited one-person exception tracked, no pretend independent reviewer.
 - [ ] Rollback/drill and failure-mode evidence; no mandatory HA cluster merely to satisfy F2.
 
 **Exit:** first essential capability can be safely operated or restored within declared targets.
