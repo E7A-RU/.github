@@ -107,17 +107,17 @@ A repo, a Draft PR, a green static scan, a package tag and a production health s
 ```yaml
 # illustrative checklist record; NOT a runtime API
 productId: example
-governanceRevision: b39ed4aabf97e45edaa0762a29ab57c69f8bbafd
+governanceRevision: "<approved-release-descriptor-revision-40-hex>"
 kit: browser-only
 sourceSha: "<full-reviewed-source-sha>"
 artifactDigest: "<immutable-digest-or-n/a-for-doc-only>"
 riskClass: R1
 qa: {status: UNKNOWN, logReference: null}
-staging: {status: NOT_TESTED}
+staging: {status: NOT_REQUIRED, reason: "illustrative low-risk release; risk assessment required"}
 production: {authorization: NOT_GRANTED, status: NOT_DEPLOYED}
 exceptions: []
 ```
 
-**Validation semantics:** `qa.status: UNKNOWN` deliberately **is not** a pass; `staging: NOT_TESTED` is acceptable only if documented as not required by the product's risk policy, not as evidence of staging. Every release requires unique evidence; template text grants no authorization.
+**Validation semantics:** `qa.status: UNKNOWN` deliberately **is not** a pass; optional staging must be explicitly `NOT_REQUIRED` with a documented risk decision, not silently `UNKNOWN` or passed without evidence. Every release requires unique evidence; template text grants no authorization.
 
 Related: [Roadmap](roadmap.md), [standards propagation](standards-propagation.md), [Product Factory](product-factory-and-kits.md), [Infra](infra-operations.md).
