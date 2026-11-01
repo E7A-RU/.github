@@ -2,7 +2,7 @@
 
 **Status: APPROVED GOVERNANCE PRINCIPLES / CHECKLIST TEMPLATE PROPOSED FOR ADOPTION.** Source: [Governance](README.md), [roadmap](roadmap.md), [Product Factory](product-factory-and-kits.md), [Infra](infra-operations.md). Checkboxes below represent **requirements to verify for each product**, not claims about already completed tasks. Evidence = exact SHA/artifact digest/run URL or dated operator readback. A green box without evidence is not PASS.
 
-Для нового продукта начинайте с [шаблона Product Charter](templates/product-charter.md); для каждого релиза оформляйте [Release Gate и evidence](templates/release-gate.md). Заполнение шаблонов не даёт права deploy.
+Для нового продукта начинайте с [шаблона Product Charter](templates/product-charter.md); для каждого релиза оформляйте [Release Gate и evidence](templates/release-gate.md). Право deployment определяется [политикой выпуска](release-deployment-policy.md): заранее разрешённый low-risk автоматический режим либо отдельное owner approval. Заполнение шаблонов само по себе не даёт права deploy.
 
 **Kit-specific обязательный маршрут:** [Browser-only → Full-stack → Service/Worker: полный roadmap и gates для каждого](kit-implementation-roadmaps.md). Для stateful Full-stack/Service — [PostgreSQL-first Backend Reference](backend-reference-architecture.md). Для PR-автоматизации стандартов — [GitHub App costs/resources](github-app-cost-and-resources.md). Чеклисты этого документа выполняются **в дополнение** к Kit-specific, а не вместо них.
 
@@ -12,7 +12,7 @@ Each independently deployable product has an explicit **Product Owner, Engineeri
 
 ### Lifecycle states
 
-`IDEA → DISCOVERY → CHARTER-APPROVED → DESIGN → IMPLEMENTED → TESTED → STAGING-VERIFIED → APPROVED FOR PRODUCTION → RUNNING-VERIFIED → MAINTAINED → DEPRECATED/ARCHIVED`.
+`IDEA → DISCOVERY → CHARTER-APPROVED → DESIGN → IMPLEMENTED → TESTED → RELEASE-ELIGIBLE → RUNNING-VERIFIED → MAINTAINED → DEPRECATED/ARCHIVED`. `STAGING-VERIFIED` и `INDIVIDUAL-OWNER-APPROVED` — дополнительные risk-triggered этапы, не обязательные для каждого выпуска.
 
 A repo, a Draft PR, a green static scan, a package tag and a production health sample are different evidence categories. Phase advancement is **per product and per release**.
 
@@ -58,29 +58,29 @@ A repo, a Draft PR, a green static scan, a package tag and a production health s
 
 **Evidence:** immutable check report + security review + artifact provenance. Hosted GitHub Actions CI remains prohibited; Core's separately authorized manual publishing workflow is not CI.
 
-## Gate D — staging and operational readiness
+## Gate D — operational readiness (staging only when needed)
 
-- [ ] Environment `Development → Staging → Production` distinct; isolated QA VM/sandbox is not staging.
+- [ ] Development/isolated QA and Production are separated by permissions and secrets. Dedicated staging is **optional**, required only by documented risk/contract; QA VM/sandbox must not be called staging.
 - [ ] Domain/DNS/TLS/ingress plan, ports, network/egress, quota, CPU/RAM/disk limits, secret permissions, data stores and third-party dependencies enumerated in Infra manifest.
-- [ ] Staging uses reviewed immutable build with release SHA/digest, smoke/health, E2E and negative tests; no production secrets in staging.
+- [ ] Pre-release checks validate the reviewed immutable SHA/digest via isolated QA and applicable smoke/E2E/negative tests. **If staging is required**, it uses the same digest and no production secrets.
 - [ ] Stateful products: **off-host backup**, restore drill, RPO/RTO per component, migrations and schema rollback approach.
 - [ ] Current host state and existing service blast radius inspected; prevent impacts on KS54/Lobachevsky, Butlerov/WireGuard, other products.
 - [ ] Security/degraded-mode simulation: Identity/Audit failure, unavailable provider/DB/broker, revocation, resource exhaustion, rollback.
 - [ ] Incident operator, alerting, support/feedback owner, data retention and decommission path assigned.
 
-**Evidence:** staging verification, recovery/rollback logs, Infra plan/diff, owner review of risk.
+**Evidence:** exact-SHA QA, digest, recovery/rollback proof, Infra plan/diff and risk classification; when required, staging verification with separate evidence.
 
-## Gate E — production approval and launch
+## Gate E — production eligibility and launch
 
 - [ ] Release record includes **product, repo, full SHA, artifact digest, target environment, exact changes, user/tenant impact, risk tier, QA and rollback evidence**.
-- [ ] Approval is **separate explicit owner decision**, bound to immutable release record, target and expiry; GitHub/ Laboratory display the **same** record, not two independent authorizations.
-- [ ] R0/R1 auto-merge rules (when operationally authorized) **do not grant deployment**; R2+ contract/critical changes require appropriate human review.
+- [ ] Authorized R0/R1 releases: standing owner authorization, protected-main review/merge, exact-SHA checks and target/expiry matched; **no second manual confirmation after merge**. Outside the approved allowlist: separate explicit owner decision bound to immutable release record, target and expiry.
+- [ ] R0/R1 auto-merge **alone** does not grant deployment: only product-specific standing authorization plus protected-main controls and successful QA do. R2+ and listed critical/security changes require separate review and approval.
 - [ ] Critical owner-only review exception is recorded with rationale/expiry/compensating checks; external independent reviewer when risk requires one.
-- [ ] Infra independently verifies approval, artifact/signature, target, credentials and privileges; no automatic PR-merge deploy and no production Docker socket from Laboratory.
+- [ ] Infra validates standing or individual authorization, exact SHA/digest, target, credentials and privileges; automated merge-to-production is allowed **only** for an activated, allowlisted product. Laboratory/QA gets no production Docker socket.
 - [ ] Deploy plan, health/smoke threshold, user communication, rollback/forward fix and emergency access ready.
 - [ ] **No public RUNNING claim until timestamped runtime proof.** For website/catalogue, accurately distinguish idea, demo, test, limited pilot and live product.
 
-**Evidence:** production approval ID and operator deployment/health evidence; no claim until executed.
+**Evidence:** standing authorization ID or individual approval ID, exact SHA/digest, operator deployment/health evidence; no claim until executed.
 
 ## Gate F — maintenance, updates and retirement
 
@@ -114,10 +114,10 @@ artifactDigest: "<immutable-digest-or-n/a-for-doc-only>"
 riskClass: R1
 qa: {status: UNKNOWN, logReference: null}
 staging: {status: NOT_TESTED}
-production: {approval: NOT_GRANTED, status: NOT_DEPLOYED}
+production: {authorization: NOT_GRANTED, status: NOT_DEPLOYED}
 exceptions: []
 ```
 
-**Validation semantics:** above `qa.status: UNKNOWN` is deliberately **not** a pass. Every actual release requires unique evidence. The template must not be copied as a green status or used to infer owner approval.
+**Validation semantics:** `qa.status: UNKNOWN` deliberately **is not** a pass; `staging: NOT_TESTED` is acceptable only if documented as not required by the product's risk policy, not as evidence of staging. Every release requires unique evidence; template text grants no authorization.
 
 Related: [Roadmap](roadmap.md), [standards propagation](standards-propagation.md), [Product Factory](product-factory-and-kits.md), [Infra](infra-operations.md).
