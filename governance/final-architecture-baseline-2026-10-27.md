@@ -1,5 +1,7 @@
 # E7A Final Architectural Baseline — owner decisions, 2026-10-27
 
+> **Historical approved baseline (2026-10-27).** Its original staging and per-release production approval requirements below are preserved as historical decisions. For future **eligible low-risk** deployments, they are superseded **only after** the owner-directed [release/deployment policy](release-deployment-policy.md) is versioned and published in Governance. Critical/security changes still need individual approval. No existing product gets authorization from this historical note.
+
 **State: OWNER APPROVED ARCHITECTURAL DIRECTION; GOVERNANCE DRAFT, not yet released in main.** Consolidates [rounds 1–10](owner-decisions-2026-10-27.md) and subsequent eight clarification decisions. No code or runtime is certified by this document. Historic decisions remain accessible; where plans conflict, this owner-approved direction takes precedence for new proposals, while a future accepted standards release must update all normative cross-references.
 
 ## Constitutional invariants

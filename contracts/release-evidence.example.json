@@ -1,8 +1,8 @@
 {
-  "_comment": "ILLUSTRATIVE schema sample. This is not a real passing check, approval or deployment.",
+  "_comment": "ILLUSTRATIVE non-authorizing example. Staging is optional by risk; per-product auto-deploy requires separate approved standing authorization activation and exact-SHA QA. Not a passing check, approval or deployment.",
   "schemaVersion": "e7a.release-evidence/v0-proposal",
   "repository": "E7A-RU/analytics",
-  "environment": "staging",
+  "environment": "production",
   "productId": "analytics",
   "architectureKit": "full-stack",
   "exactSourceCommit": "replace-with-real-head-sha",
@@ -26,14 +26,25 @@
     "runnerIsolation": "self-hosted-sandbox",
     "skippedChecks": []
   },
-  "approval": {
-    "status": "PENDING",
-    "approvedBy": null,
-    "expiresAt": null
-  },
   "production": {
     "autoApply": false,
     "healthStatus": "NOT_CHECKED",
-    "rollbackArtifact": "replace-with-known-good-digest"
+    "rollbackArtifact": "replace-with-known-good-digest",
+    "previousDigest": "UNKNOWN",
+    "outcome": "NOT_DEPLOYED"
+  },
+  "riskClass": "R1",
+  "staging": {
+    "status": "NOT_REQUIRED",
+    "reason": "example low-risk product; record product-specific risk decision"
+  },
+  "authorization": {
+    "mode": "STANDING_OR_INDIVIDUAL",
+    "status": "NOT_GRANTED",
+    "standingAuthorizationId": null,
+    "approvedScope": null,
+    "expiresAt": null,
+    "activationVerified": false,
+    "individualApprovalId": null
   }
 }

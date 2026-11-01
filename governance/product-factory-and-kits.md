@@ -10,7 +10,7 @@
 
 **3. Experiment / Sandbox.** Повторяемые временные окружения для тестов и прототипов. Infra выделяет worktree/container/networks, owner-controlled cleanup; логи остаются. Рабочие команды/секреты/тома production не монтировать внутрь PR runner.
 
-**4. Release Gate.** Собирает release manifest, status checks, risk/rollback/approvals, provenance и evidence. **Готовность к выпуску ≠ разрешение на production apply**. Laboratory направляет одобренный релиз в Infra, Infra исполняет и измеряет здоровье.
+**4. Release Gate.** Собирает release manifest, status checks, risk/rollback/approvals, provenance и evidence. **Готовность к выпуску ≠ разрешение на production apply**. Право выпуска подтверждается **активированным product-specific standing authorization** либо отдельным owner approval по [release policy](release-deployment-policy.md). Laboratory может предоставлять QA/evidence; Infra самостоятельно проверяет полномочия и исполняет rollout/health/rollback. Laboratory не является обязательным runtime для простого self-hosted deploy.
 
 **Эталонная процедура для Wizard:** после выбора Kit предлагать [полный roadmap Browser-only / Full-stack / Service-Worker](kit-implementation-roadmaps.md), [Product Charter](templates/product-charter.md) и [Release Gate](templates/release-gate.md), а для stateful backend — [PostgreSQL-first reference](backend-reference-architecture.md). Шаблон Starter может быть необязательным, но чеклист конкретного Kit — не пропускается.
 
@@ -26,7 +26,7 @@
 
 ## Иллюстративный Wizard flow
 
-Назовём продукт analytics.e7a.ru, Kit Full-stack; требуется E7A Identity и собственный PostgreSQL, Redis нет, workers нужны только после измеренного спроса. Wizard формирует **не исполняемый напрямую** декларативный manifest с продуктом, образом, healthcheck, tenancy и проверками. Infra делает план ресурсов и DNS/TLS; Laboratory проверяет собранный digest и exact SHA; владелец разрешает release. См. [пример manifest](../contracts/product-manifest.example.yaml).
+Назовём продукт analytics.e7a.ru, Kit Full-stack; требуется E7A Identity и собственный PostgreSQL, Redis нет, workers нужны только после измеренного спроса. Wizard формирует **не исполняемый напрямую** декларативный manifest с продуктом, образом, healthcheck, tenancy и проверками. Infra делает план ресурсов и DNS/TLS; QA проверяет собранный digest и exact SHA; владелец заранее разрешает ограниченный R0/R1 режим для продукта **или** утверждает конкретный высокорисковый release. См. [пример manifest](../contracts/product-manifest.example.yaml).
 
 ## PR-driven QA на Lobachevsky — из нашей эксплуатационной практики
 
@@ -36,15 +36,15 @@
 
 Минимум: product/repo, commitSha, artifact digest, kit/schema version, standards revision, check suite version, server/runner identity (без секрета), start/end, log reference, risk, DB migration/backup evidence, approval subject и expiry, rollback image/tag и health outcome. См. [release evidence](../contracts/release-evidence.example.json).
 
-Статус: PROPOSED → VALIDATED → APPROVED → DEPLOYING → VERIFIED или ROLLED_BACK/FAILED. Отдельно хранить SKIPPED (запуск пропущен из-за lock), не выдавать skipped за green.
+Статус: PROPOSED → VALIDATED → RELEASE_ELIGIBLE → DEPLOYING → RUNNING_VERIFIED или ROLLED_BACK/FAILED/RECOVERY_REQUIRED. `STAGING_VERIFIED` и `INDIVIDUAL_OWNER_APPROVED` фиксируются дополнительно, только когда нужны. Отдельно хранить SKIPPED (запуск пропущен из-за lock), не выдавать skipped за green.
 
 ## Граница с Identity и Platform
 
-Identity доказывает, кто инициировал QA/release и какие у него общие права. Laboratory хранит спецификацию и decision record. Platform (если появится) может обеспечить доставку уведомления о результате, но не решает, **можно** ли выпускать релиз; Infra применяет production изменения только с отдельным действующим разрешением.
+Identity доказывает, кто инициировал QA/release и какие у него общие права. Laboratory хранит спецификацию и decision record. Platform (если появится) может обеспечить доставку уведомления о результате, но не решает, **можно** ли выпускать релиз; Infra применяет production изменения только по действующему standing authorization либо отдельному approval, проверенному на границе выполнения.
 
 ## Безопасность
 
-Тестовые запуски не имеют access к prod PostgreSQL, секретам, сети внутренних admin API и Docker socket без изоляции. Secrets delivery — серверная зона Infra, не pipeline YAML с токенами. Нет автоматического merge, package publication или production push вследствие создания репозитория.
+Тестовые запуски не имеют access к prod PostgreSQL, секретам, сети внутренних admin API и Docker socket без изоляции. Secrets delivery — серверная зона Infra, не pipeline YAML с токенами. Нет автоматического merge, package publication или production push **вследствие создания репозитория**; product-scoped self-hosted auto-deploy возможен исключительно после owner-approved включения, не через Laboratory.
 
 ## Входящие маршруты Laboratory (проект дополнения)
 

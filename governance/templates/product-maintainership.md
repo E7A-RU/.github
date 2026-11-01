@@ -16,7 +16,7 @@
 
 | Responsibility | Current assigned identity or evidence | Notes |
 | --- | --- | --- |
-| Accountable organization owner | E7A Owner | Normative change and production approval |
+| Accountable organization owner | E7A Owner | Normative changes, scoped standing authorization, critical production approval |
 | Product Owner | `TBD — owner assignment pending` | Scope, product roadmap, acceptance |
 | Engineering lead / VP agent | `TBD — assign per work session` | Implementation, README/AGENTS, PR handoff |
 | QA reviewer | `TBD / temporary owner-only exception` | exact-SHA QA evidence, no invented independent reviewer |
@@ -52,13 +52,14 @@ Other responsibilities and pending dependencies:
 - [ ] Documentation: relative links/JSON validate, stale claims corrected.
 - [ ] Code: frozen install, strict types, lint, test/build/audit and negative scenarios at exact SHA **with real output**.
 - [ ] Privacy/security and product-specific lifecycle gates satisfied or marked `BLOCKED/UNKNOWN`.
-- [ ] Product owner has approved scope; production requires **separate** owner + Infra approval.
+- [ ] Product owner approved scope; Infra verifies active scoped standing authorization for permitted R0/R1 **or** separate owner approval for other production releases. See [release policy](../release-deployment-policy.md).
 - [ ] Handoff and PR body updated with PASS/FAIL/SKIPPED/UNKNOWN, timestamp and next step.
 
 ## Production and recovery (only observed facts)
 
 - Is there a deployed service? `NOT_VERIFIED`
 - Current deployed artifact SHA/digest: `UNKNOWN`
+- Auto-deploy standing authorization / scope / expiry / kill switch: `NOT_ENABLED_OR_NOT_VERIFIED`
 - Secret owner/location (redacted): `TBD`
 - Backup/restore RPO/RTO: `NOT_VERIFIED`
 - Support/recovery and rollback: `TBD`

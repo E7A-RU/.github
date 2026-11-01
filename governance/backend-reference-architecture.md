@@ -44,7 +44,7 @@ Dedicated PostgreSQL DB/schema+roles for this PRODUCT
 | Transport | HTTP JSON REST/OpenAPI, explicit versioning, correlation/request IDs | gRPC/events as necessary; no compulsory gateway hop |
 | Framework | Lightweight Fastify + schema validation (e.g. JSON Schema/Zod) | NestJS (potentially Fastify adapter) for larger teams/modules; do not prescribe framework org-wide |
 | SQL access | PostgreSQL `pg`, SQL-first repositories, parameterized queries | Type-safe query builder/ORM when it preserves explicit migrations/tenant checks/observability; **no auto-sync in production** |
-| Migrations | Ordered SQL, migration ledger + checksums, staging replay, operator-controlled apply | Another deterministic migration tool with the same invariants |
+| Migrations | Ordered SQL, migration ledger + checksums, disposable-DB replay, risk-triggered staging, operator-controlled apply | Another deterministic migration tool with the same invariants |
 | Background | Process-local job only for disposable ephemeral work; durable product outbox+worker for state | Platform trusted Jobs by explicit contract; not privileged arbitrary user code |
 | Cache | No cache until measured need; explicit invalidation/TTL | Redis only after evidence and security ownership |
 | Observability | Structured redacted logs, traces/correlation IDs, health/readiness, business-safe metrics | OTEL-compatible exporters if feasible; never log PII/secrets by default |
@@ -105,7 +105,7 @@ Useful ideas to generalize:
 - [ ] `OPS-001` state transitions, idempotency, outbox/inbox, retries/UNKNOWN and reconciliation.
 - [ ] `AUTH-001` OIDC subject mapping, session/MFA, service principals, recovery and logout/revoke semantics.
 - [ ] `AUD-001` local transactional audit + central event mapping, outage/degradation policy and retention.
-- [ ] `REL-001` resource budget, migrations, startup/readiness, staging/restore and rollback.
+- [ ] `REL-001` resource budget, migrations, startup/readiness, isolated QA, risk-triggered staging, restore and rollback.
 - [ ] `PRIV-001` privileged operation helper only where strictly required, never web app root/shell.
 
 These are **implementation ADRs**, not blockers for a genuine no-backend Browser-only product.
@@ -118,6 +118,6 @@ These are **implementation ADRs**, not blockers for a genuine no-backend Browser
 - [ ] Auth/tenant permission negative tests, duplicate/replayed request and exhausted resource tests.
 - [ ] Outbox worker crash between COMMIT and external ack; `UNKNOWN` reconciliation.
 - [ ] Network/host privilege boundaries tested where applicable; server doesn't inherit admin/root.
-- [ ] Infra staging checked with digest/exact SHA; production only through separate owner approval.
+- [ ] Infra verifies exact SHA/digest and isolated QA; staging is optional by risk. Production requires activated standing authorization only for explicitly eligible changes, otherwise individual owner approval. **Destructive migrations and changed DB privileges are outside the default low-risk allowlist.** See [release policy](release-deployment-policy.md).
 
 Related: [three Kit implementation roadmaps](kit-implementation-roadmaps.md), [lifecycle](product-lifecycle-checklists.md), [Platform](platform-delivery-jobs-integrations.md), [Identity](identity-and-trust.md), [Infra](infra-operations.md).

@@ -15,6 +15,8 @@
 
 ## Документы
 
+- **[Упрощённая политика release/deploy для всей линейки](release-deployment-policy.md)** — owner-directed изменение: self-hosted QA → build → production без обязательного staging и второго клика при разрешённом R0/R1; **пока proposed**, не активирует release-процессы автоматически.
+
 - **[Product Stewardship: единые правила ВП/агента и владельцев продуктов](product-stewardship.md)**
 - **[Спринт внедрения и QA/PR реестр](consumer-stewardship-sprint-2026-10-30.md)**
 - [Шаблон локального сопровождения каждого продукта](templates/product-maintainership.md)
