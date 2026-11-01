@@ -12,7 +12,7 @@
 
 ## Единственный publish trigger
 
-[Release descriptor](standards-release.json) — реестр утверждённой версии. Обновлять его можно только отдельным Governance PR после owner approval, с `version`, полным `revision` (Git commit SHA принятого baseline), `approvedBy`, `changeClass`, `effectiveAt`, `impactedConsumers`, ссылкой на ADR/changelog и migration guidance. **Current descriptor pins initial accepted v1; it does not create an immutable Git tag and does not silently publish each future docs commit.**
+[Release descriptor](standards-release.json) — реестр утверждённой версии. Обновлять его можно только отдельным Governance PR после owner approval, с `version`, полным `revision` (Git commit SHA принятого baseline), `approvedBy`, `changeClass`, `effectiveAt`, `impactedConsumers`, ссылкой на ADR/changelog и migration guidance. **Current descriptor pins approved Governance v2.0.0; it does not create an immutable Git tag and does not silently publish future docs commits. Consumer pins are changed only by independently reviewed PRs.**
 
 Versioning policy: 
 - **PATCH:** editorial/normative clarity without new consumer obligation (may produce informational report only).
@@ -72,7 +72,7 @@ Every product stores a **minimal** `governance-consumer.json` or equivalent mani
 ## Illustrative output (not already executed)
 
 ```text
-Governance v1.1.0 / approved SHA <immutable-40-hex>
+Governance v2.0.0 / approved SHA 298fe2856f6ac879286f96d089175fa960c88dd8
 core       : DRAFT_PR_REQUIRED (SDK/Starter standards)
 website    : DRAFT_PR_REQUIRED (Demo/privacy rule)
 reader     : NO_IMPACT (browser-only unrelated)
