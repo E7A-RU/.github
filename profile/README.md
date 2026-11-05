@@ -60,7 +60,8 @@
 | **[Laboratory](https://github.com/E7A-RU/laboratory)** | Product Factory: Wizard, три Product Kit, QA, Sandbox, Release Gate | Планируемый продукт, не универсальный backend |
 | **[Infra](https://github.com/E7A-RU/infra)** | Инвентарь серверов, окружения, секреты, backup/recovery, контролируемые релизы | Отдельная эксплуатационная граница; общая платформа ещё не подтверждена |
 | **[Central Audit / Billing Foundation](https://github.com/E7A-RU/.github/blob/main/governance/roadmap.md)** | Защищённый аудит; тарифы, заказы, подписки, entitlements | Утверждённые архитектурные направления, не готовые платежи |
-| **[Engineering Automation](https://github.com/E7A-RU/automation)** | Приватный внутренний проект: стандарты, планирование обновлений и безопасная подготовка Draft PR | Репозиторий создан; read-only планировщик в Draft PR, GitHub App и runtime не запущены |
+| **[Engineering Automation](https://github.com/E7A-RU/automation)** | Приватный внутренний проект: стандарты, планирование обновлений и безопасная подготовка Draft PR | Репозиторий создан; read-only планирующие инструменты в исходниках; отдельный runtime/App не подтверждён |
+| **E7A Admin Template** (private) | Самостоятельный повторно используемый шаблон UI административных интерфейсов для внутренних и будущих клиентских продуктов | Репозиторий создан, Governance 2.0.0 и Product Charter приняты; UI-приложения и публичного релиза ещё нет |
 
 ## Принципы разработки
 
