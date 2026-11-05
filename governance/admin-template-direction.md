@@ -1,7 +1,7 @@
 # E7A Admin Template — единый необязательный шаблон административных интерфейсов
 
-**Статус: OWNER-REQUESTED DIRECTION / DISCOVERY & ROADMAP ONLY (2026-11-05).**
-Идея владельца: создать собственный E7A Admin Template для будущего внутреннего и публичного использования. **Ни готового шаблона, ни опубликованного пакета, ни нового репозитория, ни работающего кабинета этим документом не подтверждается.** Это план, а не изменение опубликованного Governance 2.0.0, разрешение на production или решение о публичной лицензии.
+**Статус: OWNER-DIRECTED PRODUCT REGISTRATION / REPOSITORY BOOTSTRAP PENDING (2026-11-05).**
+Владелец подтвердил выделение E7A Admin Template в отдельное направление продуктовой линейки. **Рекомендуемое и зарезервированное в плане имя: `E7A-RU/admin-template`, приватный репозиторий. На момент этой документационной ревизии репозиторий не создан и не подтверждены runtime, QA, публикация или лицензия.** Это дорожная карта, не изменение опубликованного Governance 2.0.0 и не разрешение на deployment.
 
 ## Зачем это E7A
 
@@ -11,7 +11,8 @@
 
 ## Архитектурное место и границы
 
-- **E7A Core** владеет общими UI-компонентами, дизайн-токенами, версиями библиотек и опциональным **Product Starter**. На начальном этапе Admin Template разумно рассматривать как **опциональный frontend-профиль/пресет** существующего Starter. Имя CLI-флага, package entrypoint и выделение отдельного репозитория определятся после технического RFC; сейчас они не существуют.
+- **E7A Admin Template** — отдельный независимый **продукт-шаблон** с планируемым исходным репозиторием `E7A-RU/admin-template`, собственными версионированными исходниками, QA и релизами. Стартовать приватным. Фактическое создание репозитория и bootstrap проверяются отдельно; наличие ссылки в реестре не означает существующего GitHub-ресурса.
+- **E7A Core** остаётся единственным владельцем общих UI-компонентов, токенов, дизайн-системы и опционального Product Starter. Admin Template потребляет **точную опубликованную версию** Core UI, не копирует core tokens/компоненты; позже может подключаться к Starter как необязательный профиль/источник пресета по отдельному проверенному контракту. Core и Admin Template имеют независимые версии.
 - **Три Product Kit остаются неизменными:** Browser-only, Full-stack, Service/Worker. Admin Template — **слой интерфейса**, а не четвёртый Kit, новый общий backend, обязательный портал или управляющая платформа.
 - **Каждый продукт** владеет своими реальными API, данными, ролями, аудитом, бизнес-логикой и релизами. Шаблон предоставляет компоненты и примеры, но **не выдаёт прав доступа**, не переносит чужие базы и не предопределяет shared backend.
 - **Identity** при необходимости обеспечивает аутентификацию/доверие, но реальный backend обязан самостоятельно проверять authorization. Скрытие кнопки в UI **не считается access control**.
@@ -41,7 +42,7 @@
 | --- | --- | --- |
 | **AT0 — Discovery** | Сопоставить реальные задачи внутренних кабинетов и одного внешнего B2B сценария; решить, каких компонентов ещё нет в Core | 2–3 проверенных сценария, UX/brand/permission boundaries, выбор владельца |
 | **AT1 — UI specification & preview** | Read-only прототип оболочки и 4–6 ключевых паттернов с synthetic data, RU/EN, dark/light, mobile | UX/a11y/visual acceptance, угрозы spoofed admin UI, no backend claims |
-| **AT2 — Optional Core Starter profile** | Отдельный версионируемый frontend preset, воспроизводимый scaffold + docs/tests | exact-SHA self-hosted QA, frozen install, TypeScript, browser/a11y, независимый sample consumer |
+| **AT2 — Independent Admin Template MVP** | В приватном `E7A-RU/admin-template` разработать версионируемый исходный шаблон, воспроизводимый scaffold и тестовый consumer; последующая опциональная интеграция с Core Starter — отдельная задача | exact-SHA self-hosted QA, frozen install, TypeScript, browser/a11y, независимые версии и отсутствие обязательного общего backend |
 | **AT3 — Internal pilot** | Принять профиль в одном безопасном внутреннем кабинете, предпочтительно read-only | отдельный product/Infra PR, реальные роли/доступ, privacy, health/rollback, owner authorization |
 | **AT4 — Public distribution decision** | Отдельно решить пакет/шаблон, документацию и модель распространения | code license, brand rights, security review, support/versioning, independently tested clean install; отдельное разрешение на публикацию |
 
@@ -60,8 +61,8 @@
 
 - Первый **реальный** внутренний потребитель и один внешне-ориентированный сценарий.
 - UX-структура, состав паттернов, степень конфигурируемости, повторное использование существующих Core компонентов.
-- Нужно ли имя/пакет `Admin Template` в Core Starter, и когда обоснован отдельный репозиторий.
+- Репозиторий определён как **`E7A-RU/admin-template` (планируемый private bootstrap)**. Отдельно решаются package name, версия/распространение, API профиля и способ необязательного подключения из Core Starter; новый репозиторий ещё требуется создать и проверить.
 - Лицензия кода, визуальные права, режим брендирования/white-label для внешних пользователей.
 - Требования к доступности, мобильному интерфейсу, локализации, поддержке и безопасности конкретного pilot-продукта.
 
-**Приоритет:** отложенное направление расширения продукта/Starter (P2–P3), **не блокирует** текущие Website/Reader, Infra QA/deploy и миграцию Governance 2.0.0. Связано с [общим Roadmap](roadmap.md), [Product Factory](product-factory-and-kits.md), [Kit roadmaps](kit-implementation-roadmaps.md), [Core/Starter boundaries](https://github.com/E7A-RU/core/blob/main/templates/product-starter/README.md) и [Brand Policy](../BRAND_POLICY.md).
+**Приоритет:** самостоятельное направление продуктовой линейки / reusable developer tool (P2–P3), **не блокирует** текущие Website/Reader, Infra QA/deploy и миграцию Governance 2.0.0. Связано с [общим Roadmap](roadmap.md), [Product Factory](product-factory-and-kits.md), [Kit roadmaps](kit-implementation-roadmaps.md), [Core/Starter boundaries](https://github.com/E7A-RU/core/blob/main/templates/product-starter/README.md) и [Brand Policy](../BRAND_POLICY.md).

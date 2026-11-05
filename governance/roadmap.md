@@ -32,6 +32,7 @@
 | [Planner](https://github.com/E7A-RU/planner) | Самостоятельный планировщик | Дизайн + Starter в Draft; MVP scope отдельно не утверждён |
 | [Gateway](https://github.com/E7A-RU/gateway) | Персональный WireGuard control plane без риска действующим каналам | Mock-only PR; QA, helper и реальные сети требуют отдельного разрешения |
 | [Games](games-product-direction.md) | Зарегистрированное направление и потенциальная витрина внутри Website | Нет утверждённой игры или обязательного игрового backend; кандидат M1 по исследованию |
+| **E7A Admin Template** (`E7A-RU/admin-template`, репозиторий ожидает создания) | Самостоятельный reusable admin/dashboard template для внутренних и будущих публичных продуктов; независимые версии поверх Core UI, optional Starter integration | **OWNER-DIRECTED / PLANNED / REPO NOT CREATED**; [Product direction, AT0–AT4](admin-template-direction.md); без runtime, опубликованного пакета и новой лицензии |
 
 **Репозиторий и возможность** не обязательно совпадают один-к-одному: нельзя создавать Central Audit/Billing repo автоматически только из этой таблицы.
 
@@ -101,7 +102,7 @@
 ### P2 — Product portfolio scaling
 
 - [ ] Grow Library / Kit coverage and safe self-hosted QA only after evidence.
-- [ ] **E7A Admin Template (новое направление, только план):** изучить опциональный admin/dashboard frontend-профиль для Core Product Starter, применимый к внутренним кабинетам и будущим публичным B2B-продуктам. [Discovery, архитектурные границы, этапы AT0–AT4 и ограничения публикации](admin-template-direction.md). Не создавать четвёртый обязательный Kit или общий admin backend; сначала реальные сценарии, дизайн, безопасность и лицензия.
+- [ ] **E7A Admin Template (самостоятельное направление):** инициализировать отдельный приватный `E7A-RU/admin-template`, принять продуктовые границы и минимальный Governance bootstrap. Развивать версионируемый admin/dashboard UI поверх опубликованного Core UI; позже — необязательная интеграция с Core Starter. [AT0–AT4 и ограничения публичной поставки](admin-template-direction.md). Не создавать четвёртый Kit, общий admin backend или обязательные shared services.
 - [ ] Migrate Bot generic adapters to Platform after parity/dual-run/rollback; keep dialog state owned by Bot.
 - [ ] Add approved games, Planner or other products with independent charters.
 - [ ] Expand multi-node/regions, providers and Billing payments only when owner, law, reliability and business evidence justify costs.
