@@ -101,6 +101,7 @@
 ### P2 — Product portfolio scaling
 
 - [ ] Grow Library / Kit coverage and safe self-hosted QA only after evidence.
+- [ ] **E7A Admin Template (новое направление, только план):** изучить опциональный admin/dashboard frontend-профиль для Core Product Starter, применимый к внутренним кабинетам и будущим публичным B2B-продуктам. [Discovery, архитектурные границы, этапы AT0–AT4 и ограничения публикации](admin-template-direction.md). Не создавать четвёртый обязательный Kit или общий admin backend; сначала реальные сценарии, дизайн, безопасность и лицензия.
 - [ ] Migrate Bot generic adapters to Platform after parity/dual-run/rollback; keep dialog state owned by Bot.
 - [ ] Add approved games, Planner or other products with independent charters.
 - [ ] Expand multi-node/regions, providers and Billing payments only when owner, law, reliability and business evidence justify costs.
