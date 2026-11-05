@@ -32,7 +32,7 @@
 | [Planner](https://github.com/E7A-RU/planner) | Самостоятельный планировщик | Дизайн + Starter в Draft; MVP scope отдельно не утверждён |
 | [Gateway](https://github.com/E7A-RU/gateway) | Персональный WireGuard control plane без риска действующим каналам | Mock-only PR; QA, helper и реальные сети требуют отдельного разрешения |
 | [Games](games-product-direction.md) | Зарегистрированное направление и потенциальная витрина внутри Website | Нет утверждённой игры или обязательного игрового backend; кандидат M1 по исследованию |
-| **E7A Admin Template** (`E7A-RU/admin-template`, репозиторий ожидает создания) | Самостоятельный reusable admin/dashboard template для внутренних и будущих публичных продуктов; независимые версии поверх Core UI, optional Starter integration | **OWNER-DIRECTED / PLANNED / REPO NOT CREATED**; [Product direction, AT0–AT4](admin-template-direction.md); без runtime, опубликованного пакета и новой лицензии |
+| **[E7A Admin Template](https://github.com/E7A-RU/admin-template)** (private) | Независимый reusable admin/dashboard frontend template для внутренних и будущих публичных потребителей; optional Core Starter integration | **REPO_BOOTSTRAPPED / DOC_ONLY**: [PR #1](https://github.com/E7A-RU/admin-template/pull/1) merged, `main@d56031adea734f3ae2da4942ae43f78f5b8be068`, Governance 2.0.0 pin; [AT0–AT4](admin-template-direction.md) ещё впереди; нет приложения, опубликованного пакета и runtime |
 
 **Репозиторий и возможность** не обязательно совпадают один-к-одному: нельзя создавать Central Audit/Billing repo автоматически только из этой таблицы.
 
@@ -102,7 +102,8 @@
 ### P2 — Product portfolio scaling
 
 - [ ] Grow Library / Kit coverage and safe self-hosted QA only after evidence.
-- [ ] **E7A Admin Template (самостоятельное направление):** инициализировать отдельный приватный `E7A-RU/admin-template`, принять продуктовые границы и минимальный Governance bootstrap. Развивать версионируемый admin/dashboard UI поверх опубликованного Core UI; позже — необязательная интеграция с Core Starter. [AT0–AT4 и ограничения публичной поставки](admin-template-direction.md). Не создавать четвёртый Kit, общий admin backend или обязательные shared services.
+- [x] **E7A Admin Template — приватный product bootstrap:** `E7A-RU/admin-template` создан, README/AGENTS/Charter/Status/Governance pin приняты в [PR #1](https://github.com/E7A-RU/admin-template/pull/1); документационный факт, не MVP QA.
+- [ ] **E7A Admin Template — AT0–AT4:** согласовать первого внутреннего/внешнего потребителя и MVP UI scope, затем независимо разрабатывать версионируемый admin/dashboard frontend поверх опубликованного Core UI; позднее — необязательная интеграция в Core Starter и отдельное решение по публичной лицензии. [Charter/этапы и ограничения](admin-template-direction.md). Без четвёртого Kit, общего admin backend и обязательных shared services.
 - [ ] Migrate Bot generic adapters to Platform after parity/dual-run/rollback; keep dialog state owned by Bot.
 - [ ] Add approved games, Planner or other products with independent charters.
 - [ ] Expand multi-node/regions, providers and Billing payments only when owner, law, reliability and business evidence justify costs.
