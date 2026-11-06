@@ -12,7 +12,7 @@
 
 ## Единственный publish trigger
 
-[Release descriptor](standards-release.json) — реестр утверждённой версии. Обновлять его можно только отдельным Governance PR после owner approval, с `version`, полным `revision` (Git commit SHA принятого baseline), `approvedBy`, `changeClass`, `effectiveAt`, `impactedConsumers`, ссылкой на ADR/changelog и migration guidance. **Current descriptor pins approved Governance v2.0.0; it does not create an immutable Git tag and does not silently publish future docs commits. Consumer pins are changed only by independently reviewed PRs.**
+[Release descriptor](standards-release.json) — реестр утверждённой версии. Обновлять его можно только отдельным Governance PR после owner approval, с `version`, полным `revision` (Git commit SHA принятого baseline), `approvedBy`, `changeClass`, `effectiveAt`, `impactedConsumers`, ссылкой на ADR/changelog и migration guidance. **Current descriptor pins approved Governance v2.1.0 at normative SHA `c26fc1daea258a8ba63b61ea069664f6d9a51da2` (Owner Decision 063; previous 2.0.0 is immutable history). The descriptor does not itself create an immutable Git tag and does not silently publish future docs commits. Consumer pins are changed only by independently reviewed PRs.**
 
 Versioning policy: 
 - **PATCH:** editorial/normative clarity without new consumer obligation (may produce informational report only).
