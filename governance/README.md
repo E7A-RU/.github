@@ -61,7 +61,7 @@
 - [Platform: СГДС, Jobs, коннекторы, Mail](platform-delivery-jobs-integrations.md)
 - [Реальные и иллюстративные сценарии](scenarios.md)
 - [Infra: профессорские серверы и эксплуатация](infra-operations.md)
-- **[Единый стандарт зависимостей: Core / Product Starter / продукты / Automation](dependency-ownership.md)** — **PROPOSED**, обязательный статус только после отдельного approved immutable Governance release и targeted adoption; не активирует CI, PR writer или deploy.
+- **[Единый стандарт зависимостей: Core / Product Starter / продукты / Automation](dependency-ownership.md)** — утверждён Owner E7A как расширение **2.1.0**; действует нормативно после отдельного approved immutable `standards-release.json` с полным SHA. Независимые consumer adoption PR, никакого автоматического CI/PR writer/deploy.
 - [Версии стандартов и управление изменениями](standards-and-change-control.md)
 - [Реестр архитектурных решений и открытых вопросов](decision-log.md)
 - [Architecture Consistency Report — противоречия, риски, проверки](architecture-consistency-report.md)
