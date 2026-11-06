@@ -1,6 +1,6 @@
 # E7A Governance — единый источник архитектурных решений
 
-**Status: owner-approved Governance v2.0.0**, released 2026-11-01. Normative immutable SHA: `298fe2856f6ac879286f96d089175fa960c88dd8` ([release descriptor](standards-release.json)). This major revision changes the release/deploy gate for independently authorized low-risk products, while retaining security controls. Historical v1.0.0/v1.1.0 decisions remain in Git history. Никаких сервисов, автоматических деплоев или глобального входа документы сами по себе не создают.
+**Status: owner-approved Governance v2.1.0**, effective 2026-11-06. Immutable normative SHA: `c26fc1daea258a8ba63b61ea069664f6d9a51da2` ([release descriptor](standards-release.json), [migration notes](releases/2.1.0.md), Owner Decision 063). This backwards-compatible MINOR release adds E7A-wide dependency ownership: Core publishes independent SDKs and optional Starter defaults; each existing product owns its framework/runtime pins, security QA and release. It preserves approved Governance 2.0.0 risk-gated deployment policy; no automatic product updates, new write privileges, hosted Actions CI or production activation.
 
 ## Иерархия источников истины
 
@@ -34,6 +34,7 @@
 - [Шаблон Product Charter](templates/product-charter.md) · [шаблон Release Gate и evidence](templates/release-gate.md)
 - **[Автоматическое распространение утверждённых стандартов в Draft PR](standards-propagation.md)** — концепция self-hosted механизма, **не запущен**
 - **[Реестр опубликованной версии стандарта](standards-release.json)** — неизменяемый baseline SHA, не executable automation
+- [Governance 2.1.0 — impact/migration and review evidence](releases/2.1.0.md)
 
 - **[Финальный архитектурный baseline: восемь заключительных решений и устранение противоречий](final-architecture-baseline-2026-10-27.md)**
 - **[Решения владельца: раунды 1–10, 2026-10-27 — актуальный архитектурный baseline](owner-decisions-2026-10-27.md)**
