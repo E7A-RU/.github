@@ -61,6 +61,7 @@
 - [Platform: СГДС, Jobs, коннекторы, Mail](platform-delivery-jobs-integrations.md)
 - [Реальные и иллюстративные сценарии](scenarios.md)
 - [Infra: профессорские серверы и эксплуатация](infra-operations.md)
+- **[Единый стандарт зависимостей: Core / Product Starter / продукты / Automation](dependency-ownership.md)** — **PROPOSED**, обязательный статус только после отдельного approved immutable Governance release и targeted adoption; не активирует CI, PR writer или deploy.
 - [Версии стандартов и управление изменениями](standards-and-change-control.md)
 - [Реестр архитектурных решений и открытых вопросов](decision-log.md)
 - [Architecture Consistency Report — противоречия, риски, проверки](architecture-consistency-report.md)
