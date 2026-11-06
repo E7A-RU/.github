@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "releaseId": "e7a-governance-v2.0.0",
-  "version": "2.0.0",
+  "releaseId": "e7a-governance-v2.1.0",
+  "version": "2.1.0",
   "status": "APPROVED_BASELINE",
-  "revision": "298fe2856f6ac879286f96d089175fa960c88dd8",
+  "revision": "c26fc1daea258a8ba63b61ea069664f6d9a51da2",
   "approvedBy": "E7A Owner",
-  "effectiveAt": "2026-11-01",
-  "changeClass": "MAJOR",
-  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/12",
+  "effectiveAt": "2026-11-06",
+  "changeClass": "MINOR",
+  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/18",
   "policyRoot": "governance/",
   "brandPolicyPath": "BRAND_POLICY.md",
   "impactedConsumers": [
@@ -21,9 +21,10 @@
     "gateway",
     "identity",
     "platform",
-    "automation"
+    "automation",
+    "admin-template"
   ],
-  "notes": "Owner decision 060: risk-gated, product-scoped self-hosted exact-SHA QA -> immutable build -> production -> health/rollback. Staging optional by documented risk. R0/R1 may use individually activated standing owner authorization; R2+ / critical changes require individual approval. This is a normative policy change (major), not an active timer or universal deploy permission. Existing consumer v1.1.0 pins remain unchanged until reviewed adoption PRs. No GitHub-hosted Actions CI or permission for E7A Automation to deploy.",
+  "notes": "Owner decision 063 (2026-11-06). E7A Dependency Ownership Standard: Core maintains independently released shared UI/Server libraries and optional Starter defaults; each product independently pins exact published runtime/framework versions, commits genuine frozen lockfiles and owns security/QA/release/rollback. Automation provides read-only evidence and reviewed proposals, no product writes or deploy. New products adopt after this normative release; existing consumers migrate via targeted product-owned review PR at next relevant dependency/security change. Explicit peerDependencies/dev tooling exceptions allowed under the documented evidence policy. This minor release supersedes v2.0.0 as normative baseline without re-publishing Core packages, force-upgrading consumers, activating App/timer/Actions CI, or weakening product-scoped release approvals.",
   "botAutoMerge": false,
   "productionAutoDeploy": false,
   "productScopedAutoDeployPolicy": "OPT_IN_STANDING_AUTHORIZATION_ONLY",
