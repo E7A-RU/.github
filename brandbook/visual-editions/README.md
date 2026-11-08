@@ -14,7 +14,7 @@ Make experimental visual directions reusable in wallpapers, editorial imagery, p
 | B. Product UI themes | Core `@e7a-ru/ui` and consumer-owned QA | Current Dark and opt-in Light, semantic states, controls, a11y | **No** |
 | C. Visual Editions | This proposed specification | Decorative surfaces, art direction, backgrounds, editorial/promo and opt-in skins | **Only within decorative scope, after approval** |
 
-**Canonical reference palette (not new edition values):** `--e7a-bg #0B0D12`, `--e7a-text #F5F7FA`, `--e7a-muted #B8C0CC`, `--e7a-blue #3B82F6`. Source-of-truth values are imported from Core; these values are an observed snapshot, not independent authority. Manrope serves content; JetBrains Mono is reserved for short technical annotations.
+**Canonical Dark reference palette (not new edition values):** `--e7a-bg #0B0D12`, `--e7a-text #F5F7FA`, `--e7a-muted #B8C0CC`, `--e7a-blue #3B82F6`. Core's optional Light scope uses a different palette, including `--e7a-blue #1D4ED8`. The mark's blue balance point must track the active official theme through Core, not be hardcoded in edition CSS. Source-of-truth values are imported from Core; these are observed snapshots, not independent authority. Manrope serves content; JetBrains Mono is reserved for short technical annotations.
 
 The official `E7AMark` is a geometric seven with a square blue balance point. Do not fabricate new E7A lettering, change the seven, rotate/recolor the mark or replace the blue node. Current AI wallpaper studies contain **unofficial stylized lettering**: useful for atmosphere only; not official logo assets, not production ready.
 
@@ -30,7 +30,7 @@ Both are meant to feel like E7A, not like two unrelated subbrands. Prefer qualit
 ## Edition behavior and delivery
 
 - Default appearance remains unaffected. No global theme overrides, automatic migration, auto-enabled skins, saved preference resets or semantic token changes.
-- Provide an explicit opt-in and one-action revert to Dark/Light if an edition is ever implemented as a product skin. Persist only within that product's approved preference contract.
+- Provide an explicit opt-in and one-action revert to edition `none` without altering Dark/Light if an edition is ever implemented as a product skin. Persist only within that product's approved preference contract.
 - Editorial/wallpaper assets may be produced separately from UI implementation; designs must remain legible under crops, iOS lock-screen clock/widgets and home-screen icons.
 - Use `prefers-reduced-motion`; keep decoration outside interactive hit areas and avoid confounding glow with focus, error, warning or success.
 - Even high-resolution visual studies must not be called approved brandmasters until exact Core assets, origin, rights and QA evidence are recorded.
