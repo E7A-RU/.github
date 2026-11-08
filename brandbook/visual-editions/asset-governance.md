@@ -1,6 +1,6 @@
 # E7A Visual Editions — Asset, UX and Release Governance
 
-**Status:** draft procedural specification; no release authorization. Applies to [Silver](silver.md) and [Ember](ember.md). Canonical source: [Brandbook](../README.md), [Brand Usage Policy](../../BRAND_POLICY.md), official [Core E7AMark](https://github.com/E7A-RU/core/blob/main/packages/ui/src/E7AMark.tsx), [E7ALogo](https://github.com/E7A-RU/core/blob/main/packages/ui/src/E7ALogo.tsx) and tokens.
+**Status:** draft procedural specification; no release authorization. See the [proposed Core-compatible integration contract](integration-contract.md): `data-e7a-theme` remains Dark/Light while a distinct opt-in `data-e7a-edition` identifies decorative Silver/Ember; **no such runtime edition API has shipped**. Applies to [Silver](silver.md) and [Ember](ember.md). Canonical source: [Brandbook](../README.md), [Brand Usage Policy](../../BRAND_POLICY.md), official [Core E7AMark](https://github.com/E7A-RU/core/blob/main/packages/ui/src/E7AMark.tsx), [E7ALogo](https://github.com/E7A-RU/core/blob/main/packages/ui/src/E7ALogo.tsx) and tokens.
 
 ## Ownership and change authority
 
