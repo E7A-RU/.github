@@ -24,6 +24,7 @@ brandbook/visual-editions/
   ember.md
   asset-governance.md
   integration-contract.md
+  visual-study-register.md
   assets/
     silver/<revision>/source/
     silver/<revision>/exports/
