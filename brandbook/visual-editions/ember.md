@@ -30,7 +30,7 @@ Study-only values subject to design and accessibility QA:
 | `--e7a-edition-ember-glow` | `rgba(255,98,24,.90)` | Non-semantic seam light |
 | `--e7a-edition-ember-glow-soft` | `rgba(255,98,24,.24)` | Local spill only |
 
-**Two accent roles, never conflated:** **orange = atmospheric light; blue = brand identity.** The true E7A node and core tokens remain `#3B82F6`. Orange may never replace warning/error/focus/success color or brand balance-point. Use warm glow sparingly to retain the identity hierarchy.
+**Two accent roles, never conflated:** **orange = atmospheric light; blue = brand identity.** The E7A node must retain Core's theme-aware blue (`#3B82F6` in Dark, `#1D4ED8` in Light); an Ember surface currently renders decoratively only in Dark. These are references to Core values, not independent edition tokens. Orange may never replace warning/error/focus/success color or brand balance-point. Use warm glow sparingly to retain the identity hierarchy.
 
 ## Composition rules
 
