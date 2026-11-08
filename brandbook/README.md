@@ -45,7 +45,7 @@ Website служит визуальной baseline, Core — источнико�
 
 ## Дополнительные визуальные редакции E7A (проект спецификации)
 
-[**E7A Visual Editions: Silver / Ember**](visual-editions/README.md) — вторичные декоративные направления с подробными правилами композиции, материалов, палитр, типографики, движения, экспорта и согласования: [Silver / Quiet Precision](visual-editions/silver.md), [Ember / Active Geometry](visual-editions/ember.md), [asset governance](visual-editions/asset-governance.md).
+[**E7A Visual Editions: Silver / Ember**](visual-editions/README.md) — вторичные декоративные направления с подробными правилами композиции, материалов, палитр, типографики, движения, экспорта и согласования: [Silver / Quiet Precision](visual-editions/silver.md), [Ember / Active Geometry](visual-editions/ember.md), [asset governance](visual-editions/asset-governance.md), [visual study register](visual-editions/visual-study-register.md).
 
 **Статус:** документационная проработка, не новые официальные логотипы и не выпущенные UI-темы. Канонические E7ALogo/E7AMark, фирменная синяя точка и базовые Dark/Light остаются неизменными; внедрение — только отдельным opt-in решением и проверкой владельца продукта. Исходные AI-концепты обоев содержат неофициальное начертание, которое нельзя публиковать как фирменный знак. См. [задачу #21](https://github.com/E7A-RU/.github/issues/21).
 
