@@ -23,6 +23,7 @@ brandbook/visual-editions/
   silver.md
   ember.md
   asset-governance.md
+  integration-contract.md
   assets/
     silver/<revision>/source/
     silver/<revision>/exports/
@@ -42,8 +43,8 @@ edition: silver # silver | ember
 editionRevision: 0.1.0-study
 role: wallpaper-lock # wallpaper-home | desktop | editorial | merch-mockup
 status: concept # concept | candidate | approved | released | retired
-sourceAssetSha: null # full pinned Core commit SHA required for candidate+
-canonicalMark: E7AMark # or E7ALogo; omit only if no mark is shown
+sourceAssetSha: null # immutable full Core source commit SHA required when official mark is used at candidate+
+canonicalMark: E7AMark # E7AMark | E7ALogo | none, based on actual artwork
 masterPath: null
 exportPath: null
 pixelSize: null
@@ -56,7 +57,7 @@ qaEvidence: null
 licenseAndDistributionScope: internal-study
 ```
 
-These keys are a documentation proposal, not a deployed parser or API contract. No `candidate` or later status without actual immutable source and evidence.
+These keys are a documentation proposal, not a deployed parser or API contract. No `candidate` or later status without actual immutable source and evidence. If no mark is shown, record `canonicalMark: none` and mark source SHA as not applicable with a reason; do not fake a Core source. If a mark is shown, record the Core commit containing its geometry *and* the exact export asset revision and checksum. Record whether publication rights are internal, public-display or physical-production approved; approval for one scope does not imply another.
 
 ## Status transition gates
 
