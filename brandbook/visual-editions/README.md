@@ -43,7 +43,7 @@ Both are meant to feel like E7A, not like two unrelated subbrands. Prefer qualit
 - No new repository, product dependencies, live accounts, UI package release, GitHub Actions CI, production deployment, merch manufacturing or sales are authorized here.
 - Next review occurs at a **planned design-system / Admin Template visual iteration**, not as an urgent ecosystem rollout.
 
-See [asset and release governance](asset-governance.md) for master/manifest fields, stage gates, constraints and acceptance.
+See the [Core-compatible integration contract](integration-contract.md) for the two-axis Dark/Light × none/Silver/Ember connection, scope/isolation, preference migration and exact acceptance matrix. See [asset and release governance](asset-governance.md) for master/manifest fields, stage gates, constraints and acceptance.
 
 ## Proposed naming for collateral
 
