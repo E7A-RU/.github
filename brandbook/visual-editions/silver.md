@@ -30,7 +30,7 @@ These **draft sRGB design-study values** are deliberately namespaced. Final surf
 | `--e7a-edition-silver-highlight` | `rgba(245,247,250,.72)` | Edge reflection |
 | `--e7a-edition-silver-edge` | `rgba(255,255,255,.18)` | Hairline geometry |
 
-**Immutable identity contrast:** official background `#0B0D12`, official text `#F5F7FA`, official blue `#3B82F6`. Silver tones may depict *light* but do not turn the logo node silver. Text, focus and feedback colors come from the UI theme.
+**Identity boundary:** the values `#0B0D12`, `#F5F7FA` and `#3B82F6` describe canonical **Dark**. Core Light has different official scoped tokens (including blue `#1D4ED8`); Silver may depict *light* but must not recolor the theme-aware logo node. Text, focus and feedback colors come from the UI theme.
 
 ## Composition rules
 
