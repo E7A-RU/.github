@@ -4,13 +4,16 @@
 these final records under an effective published rule.
 Normative 3.0.0 remains in force. No real data, deployment or security acceptance.
 
-Common repository/target: E7A-RU/identity, protected main, source-only PR merge.
+Common repository/target: E7A-RU/identity, main, source-only GitHub PR merge.
 Proposed accountable approver/revocation owner: E7A Owner.
 No author may manufacture the Owner's signature/review.
-Requested fixed expiry for all three: **2026-11-25T00:00:00Z**.
-Not-before: actual immutable 4.0.0 publication, targeted adoption, effective
-protection and exact-record Owner approval, whichever is last. At approval
-the remaining interval must not exceed 14 days. No retroactive validity.
+No calendar expiry or 14-day renewal. These records cover only their listed
+PR/head and end on merge, Owner pause/revoke, changed head/dependencies/base,
+failed mandatory QA or a new critical/high finding. No blanket future commits.
+Not-before: actual 4.0.0 publication, controlled Identity adoption and the
+specific attributable Owner decision, whichever is last. No retroactive validity.
+The manual GitHub Free risk must be accepted in the published rule and each
+record; technical protection stays UNAVAILABLE, not PASS.
 
 | Record | Candidate exact head | Dependency | Scope |
 | --- | --- | --- | --- |
@@ -19,10 +22,15 @@ the remaining interval must not exceed 14 days. No retroactive validity.
 | ID-SOURCE-6-20261111 | `e1196a25a6312ad9a30f9144807a461adf633347` | #5 accepted, base main | Person-bound membership invite/accept/revoke, no implicit owner/admin, migration 006 |
 
 These heads cannot be approved if adoption changes their source. Preserve the
-record history, list the new exact head, new diff and new QA receipt; do not
+record history, list the new exact head, expected main, new diff and new QA receipt; do not
 silently expand the original approval. Prefer ordinary merge commits to
 preserve ancestry. A retargeted PR requires reviewed unique changed paths and
 final-head Docker QA; a prior base-branch receipt is not enough.
+
+Initial dependency snapshot: Identity main
+`db33c47119a75974892fff8d5272f77f15b10ab9`; #4 targets main, #5 targets
+the #4 branch, #6 targets the #5 branch. These are not approved final main/base
+values after publication/adoption or prior merges.
 
 ## Current development receipts — not final merge receipts
 
@@ -39,7 +47,11 @@ Re-run applicable acceptance before final admission and after source/base change
 ## Required dispositions before signing
 
 - [ ] Normative source/publication SHAs actually exist; Identity adopted them.
-- [ ] GitHub protection enabled and effective for main; no bypass or direct push.
+- [ ] Published Identity-only GitHub Free exception applies; technical protection
+      UNAVAILABLE is disclosed. Minimum writers and PR-only/manual history checks
+      are confirmed; no existing GitHub/organization restriction bypassed.
+- [ ] Current expected main/base SHA recorded immediately before merge; normal
+      merge parents, resulting remote main/tree and post-merge QA will be checked.
 - [ ] Concrete diff/known critical and high findings reviewed; none unremediated.
 - [ ] Applicable mandatory tests all PASS, other source tests have reviewed
       NOT_REQUIRED rationale; no mandatory FAIL/UNKNOWN accepted.
@@ -49,7 +61,7 @@ Re-run applicable acceptance before final admission and after source/base change
 - [ ] Fixtures confined to local synthetic network, no exposed ports or real
       accounts/credentials. Current data/epoch recovery is not live vendor
       key/config acceptance.
-- [ ] Active Owner approval binds exact head, admission ID, expiry and scope.
+- [ ] Active attributable Owner approval binds exact head, expected main, admission ID, scope and termination conditions.
 - [ ] No auto-merge, production, first-user, server host or package permission.
 
 Statuses now: DEVELOPMENT_VERIFIED on recorded scopes; SOURCE_MERGED=false,

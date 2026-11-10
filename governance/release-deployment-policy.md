@@ -70,7 +70,8 @@ Standing authorization **не охватывает** по умолчанию R2+
 ## Proposed Identity-only engineering admission — not active
 
 [GOV-ID-SOURCE-001](adr/GOV-ID-SOURCE-001-bounded-engineering-admission.md)
-proposes a bounded source-only admission for local synthetic Identity engineering.
+proposes a permanent, revocable Owner-controlled source-only admission for local synthetic Identity engineering.
 It has no effect until Owner review, a separate immutable Governance release,
-targeted Identity adoption and an exact-SHA admission. Existing review,
-protected-main and runtime/production rules remain in force.
+targeted Identity adoption and an exact-SHA admission. Until publication existing review/protection rules remain in force. The proposal
+explicitly lists the Identity-only GitHub Free and review-timing exceptions;
+all runtime/production requirements remain unchanged.

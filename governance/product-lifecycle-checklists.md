@@ -130,5 +130,9 @@ Related: [Roadmap](roadmap.md), [standards propagation](standards-propagation.md
 The Identity-only [GOV-ID-SOURCE-001](adr/GOV-ID-SOURCE-001-bounded-engineering-admission.md)
 proposal distinguishes DEVELOPMENT_VERIFIED, SOURCE_MERGED, SECURITY_ACCEPTED,
 STAGING_VERIFIED, PRODUCTION_AUTHORIZED and environment-scoped RUNNING_VERIFIED.
-It does not itself alter an existing checklist gate. Publication and targeted
-adoption precede any admission; other products retain their current rules.
+It does not itself alter an existing checklist gate. After publication and
+targeted Identity adoption only, GOV-ID-SOURCE-001 replaces the source-review
+timing and native protected-main/source-exception expiry requirements for the
+closed synthetic Identity scope with its permanent revocable, exact-PR/SHA
+Owner procedure. It does not replace any server/user/production gate.
+Other products retain their current rules.
