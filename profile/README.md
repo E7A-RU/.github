@@ -32,7 +32,7 @@
 | :--- | :--- | :--- |
 | Удобные пользовательские инструменты, чтение, планирование, игровые гипотезы | Диалоги, боты, интеграции, повторяемые бизнес-процессы | Общая дизайн-система, типизированные контракты, безопасность, управляемая инфраструктура |
 
-Мы не сводим экосистему к единственному серверу или универсальному backend. Каждый продукт сохраняет **свои данные, свой релиз и собственную ответственность**, а общие возможности подключает по контрактам тогда, когда они действительно нужны.
+В Governance готовится новая major-версия 3.0.0 с централизованной моделью прав через Identity; она не означает, что сервис уже запущен, и вступает в силу только после отдельного нормативного выпуска. Мы не сводим экосистему к единственному серверу или универсальному backend. Каждый продукт сохраняет **свои данные, свой релиз и собственную ответственность**, а общие возможности подключает по контрактам тогда, когда они действительно нужны.
 
 
 ## Продуктовая линейка
@@ -55,7 +55,7 @@
 | Компонент | Зона ответственности | Фактическая граница |
 | :--- | :--- | :--- |
 | **[Core](https://github.com/E7A-RU/core)** | Дизайн-система, React UI, typed SDK/contracts, необязательный Product Starter | Не backend и не центральная БД. Публичный `@e7a-ru/ui@0.2.1` опубликован |
-| **[Identity](https://github.com/E7A-RU/identity)** | Person / Account / Organization / Workspace, OIDC, доступ, проверенные claims | Репозиторий создан; работающий сервис не подтверждён |
+| **[Identity](https://github.com/E7A-RU/identity)** | Person / Account / Organization / Workspace, Product Trust, централизованные grants и OIDC (проектируется) | Репозиторий создан; работающий сервис не подтверждён |
 | **[Platform](https://github.com/E7A-RU/platform)** | Delivery/СГДС, trusted Jobs, Connectors, Results | Самостоятельная Foundation capability, ещё не RUNNING |
 | **[Laboratory](https://github.com/E7A-RU/laboratory)** | Product Factory: Wizard, три Product Kit, QA, Sandbox, Release Gate | Планируемый продукт, не универсальный backend |
 | **[Infra](https://github.com/E7A-RU/infra)** | Инвентарь серверов, окружения, секреты, backup/recovery, контролируемые релизы | Отдельная эксплуатационная граница; общая платформа ещё не подтверждена |
@@ -67,7 +67,7 @@
 
 | | Наш подход |
 | :--- | :--- |
-| **01 — Product ownership** | Каждый продукт владеет своим доменом, данными, ролями и жизненным циклом. Нет единой бизнес-БД для всех |
+| **01 — Product ownership** | Каждый продукт владеет бизнес-данными, ресурсным жизненным циклом и применяет проверку доступа; экосистемные grants и роль-модели централизуются через Identity после адресного внедрения. Общей бизнес-БД нет |
 | **02 — TypeScript / PostgreSQL** | TypeScript-first; для stateful backend предпочтителен PostgreSQL с независимой продуктовой БД, проверяемыми SQL-миграциями и восстановлением |
 | **03 — Privacy & security** | Отдельные субъекты Person / Account / SecurityActor, минимальные полномочия, независимые границы доверия, no secrets in Git |
 | **04 — Reusable, not coupled** | Core выпускает пакеты и контракты; Identity, Platform, Infra и Laboratory не подменяют друг друга |
@@ -82,7 +82,7 @@
 | **[Full-stack](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md)** | Продукт с собственными API и состоянием | TypeScript frontend/backend + продуктовая PostgreSQL, если требуется долговременное хранение |
 | **[Service / Worker](https://github.com/E7A-RU/.github/blob/main/governance/kit-implementation-roadmaps.md)** | Интеграции, события, фоновые операции | Версионированные контракты, идемпотентность, retries, Results и PostgreSQL при durable state |
 
-**Стандартный процесс:** идея → Product Charter → Kit и ADR → реализация → локальная/self-hosted проверка → staging → отдельное разрешение на production → наблюдение и следующий безопасный релиз.
+**Стандартный процесс:** идея → Product Charter → Kit и ADR → реализация → локальная/self-hosted QA → staging при необходимости по риску → разрешённый product-scoped выпуск (standing authorization для допустимых R0/R1 либо отдельный approval) → наблюдение и безопасный повторный релиз.
 
 [**Product Lifecycle Checklists**](https://github.com/E7A-RU/.github/blob/main/governance/product-lifecycle-checklists.md) · [**Backend Reference Architecture**](https://github.com/E7A-RU/.github/blob/main/governance/backend-reference-architecture.md) · [**Product Charter Template**](https://github.com/E7A-RU/.github/blob/main/governance/templates/product-charter.md)
 
