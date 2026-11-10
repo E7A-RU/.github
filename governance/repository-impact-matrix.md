@@ -101,3 +101,8 @@ See [E7A Roadmap](roadmap.md), [product release checklist](product-lifecycle-che
 **11/11 repo baseline in GitHub `main` verified:** each contains `README.md`, `AGENTS.md`, `docs/MAINTAINERSHIP.md`, `governance-consumer.json` with the **approved v1.1.0 revision** `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`. [Exact per-repo PR/commit evidence and remaining functional PR gates](consumer-stewardship-sprint-2026-10-30.md).
 
 The table above preserves earlier initial audits as history; any explicitly dated Draft/empty status is superseded by the above closeout where newer. **Docs adopted ≠ runtime code tested, app deployed, package published or security readiness approved.** GitHub-hosted CI remains prohibited.
+
+
+## Governance 3.0.0 — prospective breaking authorization change (decision 064)
+
+[Per-product impact matrix](central-authorization-impact-2026-11-10.md) and [GOV-AUTHZ-001](adr/GOV-AUTHZ-001-centralized-authorization.md) document the owner-selected central grant/Policy Engine boundary for all consumers. It supersedes **only the authority split for ecosystem resource permissions**, not independent DBs, runtime, product lifecycle, tenant validation or release. **2.1.0 remains current until separate immutable 3.0.0 descriptor publication**. All current pins, outdated statuses and earlier adoption rows above are dated historical evidence; no automatic cross-repo grant migration or product modification. Priority: Identity PR #2 reconciles its current branch and consumer pin only after 3.0.0 publication; each other product gets its own reviewed adoption, with legacy ACL retained until validated transition.

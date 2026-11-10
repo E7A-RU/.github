@@ -9,9 +9,13 @@
 3. **E7A-RU/laboratory** — реализация Wizard, QA, release evidence, approvals, реестр продуктовых потребителей стандартов.
 4. **E7A-RU/infra** — реализация декларативной инфраструктуры, серверов, runtime, мониторинга, резервного копирования и deployment.
 5. **Identity / Platform (репозитории созданы, пока не имеют подтверждённого runtime)** — самостоятельные контракты и собственные данные после отдельных ADR. Central Audit и Billing Foundation также самостоятельные обязанности, их реализация не подтверждена.
-6. **Каждый продукт** — собственные схемы, процессы, бизнес-логика, доменные политики и релизные материалы.
+6. **Каждый продукт** — собственные схемы данных, процессы, бизнес-логика, API enforcement и релизные материалы; по Decision 064 централизованные экосистемные grants и разрешения на ресурсы принадлежат Identity после Governance 3.0.0 adoption.
 
 Общий стандарт определяет **что и зачем**, продуктовый репозиторий — **как реализовано у него**. Локальные документы дополняют, но не ослабляют организационные политики. При несовместимости обязательна запись о конфликте и отдельный ADR; не менять десятки README без контроля версии.
+
+## Предлагаемое следующее нормативное изменение
+
+**Решение владельца 10.11.2026:** [GOV-AUTHZ-001 — централизованная авторизация](adr/GOV-AUTHZ-001-centralized-authorization.md) и [матрица влияния на все контуры](central-authorization-impact-2026-11-10.md). Это owner-approved *direction*, **не** новая опубликованная версия. До отдельного immutable release действует Governance v2.1.0. Product/local ACL мигрируют только адресно и после QA; производственные релизные ограничения не ослаблены.
 
 ## Документы
 
@@ -84,3 +88,6 @@
 ## Смысл утверждения Governance v1
 
 Владелец E7A подтвердил: слияние PR #1 после отдельного разрешения утверждает **первичные организационные и архитектурные стандарты**, а не готовность общих сервисов или реализаций продуктов. Канонический владелец и окончательный утверждающий изменений обязательных стандартов — **Founder / Owner E7A**. Исполнение и локальные технические решения могут делегироваться в границах утверждённых правил. [Управление изменениями](standards-and-change-control.md).
+
+
+**Version decision:** Owner Decision 064 selects **MAJOR Governance 3.0.0** as the *next* release because resource authorization authority changes. This branch is still a source proposal; actual approved normative baseline stays **2.1.0** until separate reviewed descriptor publication after merge of the exact normative source SHA. Do not update consumers to this branch or mutable `main`.

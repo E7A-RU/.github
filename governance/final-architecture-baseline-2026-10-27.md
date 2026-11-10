@@ -1,6 +1,6 @@
 # E7A Final Architectural Baseline — owner decisions, 2026-10-27
 
-> **Historical approved baseline (2026-10-27).** Its original staging and per-release production approval requirements below are preserved as historical decisions. For future **eligible low-risk** deployments, they are superseded **only after** the owner-directed [release/deployment policy](release-deployment-policy.md) is versioned and published in Governance. Critical/security changes still need individual approval. No existing product gets authorization from this historical note.
+> **Historical approved baseline (2026-10-27).** Owner Decision 064 / [GOV-AUTHZ-001](adr/GOV-AUTHZ-001-centralized-authorization.md) supersedes *its product-local ACL authority boundary* upon separate publication of Governance 3.0.0, while preserving independent product data and API enforcement; until publication the current 2.1.0 remains normative. Its original staging and per-release production approval requirements below are preserved as historical decisions. For future **eligible low-risk** deployments, they are superseded **only after** the owner-directed [release/deployment policy](release-deployment-policy.md) is versioned and published in Governance. Critical/security changes still need individual approval. No existing product gets authorization from this historical note.
 
 **State: OWNER APPROVED ARCHITECTURAL DIRECTION; GOVERNANCE DRAFT, not yet released in main.** Consolidates [rounds 1–10](owner-decisions-2026-10-27.md) and subsequent eight clarification decisions. No code or runtime is certified by this document. Historic decisions remain accessible; where plans conflict, this owner-approved direction takes precedence for new proposals, while a future accepted standards release must update all normative cross-references.
 
@@ -51,7 +51,7 @@
 ## Billing foundation — approved
 
 - Initial bounded capability: customer/tenant reference, price plans and versions, orders, subscriptions, entitlements, event contract and audit. **No real charging or payment credentials until compliance, legal/business, processing and reconciliation review.**
-- Billing records commercial state; Identity relates the authorized subject/product entry, but does **not** become a ledger; products retain per-resource authorization. Do not allow payment callbacks to create unaudited admin grants.
+- Billing records commercial state; Identity relates the authorized subject/product entry, but does **not** become a ledger; products retain business invariants and API enforcement; ecosystem per-resource grants are centralized in Identity after product-specific 3.0.0 adoption. Do not allow payment callbacks to create unaudited admin grants.
 - Eventual finance-ready design should address idempotent webhooks, refunds, disputes, tax, invoice/receipts, price change and entitlement revocation. No operating payment platform claimed.
 
 ## Availability and geographic posture

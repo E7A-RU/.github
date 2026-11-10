@@ -75,7 +75,7 @@ Discovery & User Job
 - Frontend: TypeScript + React/Next.js с Core UI по exact-version, accessibility и безопасными client/server boundaries.
 - Backend: отдельный **TypeScript Node API** (Fastify с типизированным schema validation по умолчанию; NestJS по ADR), модули `transport → application → domain → adapters`. Не смешивать опасные системные операции с web handlers.
 - DB: **dedicated PostgreSQL database/role per product**, `pg` + SQL-first checksum migrations, constraints, explicit transactions, transactional outbox, no production auto-sync. СУБД может размещаться в общем кластере Infra при гарантированной изоляции.
-- Identity: при реальном логине зрелый OIDC IdP + E7A Person/Claims/Policy, разные Person/Account/SecurityActor/tenant; domain ACL в продукте.
+- Identity: при реальном логине зрелый OIDC IdP + E7A Person/Claims/Policy, разные Person/Account/SecurityActor/tenant; центральные экосистемные grants/roles в Identity (после отдельной adoption 3.0.0), продукт владеет business data, API enforcement и локальным legacy ACL до проверенного cutover.
 - Background: продуктовый worker для своего домена, Platform trusted Jobs/Connectors по реальной необходимости.
 - Deploy: immutable containers/artifacts, DB migration gate, application health/readiness, secrets and reverse proxy Infra.
 

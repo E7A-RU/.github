@@ -30,6 +30,9 @@ A repo, a Draft PR, a green static scan, a package tag and a production health s
 
 ## Gate B — architecture, Kit and data boundary
 
+**Governance 3.0.0 central authorization adoption:** a protected product must declare resource/action schema and trust registration, applicable installation/organization scope and entitlement, central grant check and product-side enforcement/tenant invariants, migration/shadow rollback and outage semantics. Existing live product-local ACL is not removed on standards merge. Optional anonymous/local kits remain Identity-independent. See [GOV-AUTHZ-001](adr/GOV-AUTHZ-001-centralized-authorization.md). This checklist addition is normative only after separate 3.0.0 publication.
+
+
 - [ ] Select Browser-only / Full-stack / Service/Worker with reason; [Kit-specific roadmap](kit-implementation-roadmaps.md) selected and linked from Product Charter; Core Starter imported/pinned without forking shared template.
 - [ ] Repository and ownership map; `governanceRevision` pin to immutable accepted SHA or tag; product local ADR does not weaken organization policy.
 - [ ] Product identities distinguished: Person, Account/OIDC `sub`, SecurityActor, Organization, Workspace, tenant, product resource. No implicit automatic merges.
