@@ -19,8 +19,8 @@ Host edge proxy / WAF / traffic limit  [Infra; no product business logic]
       ▼
 Product API (TypeScript/Node, e.g. Fastify; NestJS optional via ADR)
       ├─ HTTP boundary: input validation, safe errors, versioning, authN
-      ├─ Application: use cases, policy (Actor+Org+Product+Capability), idempotency
-      ├─ Domain: invariants, aggregate/operation state, domain ACL
+      ├─ Application: use cases, central Identity policy check (when product adopted), idempotency
+      ├─ Domain: invariants, aggregate/operation state, mandatory enforcement/legacy ACL during migration
       ├─ Persistence: SQL repositories + migrations / PostgreSQL transaction
       ├─ Outbox: durable deferred events (within SAME DB transaction)
       ├─ Adapters: Identity OIDC, Platform, Audit, Billing by need only
@@ -101,7 +101,7 @@ Useful ideas to generalize:
 
 - [ ] `BACK-001` Product runtime/framework/modular boundaries and versioned API schema.
 - [ ] `DB-001` PostgreSQL major version, product DB/roles/schema/owner, SQL migration tool, backup/PITR, RPO/RTO.
-- [ ] `TEN-001` tenant/org IDs, resource ACLs, actor and authorization, RLS decision and negative cases.
+- [ ] `TEN-001` tenant/org IDs, Identity resource grants and product-side enforcement/legacy ACL migration, actor and authorization, RLS decision and negative cases.
 - [ ] `OPS-001` state transitions, idempotency, outbox/inbox, retries/UNKNOWN and reconciliation.
 - [ ] `AUTH-001` OIDC subject mapping, session/MFA, service principals, recovery and logout/revoke semantics.
 - [ ] `AUD-001` local transactional audit + central event mapping, outage/degradation policy and retention.
@@ -121,3 +121,8 @@ These are **implementation ADRs**, not blockers for a genuine no-backend Browser
 - [ ] Infra verifies exact SHA/digest and isolated QA; staging is optional by risk. Production requires activated standing authorization only for explicitly eligible changes, otherwise individual owner approval. **Destructive migrations and changed DB privileges are outside the default low-risk allowlist.** See [release policy](release-deployment-policy.md).
 
 Related: [three Kit implementation roadmaps](kit-implementation-roadmaps.md), [lifecycle](product-lifecycle-checklists.md), [Platform](platform-delivery-jobs-integrations.md), [Identity](identity-and-trust.md), [Infra](infra-operations.md).
+
+
+### Следующая граница authorization (проект новой нормативной версии)
+
+Владелец E7A выбрал централизованную модель: [GOV-AUTHZ-001](adr/GOV-AUTHZ-001-centralized-authorization.md). При принятии новой опубликованной версии Governance Identity станет каноническим источником экосистемных grants, product-role schemas, entitlements, installation scopes и policy decisions, а продукт продолжит владеть business data, ресурсным lifecycle, проверкой владельца и enforcement на API. На работающие продукты новая модель не распространяется автоматически: миграция только отдельным PR, shadow/negative tests и rollback. Это не требует общего backend-hop для анонимных и локальных функций.
