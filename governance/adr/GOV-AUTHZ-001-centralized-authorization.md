@@ -37,3 +37,8 @@ Current Governance 2.1.0 divides Identity (authentication, membership, entitleme
 - **MUST document:** data residence/privacy, technical product operator separation, authN/AuthZ boundaries, ZITADEL AGPL/license review, backup/key ownership, resource registry reconciliation and decommission.
 
 **Owner decision:** authorized to prepare new Governance normative source and impact proposal; not authority to bypass publication checks, produce a self-approved release descriptor or deploy E7A Identity.
+
+
+## Version classification and publication gate — Owner decision 064
+
+This is a breaking redistribution of **normative authorization authority**; therefore the next release is **MAJOR 3.0.0** (owner approved, 2026-11-10). Until publication, content remains owner-approved direction only; Governance 2.1.0 remains normative. Release MUST follow: reviewed docs-only source merge with exact SHA; independently reviewed `standards-release.json` 3.0.0 descriptor pinned to that immutable source SHA; affected consumer adoption via separate controlled PRs. A source-only merge without descriptor is not publication. No product with existing local ACL is forced into a new central API before its own tested migration; old ACL may remain in transitional mode under documented risk decision.
