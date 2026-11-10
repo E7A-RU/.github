@@ -20,13 +20,17 @@ Owner supports source-admission direction, not a plan purchase or public release
 3. Bypass list: **empty**, including administrators and apps.
 4. Enable **Restrict deletions**, **Block force pushes**, **Require a pull
    request before merging**, **Require conversation resolution**.
-5. Require **one approving review** from an authorized human other than the PR
-   author. Enable dismiss stale approvals and approval of the most recent
-   reviewable push. Owner review can approve a source-only admission after
-   publication; do not label it independent security acceptance.
-6. If supported, restrict updates/allowed merge actors to the Owner or explicitly
-   delegated maintainers while still enforcing PR/review gates. Do not put them
-   in a bypass list. Confirm the permission with a no-change readback.
+5. Default: require **one approving review** from an authorized human other
+   than the PR author; dismiss stale approvals and require approval of the
+   latest reviewable push. This review need not claim independent security
+   acceptance. GitHub forbids authors approving their own PRs. If Codex and
+   Owner act through the same GitHub login, a different account is needed.
+6. Do not enable the ruleset's **Restrict updates** merely to limit merge actors:
+   it uses the bypass list and is not the same as a classic push allowlist.
+   If merge-actor restriction is needed, use a **classic branch-protection**
+   rule with `Restrict who can push to matching branches`, allow only the
+   Owner/delegated maintainers, and keep all PR/no-bypass requirements.
+
 7. Do not require GitHub Actions checks, workflows or deployment environments.
    Docker evidence belongs to the exact-head review/admission. Do not create
    fake green status contexts. Do not enable auto-merge or merge queue.
@@ -42,6 +46,23 @@ main pattern; require PR/review=1; dismiss stale reviews; latest-push approval;
 resolve conversations; include administrators/no bypass; forbid force/delete;
 restricted update actors where supported. Do not enable linear history if
 ordinary merge commits are the selected chain-preserving method.
+
+## Explicit solo-source alternative — proposal, not selected
+
+The Owner may explicitly approve a **zero-native-approvals** source profile in
+GOV-ID-SOURCE-001 publication/admission when the same GitHub account authors and
+accepts the engineering PR. This is a disclosed manual Owner acceptance, never
+an independent review. It is not inferred from the current direction approval.
+
+Under that profile: PR-only remains mandatory; the classic push/merge allowlist
+is Owner/delegated maintainer only; no administrator bypass, force push, delete,
+auto-merge or direct main push. Required approving review count is 0 and the
+latest-push approval option is off, because GitHub cannot enforce same-account
+approval. The exact-SHA Owner admission, QA, expiry and blockers are mandatory
+policy checks performed before merging; GitHub does **not** enforce their
+semantics. The record must state this limitation. Any pre-existing stricter
+rule remains binding until explicitly reviewed and changed by the Owner.
+Never silently select this alternative to avoid a requested review.
 
 ## Current consequence
 

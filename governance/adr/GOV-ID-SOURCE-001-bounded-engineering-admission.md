@@ -55,7 +55,12 @@ Each admission is an Owner-reviewed record containing:
 - Applicable protected-main/GitHub rules and human Owner approval of the concrete
   tested diff. The admission cannot bypass branch protection, approve its own
   governance release, dismiss a human review, rewrite history or activate CI.
-  An unprotected main is not silently treated as compliant.
+  An unprotected main is not silently treated as compliant. The record must
+  identify the chosen native-review profile. Same-account Owner acceptance is
+  possible only through the explicitly approved solo-source profile in the
+  [protection runbook](../identity-main-protection.md); GitHub cannot call it
+  an approving review. The implementing agent cannot select that profile
+  or invent human approval itself.
 - Deferred independent-security-review scope, accountable owner and stop condition:
   it is mandatory **before Identity serves real users on a server**, including
   a staging pilot. Server sandbox resource admission is still separate.
