@@ -1,13 +1,13 @@
 {
   "schemaVersion": 1,
-  "releaseId": "e7a-governance-v2.1.0",
-  "version": "2.1.0",
+  "releaseId": "e7a-governance-v3.0.0",
+  "version": "3.0.0",
   "status": "APPROVED_BASELINE",
-  "revision": "c26fc1daea258a8ba63b61ea069664f6d9a51da2",
+  "revision": "80b574cf01d2976b4112e3e492692b02233b9f44",
   "approvedBy": "E7A Owner",
-  "effectiveAt": "2026-11-06",
-  "changeClass": "MINOR",
-  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/18",
+  "effectiveAt": "2026-11-10",
+  "changeClass": "MAJOR",
+  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/24",
   "policyRoot": "governance/",
   "brandPolicyPath": "BRAND_POLICY.md",
   "impactedConsumers": [
@@ -24,7 +24,7 @@
     "automation",
     "admin-template"
   ],
-  "notes": "Owner decision 063 (2026-11-06). E7A Dependency Ownership Standard: Core maintains independently released shared UI/Server libraries and optional Starter defaults; each product independently pins exact published runtime/framework versions, commits genuine frozen lockfiles and owns security/QA/release/rollback. Automation provides read-only evidence and reviewed proposals, no product writes or deploy. New products adopt after this normative release; existing consumers migrate via targeted product-owned review PR at next relevant dependency/security change. Explicit peerDependencies/dev tooling exceptions allowed under the documented evidence policy. This minor release supersedes v2.0.0 as normative baseline without re-publishing Core packages, force-upgrading consumers, activating App/timer/Actions CI, or weakening product-scoped release approvals.",
+  "notes": "Owner Decision 064 (2026-11-10), Governance 3.0.0 MAJOR: centralized E7A Identity authority for ecosystem Product Trust, resource permission schemas, Organization Entitlements, scoped multi-Workspace Product Installations, grants and policy decisions. Products retain independent business/domain databases, resource lifecycle, API enforcement, independent release/rollback and transitional local ACL until per-product reviewed migration. Initial Identity ZITADEL + OpenFGA choice requires vendor security/licensing/Infra PoC, no runtime claim. Full ADR GOV-AUTHZ-001 and impact/migration instructions in governance/releases/3.0.0.md. This descriptor publishes immutable normative source SHA 80b574cf01d2976b4112e3e492692b02233b9f44. Existing consumers retain prior pins pending targeted reviewed adoption; no automatic consumer edits, hosted GitHub CI, automation write privileges, product deployments or relaxation of R2+ release/security gates.",
   "botAutoMerge": false,
   "productionAutoDeploy": false,
   "productScopedAutoDeployPolicy": "OPT_IN_STANDING_AUTHORIZATION_ONLY",
