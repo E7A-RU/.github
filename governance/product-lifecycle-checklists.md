@@ -124,3 +124,11 @@ exceptions: []
 **Validation semantics:** `qa.status: UNKNOWN` deliberately **is not** a pass; optional staging must be explicitly `NOT_REQUIRED` with a documented risk decision, not silently `UNKNOWN` or passed without evidence. Every release requires unique evidence; template text grants no authorization.
 
 Related: [Roadmap](roadmap.md), [standards propagation](standards-propagation.md), [Product Factory](product-factory-and-kits.md), [Infra](infra-operations.md).
+
+## Proposed Identity evidence separation — not active
+
+The Identity-only [GOV-ID-SOURCE-001](adr/GOV-ID-SOURCE-001-bounded-engineering-admission.md)
+proposal distinguishes DEVELOPMENT_VERIFIED, SOURCE_MERGED, SECURITY_ACCEPTED,
+STAGING_VERIFIED, PRODUCTION_AUTHORIZED and environment-scoped RUNNING_VERIFIED.
+It does not itself alter an existing checklist gate. Publication and targeted
+adoption precede any admission; other products retain their current rules.

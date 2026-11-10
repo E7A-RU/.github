@@ -66,3 +66,11 @@ Standing authorization **не охватывает** по умолчанию R2+
 ## Управление версией нормы
 
 Это изменение заменяет прежний безусловный путь «staging → отдельное одобрение каждого production-релиза» **только с момента** принятия Governance PR и публикации новой immutable версии стандарта. До этого для runtime действует предыдущая утверждённая политика. Consumer governance pins обновляются только через targeted review; сам факт новой версии Governance **не запускает production deployment**.
+
+## Proposed Identity-only engineering admission — not active
+
+[GOV-ID-SOURCE-001](adr/GOV-ID-SOURCE-001-bounded-engineering-admission.md)
+proposes a bounded source-only admission for local synthetic Identity engineering.
+It has no effect until Owner review, a separate immutable Governance release,
+targeted Identity adoption and an exact-SHA admission. Existing review,
+protected-main and runtime/production rules remain in force.
