@@ -88,3 +88,6 @@
 ## Смысл утверждения Governance v1
 
 Владелец E7A подтвердил: слияние PR #1 после отдельного разрешения утверждает **первичные организационные и архитектурные стандарты**, а не готовность общих сервисов или реализаций продуктов. Канонический владелец и окончательный утверждающий изменений обязательных стандартов — **Founder / Owner E7A**. Исполнение и локальные технические решения могут делегироваться в границах утверждённых правил. [Управление изменениями](standards-and-change-control.md).
+
+
+**Version decision:** Owner Decision 064 selects **MAJOR Governance 3.0.0** as the *next* release because resource authorization authority changes. This branch is still a source proposal; actual approved normative baseline stays **2.1.0** until separate reviewed descriptor publication after merge of the exact normative source SHA. Do not update consumers to this branch or mutable `main`.
