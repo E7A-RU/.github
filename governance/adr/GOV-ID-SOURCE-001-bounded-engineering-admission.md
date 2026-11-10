@@ -23,6 +23,14 @@ PRs' synthetic runtime do not alone publish that exception. Codex QA is
 engineering evidence, not independent review. This proposal removes that
 ambiguity through a narrow, explicitly published mechanism.
 
+## Version classification
+
+**MAJOR 4.0.0 proposed for Owner acceptance.** Deferring an existing mandatory
+Identity review gate changes the security acceptance contract, even with a
+narrower runtime scope. It is not a PATCH or a backward-compatible new
+obligation. This classification does not release 4.0.0 or reclassify 3.0.0.
+Other consumers retain their existing pins and rules; no bulk adoption follows.
+
 ## Proposed rule
 
 Only **E7A-RU/identity**, local synthetic Docker engineering, may receive a
@@ -33,7 +41,8 @@ ecosystem-wide exception.
 Each admission is an Owner-reviewed record containing:
 
 - Unique admission ID, product, repository, target branch, PR numbers and exact
-  permitted head SHAs; finite expiry no longer than 30 days; revocation owner.
+  permitted head SHAs; finite expiry no longer than **14 days**; revocation owner.
+  No wildcard SHA/range, mutable branch or automatic renewal is valid.
 - Changed-path/diff summary, current risk and known findings, author and accountable
   human. A new head invalidates approval until QA and admission are updated.
 - Exact-SHA Docker build/typecheck/unit/integration/negative tests, genuine frozen
@@ -59,6 +68,45 @@ Architecture changes, crypto implementation, secrets handling outside synthetic
 fixtures, exposed/public issuers, real PII and production remain outside this
 admission.
 
+## Mandatory source tests and blockers
+
+Before an admission can become active, the exact approved head must pass all
+applicable synthetic Docker checks, and unavailable checks must be explicitly
+classified by the Owner against the concrete diff:
+
+- Frozen install/build/typecheck, unit/contract/SQL migration first apply and
+  replay, cross-DB and tenant/installation/workspace boundaries.
+- For OIDC source: real provider Code + PKCE and verification-mail delivery;
+  unverified/disabled account denial, state/nonce/PKCE and callback replay;
+  issuer/audience/expiry/JWKS validation through maintained libraries.
+  Dedicated issuer/audience/expiry/rotation test gaps are explicit deferred
+  server-admission gates only for a closed synthetic prototype with no
+  public/browser ingress; this deferral requires exact-record Owner review.
+- Product Trust, schema/version, separate bounded entitlement, installation
+  scope, grant/delegation ceilings; expiry, revoke, stale revisions, engine
+  outage, pending projection, outbox replay and superseded-event denial.
+- For lifecycle changes: wrong-person/wrong-organization denial, invite expiry
+  and replay, no privilege promotion or reactivation after revocation.
+- Restart and applicable pre-/post-revoke isolated recovery; an old DB snapshot
+  cannot pass the current revocation epoch. A data-only drill is not a
+  restored runtime/key/config acceptance or HA consistency proof.
+- No published port, production Docker socket, privileged container, real
+  credential/PII, hosted Actions or cross-product mutation. Human review of
+  changed paths and targeted secret scan; no assertion of exhaustive absence
+  of vulnerabilities from a pattern scan.
+
+FAIL or UNKNOWN in a mandatory source test, unexplained privilege expansion,
+unacknowledged critical/high finding, missing/expired approval, changed head,
+missing protection or source-admission revision is STOP for source merge.
+A deferred production gate is not PASS. Blocking findings require an actual
+fix and exact-head regression evidence, never a blanket risk label.
+
+The active record names its approver and exact SHA. A separate capability
+authorizes each installation/credentials/deployment boundary; this source
+admission does not create any of them. In-memory prototype sessions, fixture
+sockets and recovery epochs are explicitly nonproduction, not approved
+replacements for operational controls.
+
 ## Evidence statuses — independent, scoped facts
 
 | Status | Required evidence |
@@ -76,9 +124,8 @@ be inferred from DEVELOPMENT_VERIFIED, a merge or the implementing agent's QA.
 
 ## Publication and targeted adoption
 
-1. Owner reviews this ADR, affected clauses and Identity-only risk; settles
-   release classification. A weakened mandatory security boundary may require
-   MAJOR classification; do not silently label it a patch.
+1. Owner reviews this ADR, affected clauses and Identity-only risk, including
+   the proposed **MAJOR 4.0.0** classification and 14-day ceiling.
 2. Reviewed source PR merges with exact immutable SHA. No normative status follows
    solely from this source merge.
 3. A **separate reviewed release PR** publishes `standards-release.json` with the
@@ -89,7 +136,7 @@ be inferred from DEVELOPMENT_VERIFIED, a merge or the implementing agent's QA.
    by Website, Core, Infra or any other consumer.
 5. Revalidate PR #4 then source-merge if admitted. Retarget PR #5, inspect the new
    diff and revalidate the resulting head and admission before its source merge.
-6. Expiry, revocation, changed head, failed QA or critical finding closes the
+6. Expiry, revocation, changed head, failed QA or critical/high finding closes the
    admission. Already merged source does not grant runtime permission. Revert
    unsafe source via reviewed PR when required; never delete evidence.
 
@@ -104,3 +151,19 @@ No hosted GitHub Actions, package publication, paid service, host resources,
 signing keys, accounts, source merge permission or deployment is created here.
 The proposed ADR and conditional links must pass docs-only QA. Source admission
 and server/production acceptance stay distinct even after publication.
+
+## Concrete pending chain, 2026-11-11
+
+The current Identity chain is #4 → #5 → #6. Initial source heads are
+`acc3ce73f9075ab121dad0deaf9b2709be95e5e5`,
+`ecda01f73493d6995d03ed7bdb0ae34181f1725c`,
+`e1196a25a6312ad9a30f9144807a461adf633347`.
+These are **candidates, not approved admissions**. Retarget/merge-base changes
+require diff review and final-head QA even when the head itself is unchanged.
+Approved standard adoption can change these heads; any resulting new head must
+replace its candidate only after actual testing and Owner approval.
+
+[Pending admission records](../identity-source-admission-2026-11-11.md) contain
+exact scope and a fixed expiry, never a future invented release SHA.
+[GitHub protection runbook](../identity-main-protection.md) records the plan
+limitation. This ADR explicitly does not waive it.
