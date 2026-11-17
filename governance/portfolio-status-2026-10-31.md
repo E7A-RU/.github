@@ -1,7 +1,11 @@
 # E7A — сверка фактического состояния экосистемы
 
+> **Архив на 31.10.2026.** Описанные версии, PR и следующие шаги исторические.
+> Для новой работы используйте [сверку 18.11.2026](portfolio-status-2026-11-18.md)
+> и актуальные документы продуктов. Основной текст сохранён из исходного PR #11.
+
 **Срез:** 31.10.2026. **Тип:** read-only GitHub source inventory + historical operator evidence; **не** сертификат QA, не онлайн-мониторинг, не разрешение release/deploy.  
-**Normative baseline:** [Governance v1.1.0](standards-release.json), owner-approved, immutable SHA `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`, adopted on 30.10.2026. Наиболее свежий `main` того или иного репозитория **не** равен автоматически проверенному production SHA.
+**Normative baseline:** [Governance v1.1.0](https://github.com/E7A-RU/.github/tree/c74bce10bc9eac6bb2e604a7db6b14d33b7c7645/governance), owner-approved, immutable SHA `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`, adopted on 30.10.2026. Наиболее свежий `main` того или иного репозитория **не** равен автоматически проверенному production SHA.
 
 ## 1. Иерархия ответственности — это уже не «четыре репозитория»
 

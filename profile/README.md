@@ -18,7 +18,10 @@
 
 ## E7A Core UI — проверенный публичный релиз
 
-Общая дизайн-система [`@e7a-ru/ui@0.5.0`](https://www.npmjs.com/package/@e7a-ru/ui/v/0.5.0) опубликована и проверена в npm 18 ноября 2026 года. В ней представлены утверждённые SVG E7A Wordmark v3. **Поддерживаются 0.5.0 и 0.4.0 (предыдущая, ограниченная)**; версии до 0.4.0 — архивные, неподдерживаемые, хотя исторические опубликованные пакеты остаются доступными. Нормальное окно поддержки — текущий и один предыдущий minor, максимум два предыдущих по отдельному временно ограниченному решению владельца. [Политика версий](https://github.com/E7A-RU/.github/blob/main/CORE_UI_SUPPORT.md). Выпуск библиотеки не обновляет сами продукты; использование бренда третьими лицами требует разрешения правообладателя.
+Публичная дизайн-система [`@e7a-ru/ui@0.5.0`](https://www.npmjs.com/package/@e7a-ru/ui/v/0.5.0)
+подтверждена в npm 18.11.2026. Актуальные поддерживаемые версии, ограничения
+и условия миграции — в [Core UI support](https://github.com/E7A-RU/.github/blob/main/CORE_UI_SUPPORT.md).
+Выпуск библиотеки не обновляет продукты автоматически.
 
 ## Как познакомиться с E7A
 
@@ -60,7 +63,7 @@
 
 | Компонент | Зона ответственности | Фактическая граница |
 | :--- | :--- | :--- |
-| **[Core](https://github.com/E7A-RU/core)** | Дизайн-система, React UI, typed SDK/contracts, необязательный Product Starter | Не backend и не центральная БД. Публичный `@e7a-ru/ui@0.5.0` подтверждён в npm 18.11.2026; adoption у продуктов отдельный |
+| **[Core](https://github.com/E7A-RU/core)** | Дизайн-система, React UI, typed SDK/contracts, необязательный Product Starter | Библиотеки и контракты; версии и поддержка — в [Core UI support](https://github.com/E7A-RU/.github/blob/main/CORE_UI_SUPPORT.md) |
 | **[Identity](https://github.com/E7A-RU/identity)** | Person / Account / Organization / Workspace, Product Trust, централизованные grants и OIDC | Реализация и эксплуатационная приёмка развиваются; готовность для реальных пользователей не заявляется |
 | **[Platform](https://github.com/E7A-RU/platform)** | Delivery/СГДС, trusted Jobs, Connectors, Results | Самостоятельная Foundation capability, ещё не RUNNING |
 | **[Laboratory](https://github.com/E7A-RU/laboratory)** | Product Factory: Wizard, три Product Kit, QA, Sandbox, Release Gate | Планируемый продукт, не универсальный backend |
