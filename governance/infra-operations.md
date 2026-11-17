@@ -40,3 +40,56 @@
 ## Никакой несанкционированной автоматики
 
 По умолчанию никакой git push, создание репозитория или неразрешённый merge не разворачивает ВМ/DNS/базы. **Исключение для выпуска кода продукта:** после явной однократной активации и в границах standing authorization merge в защищённый `main` запускает автоматический self-hosted QA/build/deploy без пострелизного owner-click. Infra применяет только разрешённый service-scoped план; GitHub-hosted Actions CI запрещён.
+
+## Предлагаемый E7A стандарт маркировки контейнеров и Docker-артефактов — Owner request 2026-11-17
+
+**Статус: DRAFT / NOT NORMATIVE until protected review, Owner approval and
+immutable Governance descriptor release.** Изменение вводит новое обязательство
+для будущих product builds (MINOR), без автоматического вмешательства в
+существующие образы/контейнеры и без массового обновления потребителей.
+
+Каждый новый E7A Docker/OCI образ обязан иметь проверяемые метки:
+`org.opencontainers.image.source` (точная ссылка на E7A репозиторий),
+`org.opencontainers.image.revision` (полный 40-символьный Git SHA
+реального build-input), `org.opencontainers.image.vendor=E7A`,
+`org.e7a.project` (точный идентификатор продукта),
+`org.e7a.component` (API / tools / worker / bridge и т.п.),
+`org.e7a.lifecycle` (одно из `qa`, `candidate`, `production`),
+и `org.e7a.managed-by` (одобренный владелец deployment). Дополнительные
+`org.opencontainers.image.version` / `created` / `description` полезны
+по необходимости. Значения не могут содержать секреты, PII, DSN или токены.
+
+Метки **не** являются авторизацией, подтверждением происхождения или
+заменой immutable image/config digest, подписанного release manifest,
+точного SHA source и принятого QA: labels и tags могут быть назначены
+любой стороной, способной собирать и публиковать образы. Проверять
+выпуск одновременно по registry digest (если доступен), локальному
+`docker image inspect .Id`, revision и approved release receipt;
+не подменять digest тегом. Смена labels меняет конфигурационный digest
+образа и требует новой сборки и QA. Для будущего релиза ставить
+`lifecycle=production` только в отдельно проверенном production
+artifact; не перемаркировывать уже прошедший QA кандидат задним числом.
+
+Каждый управляемый Compose контейнер должен иметь
+`com.docker.compose.project`, `com.docker.compose.service`, проверенный
+`com.docker.compose.project.working_dir` и service-scoped ownership.
+Это метаданные Compose, а не Dockerfile labels; не пытаться назначать их
+в образе. Для отдельно созданных/управляемых контейнеров обязателен
+задокументированный точный allowlist владельца, имени, digest, сети,
+конфигурации и возможного объёма остановки. Любое несовпадение —
+`BLOCKED`, а не автоматическое расширение доверия к project label.
+
+QA и GC: присваивать отдельный префикс `e7a-<product>-qa-`; QA release
+receipt должен включать full image IDs и связанную source revision.
+Для адресной очистки: подтверждать конкретный tag **и** immutable image ID,
+отсутствие ссылок всех running/stopped контейнеров, отсутствие pin в
+release/rollback inventory; лишь затем удалять точные verified tags/IDs,
+без `--force`. Никогда не применять общий `docker system prune -a`,
+`builder prune -a`, удаление volumes или широкую очистку по префиксу.
+Shared layers означают, что сумма показываемых image sizes не равна
+освобождённым байтам. При нехватке диска сохранять guard/permit thresholds.
+
+**Adoption:** Infra, Identity, Website, Bot, Reader и другие потребители
+обновляют свои Dockerfiles/Compose и release QA точечными reviewed PR
+после публикации нового стандарта. Не пересобирать текущие проверенные
+Identity/Admin-0 образы исключительно из-за отсутствующих меток.
