@@ -1,6 +1,6 @@
 # E7A Core UI — release and support window (2026-11-18)
 
-**Canonical implementation/release contract:** [Core UI supported versions](https://github.com/E7A-RU/core/blob/main/docs/ui-supported-versions.md) ([pending Core docs PR #59](https://github.com/E7A-RU/core/pull/59)); this public note is a status summary for E7A repositories, **not** a new normative Governance standard or instruction to auto-upgrade any product.
+**Canonical implementation/release contract:** [Core UI supported versions](https://github.com/E7A-RU/core/blob/main/docs/ui-supported-versions.md) ([merged Core docs PR #59](https://github.com/E7A-RU/core/pull/59)); this public note is a status summary for E7A repositories, **not** a new normative Governance standard or instruction to auto-upgrade any product.
 
 ## Release and supported versions
 

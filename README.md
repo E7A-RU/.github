@@ -1,60 +1,43 @@
-# E7A GitHub organization profile
+# E7A — документация организации
 
-## E7A Core UI — текущая публикация и поддержка
+Публичные архитектурные правила, профиль организации и материалы бренда E7A.
+**Навигация сверена 18 ноября 2026 года.** Статус опубликованного стандарта,
+его принятие продуктом и готовность работающего сервиса учитываются отдельно.
 
-Публичный `@e7a-ru/ui@0.5.0` **опубликован и проверен** 18.11.2026 (`PUBLIC_NPM_READBACK=PASS`). Поддерживаются `0.5.0` (актуальная) и `0.4.0` (предыдущая, ограниченная поддержка). **`0.3.x` и более ранние — архивные, неподдерживаемые**; их историческая доступность в npm не равна поддержке. Нормальное окно: текущая + одна предыдущая версия, максимум две предыдущие итерации по явному временно ограниченному решению владельца, действующий минимум `0.4.0`. [Единая версия политики и миграция](CORE_UI_SUPPORT.md). Никаких автоматических обновлений продуктов или лицензирования бренда публикация не означает.
+| Задача | Точка входа |
+| --- | --- |
+| Познакомиться с E7A и продуктами | [Публичный профиль](profile/README.md) · [e7a.ru](https://e7a.ru) |
+| Найти организационные правила | [Governance](governance/README.md) |
+| Проверить опубликованную версию стандарта | [Release descriptor](governance/standards-release.json) · [история 4.0.0](governance/releases/4.0.0.md) |
+| Понять границы продуктов и общих компонентов | [Ecosystem Charter](governance/ecosystem-charter.md) · [Dependency ownership](governance/dependency-ownership.md) |
+| Начать или продолжить продуктовую работу | [Product Stewardship](governance/product-stewardship.md) · [Lifecycle](governance/product-lifecycle-checklists.md) · [шаблон передачи](governance/templates/product-maintainership.md) |
+| Найти направление развития | [Roadmap](governance/roadmap.md) · [M1 Product-in-Use](governance/growth-strategy-and-first-milestone.md) |
+| Использовать фирменные материалы | [Brand Usage Policy](BRAND_POLICY.md) · [Brandbook](brandbook/README.md) |
+| Изучить юридические исследования | [Индекс исследований](legal/README.md); проверять дату и актуальность каждого документа |
 
-This repository contains the public-facing organization profile. See `profile/README.md`.
+## Источники истины
 
-Do not store secrets, private links or deployment credentials here.
+| Информация | Где поддерживается |
+| --- | --- |
+| Опубликованный стандарт и нормативный SHA | [Release descriptor](governance/standards-release.json); пояснения в [Governance index](governance/README.md) |
+| Принятая версия конкретного продукта | Его `governance-consumer.json` и adoption-документ |
+| Поддерживаемые версии UI и условия миграции | [Core UI support](CORE_UI_SUPPORT.md) |
+| Возможности и доступность продуктов | [Публичный профиль](profile/README.md); технические подтверждения — в документах продуктов |
+| Внутренняя навигация и порядок работы | Приватный `.github-private/profile/README.md` |
+| Датированные наблюдения | [Публичная сверка 18.11.2026](governance/portfolio-status-2026-11-18.md) |
 
-## Canonical E7A brand permissions
+README служат навигацией и краткими представлениями для разных аудиторий.
+Таблицы версий, правила поддержки и эксплуатационные журналы ведутся в
+указанных источниках; при их изменении здесь обновляются ссылки, а не копии правил.
+Нормативное принятие продукта не следует автоматически из нового `main`.
 
-**E7A branding is not licensed for third-party use without advance written permission.** See the public bilingual [E7A Brand Usage Policy](BRAND_POLICY.md), which governs the logo, distinctive symbol, wordmark and other brand assets. The publicly downloadable UI library does not authorize third-party brand use. Software reuse permission is a separate decision; currently `@e7a-ru/ui` is `UNLICENSED`.
+[ECOSYSTEM_ARCHITECTURE.md](ECOSYSTEM_ARCHITECTURE.md) и
+[срез 31.10.2026](governance/portfolio-status-2026-10-31.md) сохраняются как история.
+GitHub Actions CI/deploy запрещены; проверки документации выполняются локально.
 
+## Права и публичность
 
-## E7A — единый архитектурный стандарт (согласован 25.10.2026)
-
-См. [E7A Ecosystem Standard v1](ECOSYSTEM_ARCHITECTURE.md): Core, Laboratory, Infra, Identity, будущая Platform/СГДС, три Kit, workers, почта, независимые данные и безопасный выпуск. Стандарт — концепция; он не запускает новые сервисы и не изменяет текущий production. Исходная история README сохранена.
-
-
-## Canonical governance / Каноническая архитектура
-
-**Единственный источник организационных архитектурных требований:** [E7A Governance](governance/README.md). Здесь хранятся философия, ownership, Identity, Laboratory, Infra, Platform (Delivery/Jobs/Connectors/Results), три Kit, реальные и проектные примеры, контроль версий стандартов и release policy. Текущий документ [ECOSYSTEM_ARCHITECTURE.md](ECOSYSTEM_ARCHITECTURE.md) сохранён как первоначальный исторический snapshot; при противоречии использовать актуальный пакет governance после его принятия в main.
-
-Это **не** разрешение на создание/запуск Identity, Platform, почты, worker pools, Kubernetes или запуск GitHub Actions CI. Опубликованные документы не доказывают работоспособность будущих сервисов.
-
-
-## B2C-first strategy, team and E7A Brandbook
-
-Владелец зафиксировал **B2C как первое направление** с сохранением B2B. Начальная цель — [M1 Product-in-Use](governance/growth-strategy-and-first-milestone.md), функциональная [минимальная команда и 4.0 FTE ориентир](governance/team-and-capacity.md), единая [фирменная айдентика и правила применения](brandbook/README.md). В [Merchandise/hoodie](brandbook/merchandise-and-hoodie.md) описаны варианты худи и других носителей **как будущие дизайнерские референсы, не готовые товары**. Этот документ не разрешает production изменения или публичную продажу фирменной продукции.
-
-
-## E7A Stickerpack и юридическая база РФ
-
-[Фирменный стикерпак](brandbook/stickerpack.md) — отдельный проект дизайна (12 сюжетов MVP), не опубликованные изображения. [Юридическая карта РФ](legal/README.md) охватывает самозанятость/НПД, ИП, ООО, товарные знаки, авторские права на Core/бренд/стикеры, промышленные образцы, цифровые и физические товары. Никакая регистрация бизнеса, заявка на товарный знак или продажа худи не проводились. Текущая Brand Usage Policy не заменяет государственную регистрацию права на знак.
-
-
-### Практическая регистрация бренда как физлицо
-
-[Пошаговая заявка E7A, пошлины, классы, работа по найму и НПД](legal/trademark-filing-and-employed-income-russia.md). Подача товарного знака в Роспатент не требует открытия ИП/ООО или получения статуса самозанятого; все индивидуальные правовые и налоговые условия требуют проверки.
-
-
-### Результаты предварительной проверки товарного знака E7A
-
-[Отчёт 25.10.2026](legal/trademark-clearance-e7a-preliminary-2026-10-25.md): нет подтверждённой свободы названия; для одежды/худи отдельно рассмотреть потенциальное сходство с EA7 Armani; для IT сначала профессиональный поиск классов 9/42 и оценка различительной способности. Не является регистрацией, заявкой или разрешением коммерческих продаж.
-
-
-### Первый товарный знак E7A: утверждённая экономная стратегия
-
-[Одна комбинированная заявка E7AMark + E7A (класс 42)](legal/e7a-combined-mark-first-filing-strategy.md), после проверки сходства и фиксации окончательной композиции. Пошлины: 17 000 ₽ на первом этапе, 35 000 ₽ за полную успешную процедуру без дополнительных расходов. Это **не две отдельные регистрации слова и изображения**, заявка ещё не подана.
-
-## Организационная дорожная карта и запуск продуктов
-
-Принятый [Governance v1](governance/README.md), [Roadmap экосистемы](governance/roadmap.md) и [обязательные чеклисты жизненного цикла продукта](governance/product-lifecycle-checklists.md) определяют путь от идеи и Product Kit до QA, staging, owner-approved production и поддержки. [Предлагаемая self-hosted синхронизация стандартов](governance/standards-propagation.md) будет создавать только Draft PR в затронутых репозиториях после выпуска новой утверждённой версии; пока автоматизация не включена, GitHub-hosted Actions CI запрещён.
-
-**Технические стандарты:** [Backend: TypeScript/PostgreSQL-first](governance/backend-reference-architecture.md) · [три Product Kit и отдельные пошаговые roadmap](governance/kit-implementation-roadmaps.md) · [GitHub App: ресурсы и стоимость](governance/github-app-cost-and-resources.md) · [публичный профиль организации](profile/README.md).
-
-**Предлагаемая внутренняя автоматизация:** [E7A Automation](governance/engineering-automation.md) — будущий приватный сервис с модулями Governance Sync, синхронизации публичного профиля и продуктовой документации. Изменения предлагаются через Draft PR с review владельца, а не напрямую в main.
-
-**Для ВП и владельцев продуктов:** [Product Stewardship](governance/product-stewardship.md) · [локальный handoff-шаблон](governance/templates/product-maintainership.md) · [реестр спринта внедрения](governance/consumer-stewardship-sprint-2026-10-30.md). Это процесс контроля PR и QA, не полномочия на merge/production.
+Бренд E7A, логотипы и фирменные материалы требуют предварительного письменного
+разрешения правообладателей для стороннего использования.
+Публичная загрузка UI (`UNLICENSED`) не предоставляет прав на код или бренд.
+Секреты, приватные операционные сведения и внутренние отчёты сюда не добавляются.
