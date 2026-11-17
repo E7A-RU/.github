@@ -12,14 +12,16 @@
 
 Один физический узел с 12 ядрами, ~31 GiB RAM и ~433 GiB disk не получает новых ресурсов при добавлении гипервизора или K3s. ВМ полезны для дополнительной изоляции; K3s — при росте многоузловой оркестрации. Первый этап — раздельные Compose projects, networks, service accounts, quotas и единый управляемый reverse proxy. Kubernetes включать только после cost/security/operations ADR.
 
-## Declarative product deployment
+## Declarative product deployment — минимальный самохостинговый путь
 
-1. Laboratory отправляет product manifest без секретов.
-2. Infra проверяет schema, host capacity, namespace/port/domain collisions, разрешённый ingress/egress, dependencies, volumes и backup requirements.
-3. Infra публикует diff желаемого/текущего состояния, назначение ресурсов и план отката. Никакого apply на основе README.
-4. Staging создаётся в пределах выданных policy/grants и quotas.
-5. Owner подписывает **конкретный** release manifest/digest, target host и окно.
-6. Infra применяет, проверяет healthchecks, сохраняет журнал, status и rollback. Изменения PostgreSQL и других stateful систем требуют отдельной проверки совместимости миграции и восстановления.
+См. [release/deploy policy](release-deployment-policy.md). **Цель:** `protected main merge → self-hosted exact-SHA QA → immutable build → production healthcheck → rollback при ошибке`, без обязательного staging и второго ручного подтверждения каждого безопасного выпуска.
+
+1. Product поставляет тесты, build/health/rollback contract и manifest **без секретов**. На раннем этапе достаточно локального `systemd timer` и отдельного Docker Compose project на Lobachevsky: отдельный сервер, общий Release Controller и Laboratory runtime не обязательны.
+2. Infra проверяет host capacity, namespace/port/domain collisions, ingress/egress, права, dependencies, volumes, backup и blast radius. Никакого apply на основе README.
+3. Владелец **один раз** утверждает ограниченный standing authorization (продукт, protected branch, R0/R1 allowlist, target, expiry/revocation, QA и rollback), а Infra отдельно проверяет и включает executor. Без такого activation сам merge в main ничего не разворачивает.
+4. Для разрешённых изменений executor фиксирует exact SHA, проводит изолированные проверки без production secrets/privileged Docker socket, собирает и проверяет immutable digest; при любой ошибке не трогает production. Staging выполняется **только** по зафиксированному risk-trigger.
+5. Infra переключает лишь выбранный сервис, фиксирует текущий/предыдущий digest, проверяет health/smoke и пишет журнал. На сбое делает rollback или объявляет `RECOVERY_REQUIRED` с остановкой повторных попыток.
+6. Изменения R2+, IAM/секретов/сетей, критические DB migration и самого release controller **вне standing authorization** требуют отдельного решения Owner и дополнительных подходящих тестов/плана восстановления. Откат Docker-образа не является откатом БД.
 
 [Пример product manifest](../contracts/product-manifest.example.yaml) — иллюстрация, не действующий CRD.
 
@@ -37,4 +39,4 @@
 
 ## Никакой несанкционированной автоматики
 
-По умолчанию никакой git push или создание репозитория не разворачивает ВМ/DNS/базы. Laboratory организует проверку; Infra применяет строго разрешённый план. GitHub-hosted Actions CI запрещён.
+По умолчанию никакой git push, создание репозитория или неразрешённый merge не разворачивает ВМ/DNS/базы. **Исключение для выпуска кода продукта:** после явной однократной активации и в границах standing authorization merge в защищённый `main` запускает автоматический self-hosted QA/build/deploy без пострелизного owner-click. Infra применяет только разрешённый service-scoped план; GitHub-hosted Actions CI запрещён.

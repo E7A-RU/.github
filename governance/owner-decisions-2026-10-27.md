@@ -1,5 +1,7 @@
 # Owner decisions — consolidated architecture baseline (rounds 1–10)
 
+> **Historical decision record (2026-10-27).** Its universal staging/separate-per-release approval statements below describe the policy of that date. See [decision #060](decision-log.md) and [release/deployment policy](release-deployment-policy.md) for the subsequently owner-directed, risk-gated low-risk standing authorization model. Supersession is effective only through a new published Governance version; production activation remains per product.
+
 **Subsequent eight owner approvals:** see [final architectural baseline](final-architecture-baseline-2026-10-27.md), which additionally governs tenant hierarchy, IdP, trusted Jobs, Billing, Audit failure, F2 recovery, owner-only critical release exception and market selection.
 
 **Decision date:** 2026-10-27. **Status:** OWNER-APPROVED DIRECTION / DRAFT GOVERNANCE PR; not approved as a released governance standard until PR review and merge. **IMPLEMENTED, TESTED and RUNNING are not implied.**

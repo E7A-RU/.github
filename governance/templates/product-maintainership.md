@@ -7,7 +7,7 @@
 - Repository: `E7A-RU/<name>`
 - Purpose and boundary:
 - Product Kit: `Browser-only | Full-stack | Service/Worker | Engineering/Infra only | TBD`
-- Governance: **v1.1.0**, immutable normative SHA `c74bce10bc9eac6bb2e604a7db6b14d33b7c7645`.
+- Target Governance: **v2.0.0**, immutable normative SHA `298fe2856f6ac879286f96d089175fa960c88dd8`. Existing consumer may still be pinned to v1.1.0 until its own reviewed adoption PR.
 - Local `governance-consumer.json` state: `MERGED | DRAFT | PENDING`
 - Actual status: `DIRECTION | DESIGN | IMPLEMENTED_SOURCE | TESTED_EXACT_SHA | RUNNING_VERIFIED | UNKNOWN`
 - Last verified source SHA and evidence date: `UNKNOWN` unless read/verified.
@@ -16,7 +16,7 @@
 
 | Responsibility | Current assigned identity or evidence | Notes |
 | --- | --- | --- |
-| Accountable organization owner | E7A Owner | Normative change and production approval |
+| Accountable organization owner | E7A Owner | Normative changes, scoped standing authorization, critical production approval |
 | Product Owner | `TBD — owner assignment pending` | Scope, product roadmap, acceptance |
 | Engineering lead / VP agent | `TBD — assign per work session` | Implementation, README/AGENTS, PR handoff |
 | QA reviewer | `TBD / temporary owner-only exception` | exact-SHA QA evidence, no invented independent reviewer |
@@ -52,13 +52,14 @@ Other responsibilities and pending dependencies:
 - [ ] Documentation: relative links/JSON validate, stale claims corrected.
 - [ ] Code: frozen install, strict types, lint, test/build/audit and negative scenarios at exact SHA **with real output**.
 - [ ] Privacy/security and product-specific lifecycle gates satisfied or marked `BLOCKED/UNKNOWN`.
-- [ ] Product owner has approved scope; production requires **separate** owner + Infra approval.
+- [ ] Product owner approved scope; Infra verifies active scoped standing authorization for permitted R0/R1 **or** separate owner approval for other production releases. See [release policy](../release-deployment-policy.md).
 - [ ] Handoff and PR body updated with PASS/FAIL/SKIPPED/UNKNOWN, timestamp and next step.
 
 ## Production and recovery (only observed facts)
 
 - Is there a deployed service? `NOT_VERIFIED`
 - Current deployed artifact SHA/digest: `UNKNOWN`
+- Auto-deploy standing authorization / scope / expiry / kill switch: `NOT_ENABLED_OR_NOT_VERIFIED`
 - Secret owner/location (redacted): `TBD`
 - Backup/restore RPO/RTO: `NOT_VERIFIED`
 - Support/recovery and rollback: `TBD`

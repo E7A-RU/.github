@@ -41,7 +41,7 @@ Identity / developer enrolment → Laboratory Wizard → один из трёх 
 - Core: версии библиотек и шаблонов.
 - Identity: субъект, атрибуты, проверки и membership; **не** результаты собеседований в общем пользовательском профиле без privacy basis.
 - Laboratory: проектная спецификация, QA, evidence, approvals, team/developer workflows.
-- Infra: isolated runner, compute, staging, prod apply после отдельного одобрения.
+- Infra: isolated runner, compute, risk-triggered staging, production apply по проверенному standing authorization или индивидуальному approval; [release policy](release-deployment-policy.md).
 - Platform: опциональное исполнение typed jobs/integrations/results; не HR-движок по умолчанию.
 - Продукт: доменные данные и самостоятельный release.
 

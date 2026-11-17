@@ -18,7 +18,7 @@ runtime:
   resources:
     cpus: 1
     memory: 512Mi
-  desiredEnvironment: staging # prod только по отдельному approval
+  desiredEnvironment: production # иллюстративная цель; apply запрещён до отдельной авторизации
 dependencies:
   identity:
     mode: registered-subjects # anonymous / registered-subjects
@@ -34,5 +34,8 @@ operations:
   exposure: reverse-proxy-only
   backup: required-for-durable-data
   monitoring: required
-  releaseApproval: human-required
-  productionAutoApply: false
+  releaseAuthorization: pending # standing-product-scoped или individual; не выдаётся этим файлом
+  allowedRiskClass: R1 # пример; реальный allowlist утверждается Owner отдельно
+  qaRequired: exact-sha-self-hosted
+  stagingRequired: risk-dependent # не обязательный gate
+  productionAutoApply: false # default DENY пока отдельная активация не подтверждена

@@ -16,7 +16,7 @@
 - формирует отчёт для владельца и ответственных агентов/инженеров;
 - ведёт журнал выполненных и отклонённых предложений.
 
-**Граница:** создание Draft PR ≠ утверждение изменений; **ни прямого push в main, ни auto-merge, ни деплоя**. Полная автоматически написанная реализация бизнес-функций вне MVP этого сервиса.
+**Граница:** создание Draft PR ≠ утверждение изменений; **ни прямого push в main, ни auto-merge, ни деплоя со стороны E7A Automation**. Предлагаемый [продуктовый self-hosted auto-release](release-deployment-policy.md) реализуется под Infra и не даёт Automation продакшен-доступ. Полная автоматически написанная реализация бизнес-функций вне MVP этого сервиса.
 
 ## Модули (версионированные capability, включаются отдельно)
 
@@ -56,7 +56,7 @@
              Exact-SHA QA → approved merge
                            │
         Independent product release, if needed
-          (separate owner approval for prod)
+          (standing authorization OR separate owner approval for prod)
 ```
 
 ### Важное отличие: нормативные и производные документы

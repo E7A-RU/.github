@@ -1,6 +1,6 @@
 # Identity & Trust — единая среда зарегистрированных субъектов E7A
 
-**Статус: стратегическое решение согласовано; отдельный production Identity Provider НЕ создан и НЕ развёрнут.** Дальнейшие протоколы, схема и IdP — предмет ADR и security review.
+**Статус: стратегическое решение согласовано; отдельный production Identity Provider НЕ создан и НЕ развёрнут.** Новая owner-approved граница централизованной авторизации предложена для следующего неизменяемого Governance release в [GOV-AUTHZ-001](adr/GOV-AUTHZ-001-centralized-authorization.md). Действующая v2.1.0 остаётся нормативной до отдельной публикации новой версии. Дальнейшие протоколы, схема и IdP — предмет ADR и security review.
 
 ## Назначение
 
@@ -10,7 +10,7 @@
 
 - **Person** — стабильный ID, управление связанными логинами, локализованное отображаемое имя, минимальные обязательные данные.
 - **Identity Claim** — тип, значение/ссылка, source, assurance, verified_at, expires_at, revocation, consent/legal basis; запрещено выдавать чужим продуктам всё сразу.
-- **Organisation / Membership** — организации, member IDs, роли членства и делегирование; доменные роли остаются у продуктов.
+- **Organisation / Membership** — организации, member IDs, роли членства и делегирование; продукт декларирует ресурсные действия/роли, E7A Identity станет каноническим владельцем экосистемных grants после публикации нового стандарта; продукт сохраняет данные и enforcement.
 - **Developer/Operator** — отдельные privileged capabilities, MFA, audit и break-glass с ограниченным сроком.
 - **Service Principal** — machine-to-machine identity с audience-scoped credentials, key rotation, revocation; не подменять им реальную персону.
 - **Entitlement** — продуктовый доступ (например Bot Studio enabled); не разрешение редактировать конкретного бота.
@@ -20,7 +20,7 @@
 
 - Website: публичный сайт без входа, при этом защищённый административный интерфейс (если есть) может использовать Identity.
 - Reader: чтение локального файла анонимно; только опциональные функции sync/account должны требовать Identity, без тихой загрузки документов.
-- Bot Studio: зарегистрированный оператор проходит общий SSO, а Bot сохраняет свои tenant permissions.
+- Bot Studio: зарегистрированный оператор проходит общий SSO; действующие Bot tenant permissions сохраняются на переходный период до проверенной миграции на централизованные grants, с обязательным product-side enforcement.
 - Planner: общая identity связывает участника с его локальными задачами, а не хранит сами задачи.
 - Laboratory/Infra: разработчик имеет единый subject; QA approve и prod deploy — **разные** роли и требования к подтверждению.
 
@@ -39,6 +39,11 @@
 
 ## Пример запроса права
 
-Product API проверяет валидный токен E7A subject для своего audience. Затем запрашивает/проверяет entitlement «Bot Studio available», но право изменить конкретный flow остаётся в Bot. При отозванном entitlement stale cache допускается только в пределах задокументированного security budget и SLA; не делать бессрочные offline grants.
+Product API проверяет валидный токен E7A subject для своего audience. Затем запрашивает/проверяет entitlement «Bot Studio available», но право изменить конкретный flow в новой модели оценивается центральным E7A Policy Engine на основании зарегистрированного ресурса, установки и grants; Bot проверяет решение и собственные бизнес-инварианты. До перехода его текущие ACL сохраняются, без неявного разрешения доступа. При отозванном entitlement stale cache допускается только в пределах задокументированного security budget и SLA; не делать бессрочные offline grants.
 
 См. [матрицу](ownership-and-data.md) и [операции](platform-delivery-jobs-integrations.md).
+
+
+## Следующая нормативная граница: central authorization (предложение после v2.1.0)
+
+См. [GOV-AUTHZ-001](adr/GOV-AUTHZ-001-centralized-authorization.md) и [матрицу влияния](central-authorization-impact-2026-11-10.md): Product Trust, Organization Entitlements, Product Installations (одна организация — несколько явно разрешённых Workspace), product technical grants, управляемые/forked policy templates и OpenFGA/ZITADEL в Identity. Никакого перевода работающих продуктов, issuance credentials или деплоя вследствие объединения документов.

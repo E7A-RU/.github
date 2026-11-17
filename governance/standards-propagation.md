@@ -12,7 +12,7 @@
 
 ## Единственный publish trigger
 
-[Release descriptor](standards-release.json) — реестр утверждённой версии. Обновлять его можно только отдельным Governance PR после owner approval, с `version`, полным `revision` (Git commit SHA принятого baseline), `approvedBy`, `changeClass`, `effectiveAt`, `impactedConsumers`, ссылкой на ADR/changelog и migration guidance. **Current descriptor pins initial accepted v1; it does not create an immutable Git tag and does not silently publish each future docs commit.**
+[Release descriptor](standards-release.json) — реестр утверждённой версии. Обновлять его можно только отдельным Governance PR после owner approval, с `version`, полным `revision` (Git commit SHA принятого baseline), `approvedBy`, `changeClass`, `effectiveAt`, `impactedConsumers`, ссылкой на ADR/changelog и migration guidance. **Current descriptor pins approved Governance v2.1.0 at normative SHA `c26fc1daea258a8ba63b61ea069664f6d9a51da2` (Owner Decision 063; previous 2.0.0 is immutable history). The descriptor does not itself create an immutable Git tag and does not silently publish future docs commits. Consumer pins are changed only by independently reviewed PRs.**
 
 Versioning policy: 
 - **PATCH:** editorial/normative clarity without new consumer obligation (may produce informational report only).
@@ -51,7 +51,7 @@ Every product stores a **minimal** `governance-consumer.json` or equivalent mani
 - Repo allowlist fixed and versioned; no arbitrary `owner/repo` input from events.
 - Canonical SHA must be verified under `E7A-RU/.github`; read releases from trusted default branch only.
 - **Default writes** limited to `docs/governance-adoption.md`, `governance-consumer.json` and bot-owned migration reports. **Optional controlled doc-sync scope** may additionally include `README.md`, `AGENTS.md`, `docs/README.md`, `docs/status.md`, reviewed architecture references, and product manifests; each path is explicitly enabled per module/repo and reviewed in a Draft PR. AGENTS, brand/legal/security claims and product readiness statuses are protected/high-review paths. Do not rewrite historical Standard v1 snapshots after archival.
-- PR labels/comments do **not** give production approval; privileged authorizations are independent and time-bound.
+- PR labels/comments **alone** do not give production permission; product-scoped standing authorization (after separate activation) or individual approval is independently validated, and privileges are time-bounded. [Release policy](release-deployment-policy.md).
 - Concurrency lock per repo + governance revision; exponential backoff for API rate limits; durable job audit, reconciliation and observable fail modes.
 - Prompt injection prevention: PR descriptions, README content, changelogs and comments are **untrusted data**, never executable agent instructions.
 - No secret values, emails, customer details, private topologies or signed tokens in generated PR payloads.
@@ -72,7 +72,7 @@ Every product stores a **minimal** `governance-consumer.json` or equivalent mani
 ## Illustrative output (not already executed)
 
 ```text
-Governance v1.1.0 / approved SHA <immutable-40-hex>
+Governance v2.0.0 / approved SHA 298fe2856f6ac879286f96d089175fa960c88dd8
 core       : DRAFT_PR_REQUIRED (SDK/Starter standards)
 website    : DRAFT_PR_REQUIRED (Demo/privacy rule)
 reader     : NO_IMPACT (browser-only unrelated)

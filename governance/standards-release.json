@@ -1,28 +1,22 @@
 {
   "schemaVersion": 1,
-  "releaseId": "e7a-governance-v1.1.0",
-  "version": "1.1.0",
+  "releaseId": "e7a-governance-v4.0.0",
+  "version": "4.0.0",
   "status": "APPROVED_BASELINE",
-  "revision": "c74bce10bc9eac6bb2e604a7db6b14d33b7c7645",
+  "revision": "abba7788f305bbf4d0494d8b34c82aeea197a2ee",
   "approvedBy": "E7A Owner",
-  "effectiveAt": "2026-10-30",
-  "changeClass": "MINOR",
-  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/4",
+  "effectiveAt": "2026-11-11",
+  "changeClass": "MAJOR",
+  "sourcePullRequest": "https://github.com/E7A-RU/.github/pull/26",
   "policyRoot": "governance/",
   "brandPolicyPath": "BRAND_POLICY.md",
   "impactedConsumers": [
-    "core",
-    "website",
-    "reader",
-    "bot",
-    "planner",
-    "infra",
-    "laboratory",
-    "gateway",
-    "identity",
-    "platform"
+    "identity"
   ],
-  "notes": "Owner-approved recommended PostgreSQL-first backend architecture, separate three-Kit implementation roadmaps, updated GitHub organization profile and proposed private governance-sync App/repo. Scope may be NO_IMPACT in specific consumers after review. Sync App is not created or activated; consumer adaptations remain independent Draft PRs. Initial v1.0.0 remains in Git history.",
+  "notes": "Owner-approved source PR #26: permanent revocable Owner-controlled source-only procedure for E7A-RU/identity, including explicit organizational risk of unavailable native protection on private GitHub Free. Separate exact-PR/head Owner admission, expected-main checks, complete Docker QA and critical/high blockers remain mandatory. No direct/force main pushes, history rewriting, auto-merge, paid plan, public repository, production, real users, credentials or product migration. Independent security review remains mandatory before real-user server use, alongside Infra/runtime/recovery/privacy gates. This separate descriptor publishes the accepted immutable source merge abba7788f305bbf4d0494d8b34c82aeea197a2ee; it does not adopt Identity automatically or approve any engineering PR. Other products retain their existing pins/rules. Governance 3.0.0 history remains unchanged.",
   "botAutoMerge": false,
-  "productionAutoDeploy": false
+  "productionAutoDeploy": false,
+  "productScopedAutoDeployPolicy": "OPT_IN_STANDING_AUTHORIZATION_ONLY",
+  "stagingRequiredByDefault": false,
+  "perReleaseApprovalForAuthorizedLowRisk": false
 }

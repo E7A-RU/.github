@@ -1,6 +1,16 @@
 # E7A Governance — единый источник архитектурных решений
 
-**Status: owner-approved organizational/architectural Governance v1, merged in PR #1 on 2026-10-29** and pinned to `b39ed4aabf97e45edaa0762a29ab57c69f8bbafd`. Subsequent improvements require their own approved PR and release descriptor. Никаких сервисов, автоматических деплоев или глобального входа документы сами по себе не создают.
+**Навигация актуализирована 18.11.2026. Опубликован Governance 4.0.0**:
+[descriptor](standards-release.json), [release notes](releases/4.0.0.md).
+Нормативный source SHA — `abba7788f305bbf4d0494d8b34c82aeea197a2ee`;
+publication commit — `5c11fd53dc3b203ce5166187cc10d564ad3f2c1d`.
+4.0.0 адресно меняет source-only процедуру Identity; остальные продукты
+сохраняют принятые pins и gates. Эта навигационная правка не является новым
+нормативным выпуском, adoption, runtime QA или разрешением production.
+
+Предыдущие опубликованные версии: [3.0.0](releases/3.0.0.md),
+[2.1.0](releases/2.1.0.md). Для применения читать пакет на immutable revision
+из принятого consumer pin, а не автоматически считать `main` принятой нормой.
 
 ## Иерархия источников истины
 
@@ -8,16 +18,29 @@
 2. **E7A-RU/core** — исполняемые исходники версионированных SDK, UI, типизированных server contracts и текущего опционального Product Starter.
 3. **E7A-RU/laboratory** — реализация Wizard, QA, release evidence, approvals, реестр продуктовых потребителей стандартов.
 4. **E7A-RU/infra** — реализация декларативной инфраструктуры, серверов, runtime, мониторинга, резервного копирования и deployment.
-5. **Identity / Platform (репозитории созданы, пока не имеют подтверждённого runtime)** — самостоятельные контракты и собственные данные после отдельных ADR. Central Audit и Billing Foundation также самостоятельные обязанности, их реализация не подтверждена.
-6. **Каждый продукт** — собственные схемы, процессы, бизнес-логика, доменные политики и релизные материалы.
+5. **Identity / Platform** — самостоятельные контракты и собственные данные после отдельных ADR. Central Audit и Billing Foundation также самостоятельные обязанности, их реализация не подтверждена.
+6. **Каждый продукт** — собственные схемы данных, процессы, бизнес-логика, API enforcement и релизные материалы; по Decision 064 централизованные экосистемные grants и разрешения на ресурсы принадлежат Identity после Governance 3.0.0 adoption.
 
 Общий стандарт определяет **что и зачем**, продуктовый репозиторий — **как реализовано у него**. Локальные документы дополняют, но не ослабляют организационные политики. При несовместимости обязательна запись о конфликте и отдельный ADR; не менять десятки README без контроля версии.
 
-## Проверенный портфель / актуальный source-срез
+## Публикация централизованной авторизации и последующие изменения
 
-- [Срез 31.10.2026: репозитории, опубликованные пакеты, открытые PR, границы QA/production](portfolio-status-2026-10-31.md). **Датированный инвентаризационный отчёт, не live-мониторинг и не новая версия Governance.**
+[GOV-AUTHZ-001](adr/GOV-AUTHZ-001-centralized-authorization.md) и
+[матрица влияния](central-authorization-impact-2026-11-10.md) относятся к
+опубликованной [Governance 3.0.0](releases/3.0.0.md), а не к ожидающему выпуска
+предложению. Следующая [4.0.0](releases/4.0.0.md) уточняет source admission Identity.
+Адресное принятие продуктов, QA и полномочия на выпуск проверяются отдельно.
+
+## Датированные сверки
+
+- [Публичная сверка 18.11.2026](portfolio-status-2026-11-18.md) — обновление профиля и навигации.
+- [Архивный срез 31.10.2026](portfolio-status-2026-10-31.md) — сохранённая история исходного PR, не текущие версии или runtime.
 
 ## Документы
+
+- **[E7A Admin Template — концепция и будущие этапы](admin-template-direction.md)** — owner-requested план необязательного шаблона административных интерфейсов для внутреннего/публичного использования; пока не реализован и не публиковался.
+
+- **[Упрощённая политика release/deploy для всей линейки](release-deployment-policy.md)** — owner-directed изменение: self-hosted QA → build → production без обязательного staging и второго клика при разрешённом R0/R1; **опубликована как нормативное направление Governance v2.0.0**, но не активирует release-процессы без отдельного включения для каждого продукта.
 
 - **[Product Stewardship: единые правила ВП/агента и владельцев продуктов](product-stewardship.md)**
 - **[Спринт внедрения и QA/PR реестр](consumer-stewardship-sprint-2026-10-30.md)**
@@ -34,6 +57,7 @@
 - [Шаблон Product Charter](templates/product-charter.md) · [шаблон Release Gate и evidence](templates/release-gate.md)
 - **[Автоматическое распространение утверждённых стандартов в Draft PR](standards-propagation.md)** — концепция self-hosted механизма, **не запущен**
 - **[Реестр опубликованной версии стандарта](standards-release.json)** — неизменяемый baseline SHA, не executable automation
+- [Governance 2.1.0 — impact/migration and review evidence](releases/2.1.0.md)
 
 - **[Финальный архитектурный baseline: восемь заключительных решений и устранение противоречий](final-architecture-baseline-2026-10-27.md)**
 - **[Решения владельца: раунды 1–10, 2026-10-27 — актуальный архитектурный baseline](owner-decisions-2026-10-27.md)**
@@ -61,6 +85,7 @@
 - [Platform: СГДС, Jobs, коннекторы, Mail](platform-delivery-jobs-integrations.md)
 - [Реальные и иллюстративные сценарии](scenarios.md)
 - [Infra: профессорские серверы и эксплуатация](infra-operations.md)
+- **[Единый стандарт зависимостей: Core / Product Starter / продукты / Automation](dependency-ownership.md)** — утверждён Owner E7A как расширение **2.1.0**; действует нормативно после отдельного approved immutable `standards-release.json` с полным SHA. Независимые consumer adoption PR, никакого автоматического CI/PR writer/deploy.
 - [Версии стандартов и управление изменениями](standards-and-change-control.md)
 - [Реестр архитектурных решений и открытых вопросов](decision-log.md)
 - [Architecture Consistency Report — противоречия, риски, проверки](architecture-consistency-report.md)
@@ -82,3 +107,6 @@
 ## Смысл утверждения Governance v1
 
 Владелец E7A подтвердил: слияние PR #1 после отдельного разрешения утверждает **первичные организационные и архитектурные стандарты**, а не готовность общих сервисов или реализаций продуктов. Канонический владелец и окончательный утверждающий изменений обязательных стандартов — **Founder / Owner E7A**. Исполнение и локальные технические решения могут делегироваться в границах утверждённых правил. [Управление изменениями](standards-and-change-control.md).
+
+
+**Version decision:** Owner Decision 064 selects **MAJOR Governance 3.0.0** as the *next* release because resource authorization authority changes. This branch is still a source proposal; actual approved normative baseline stays **2.1.0** until separate reviewed descriptor publication after merge of the exact normative source SHA. Do not update consumers to this branch or mutable `main`.

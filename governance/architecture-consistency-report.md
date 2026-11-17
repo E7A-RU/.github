@@ -1,5 +1,7 @@
 # Architecture Consistency Report — 2026-10-25
 
+> **Historical audit, not the current deployment policy.** References to universal manual approval / “never auto-deploy” below describe the audit baseline. For current changes consult [decision #060](decision-log.md) and the [risk-gated release policy](release-deployment-policy.md), effective only after a separate approved Governance release. Product automation remains disabled until individually activated.
+
 **Status: REVIEW / PROPOSED remediation.** Scope: governance PR #1, its baseline main, and documented cross-repository relationships. This is a documentary architecture audit, **not** runtime certification or a comprehensive source-code audit of every consumer. Baseline main `5921f99dbce40caeb673c21811941836ff43f826`; initial PR head `47f32d74b18da9a30d996ae0df83a189034173eb`. The final head must be recorded separately after changes.
 
 ## Executive conclusion
