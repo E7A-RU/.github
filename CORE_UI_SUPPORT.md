@@ -5,7 +5,7 @@
 ## Release and supported versions
 
 - **`@e7a-ru/ui@0.5.0` — CURRENT / SUPPORTED / PREFERRED.** Owner-authorized public npm upload completed on 2026-11-18 with `NPM_UPLOAD_ACCEPTED=PASS` and exact `PUBLIC_NPM_READBACK=PASS`. Core verified source `896113bcc93d7bfbd9e80b01e72844fd608786e3`; archive SHA-256 `7bb02bf2e88875ac9f5198d126a24f90cc4df333112149c38d44c0076c8bf179`. Includes approved autonomous E7A Wordmark v3 `wordmark-dark.svg`/`wordmark-light.svg`.
-- **`0.4.0` — PREVIOUS / LIMITED SUPPORT** for verified pinned consumers during migration and bounded rollback. Existing Website dependency currently pins 0.4.0; this does not mean its public site already uses 0.5.0.
+- **`0.4.0` — PREVIOUS / LIMITED SUPPORT** for verified pinned consumers during migration and bounded rollback. Website has since adopted 0.5.0 and released it on 2026-11-26; 0.4.0 remains a limited-support previous release.
 - **`0.3.x` and older — ARCHIVED / UNSUPPORTED** for feature work, security patches, compatibility promises or new deployments. npm copies that were actually published remain accessible and immutable; no unpublishing or rewriting. Any exceptional rollback is product-owner-approved, documented and time-limited.
 
 **Owner rolling policy:** default current plus one previous minor release iteration, at most two previous minor iterations when a specific migration exception is approved. The explicit **minimum supported version is 0.4.0**, superseding any theoretical support for 0.3.x as second-previous. Re-evaluate the window with every new minor release; no indefinite `0.x` LTS.
@@ -14,4 +14,4 @@
 
 The UI package is `UNLICENSED` and the official E7A Brand assets need advance written rights-holder permission for third-party use. See [Brand Usage Policy](BRAND_POLICY.md) and the [Core release evidence](https://github.com/E7A-RU/core/blob/main/docs/release-evidence/ui-0.5.0-prepublication.md).
 
-**Open work:** [Core follow-up issue #58](https://github.com/E7A-RU/core/issues/58); [Website PR #90](https://github.com/E7A-RU/website/pull/90) will adopt 0.5.0 only after independent package and visual QA, followed by a manual Website-only release.
+**Open work:** [Core follow-up issue #58](https://github.com/E7A-RU/core/issues/58); Website adoption is complete: [PR #98 release evidence](https://github.com/E7A-RU/website/pull/98#issuecomment-7192112009), 142 release tests, 272 Chromium checks and public SVG parity; [PR #99](https://github.com/E7A-RU/website/pull/99) reconciled operational paths without a new product release. No other consumer adoption is inferred.
